@@ -1,0 +1,58 @@
+.idea
+.vscode/
+
+# Бэкап-файлы редакторов
+*.bak
+*.tmp
+*.swp
+
+# Логи и временные файлы
+*.log
+*.tmp
+*.temp
+
+# Системные файлы MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.localized
+.Spotlight-V100
+.Trashes
+.Trash-*
+
+# Конфигурационные файлы VSCode
+.vscode/
+
+# Node.js зависимости и логи
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+
+# Сессии PHP
+sessions/
+
+# Загрузки PHP
+uploads/
+
+# Кэш и временные файлы PHP
+*.php~
+*.php.swp
+*.php.bak
+
+# Композитор
+vendor/
+composer.lock
+
+# Сборщики и кэш
+dist/
+.build/
+.cache/
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
