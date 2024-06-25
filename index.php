@@ -44,17 +44,17 @@ $currentDay = 24; // decommenter pour la test
 
 if ($currentMounth == 12 && $currentDay >= 24) {
 
-    //$stmt = $pdo->prepare("SELECT * FROM goods");
-	//$stmt->execute();
+    //$result = $pdo->query("SELECT * FROM goods");
+	
 	//$result = $stmt->fetchAll();
 	$result = $pdo->prepare("SELECT * FROM goods");
-
+	$result->execute();
+	//$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $products = array();
-
-    while ($productInfo = $result->fetch()) {
+	
+    while ($productInfo = $result->fetch(PDO::FETCH_ASSOC)) {
         $products[] = $productInfo;
     }
-
 
 	include 'online_store.php';
 } else {
