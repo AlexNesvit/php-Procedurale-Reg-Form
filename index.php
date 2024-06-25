@@ -38,16 +38,16 @@ $currentMounth = $currentDateArray[0];
 $currentDay = $currentDateArray[1];
 
 
-//$currentMounth = 12; // decommenter pour la test
-//$currentDay = 24; // decommenter pour la test
+$currentMounth = 12; // decommenter pour la test
+$currentDay = 24; // decommenter pour la test
 
 
 if ($currentMounth == 12 && $currentDay >= 24) {
 
-    $stmt = $pdo->prepare("SELECT * FROM goods");
-	$stmt->execute();
-	$result = $stmt->fetchAll();
-
+    //$stmt = $pdo->prepare("SELECT * FROM goods");
+	//$stmt->execute();
+	//$result = $stmt->fetchAll();
+	$result = $pdo->prepare("SELECT * FROM goods");
 
     $products = array();
 
