@@ -10,12 +10,15 @@
 --------------------------------------------------------------*/
 :root {
   scroll-behavior: smooth;
+  --main-bg-color-1: #000;
 }
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  /*background: #f6f9ff;*/
   color: #444444;
+  background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center fixed;
+  background-size: 100% auto;
 }
 
 a {
@@ -1253,7 +1256,7 @@ h6 {
   font-size: 13px;
   color: #012970;
 }
- .logoD {
-   width: 20px;
-   height: 20px;
- }
+.logoD {
+  width: 20px;
+  height: 20px;
+}

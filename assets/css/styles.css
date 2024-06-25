@@ -16,7 +16,8 @@ body {
     background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center fixed;
     background-size: 100% auto;
     font-family: Ouroboros, sans-serif;
-    color: var(--main-color-2);
+    /*color: var(--main-color-2);*/
+    color: #444444;
 }
 
 .vein {

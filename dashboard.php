@@ -32,7 +32,7 @@ session_start();
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <img src="assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
+      <img src="assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
       <a href="index.php" class="logo d-flex align-items-center">
      
         <span class="d-none d-lg-block">Boutique</span>
