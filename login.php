@@ -9,7 +9,7 @@ session_start();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Human Heart | Se connecter</title>
+    <title>Boutique | Se connecter</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -48,7 +48,7 @@ session_start();
               <div class="d-flex justify-content-center py-4">
                 <a href="#" class="logo d-flex align-items-center w-auto">
                   <img src="assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
-                  <span class="d-none d-lg-block">Human-Heart</span>
+                  <span class="d-none d-lg-block">Boutique</span>
                 </a>
               </div><!-- End Logo -->
 

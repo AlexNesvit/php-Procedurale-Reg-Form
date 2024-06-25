@@ -8,9 +8,7 @@ require 'actions/users/registerAction.php';
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Human Heart | S'inscrire</title>
-    <meta content="ONG de solidarité internationale qui vise à alléger les souffrances des populations les plus pauvres du monde." name="description">
-    <meta content="aide humanitaire, ong, human heart" name="keywords">
+    <title>Boutique | S'inscrire</title>
 
     <!-- Favicons -->
     <link href="assets/img/iconfav.jpg" rel="icon">
@@ -39,7 +37,7 @@ require 'actions/users/registerAction.php';
       <div class="container-fluid p-0">
           <nav class="navbar navbar-expand-lg navbar-light bg-light">
               <div class="container-fluid p-3">
-                  <a class="navbar-brand " href="#">Human heart</a>
+                  <a class="navbar-brand " href="#">Boutique</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
@@ -92,8 +90,8 @@ require 'actions/users/registerAction.php';
 
               <div class="d-flex justify-content-center py-4">
                 <a href="" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
-                  <span class="d-none d-lg-block">Human-Heart</span>
+                  <img src="assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
+                  <span class="d-none d-lg-block">Boutique</span>
                 </a>
               </div><!-- End Logo -->
 

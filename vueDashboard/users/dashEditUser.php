@@ -11,9 +11,7 @@ logged_only();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Human Heart | Administration</title>
-    <meta content="ONG de solidarité internationale qui vise à alléger les souffrances des populations les plus pauvres du monde." name="description">
-    <meta content="aide humanitaire, ong, human heart" name="keywords">
+    <title>Boutique | Administration</title>
 
     <!-- Favicons -->
     <link href="../../assets/img/iconfav.jpg" rel="icon">
@@ -35,17 +33,13 @@ logged_only();
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <img src="../../assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
+        <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
         <a href="../../dashboard.php" class="logo d-flex align-items-center">
 
-            <span class="d-none d-lg-block">Human-Heart</span>
+            <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-
-
-
-
 
 </header><!-- End Header -->
 
@@ -69,25 +63,18 @@ logged_only();
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
-                <i class="bi bi-collection-fill"></i>
-                <span>Dons</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="../dashboardCategory.php">
+            <a class="nav-link collapsed" href="dashboardProduit.php">
                 <i class="bi bi-card-list"></i>
-                <span>Catégories</span>
+                <span>Produits</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
-                <i class="bi bi-cash"></i>
-                <span>Donations</span>
-            </a>
-        </li>
+        <a class="nav-link collapsed" href="#">
+          <i class="bi bi-cash"></i>
+          <span>Toutes les ashats</span>
+        </a>
+      </li>
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="../../logout.php">

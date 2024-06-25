@@ -8,7 +8,7 @@ session_start();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Human Heart | Administration</title>
+    <title>Boutique | Administration</title>
     <meta content="ONG de solidarité internationale qui vise à alléger les souffrances des populations les plus pauvres du monde." name="description">
     <meta content="aide humanitaire, ong, human heart" name="keywords">
 
@@ -35,7 +35,7 @@ session_start();
       <img src="assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
       <a href="index.php" class="logo d-flex align-items-center">
      
-        <span class="d-none d-lg-block">Human-Heart</span>
+        <span class="d-none d-lg-block">Boutique</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
