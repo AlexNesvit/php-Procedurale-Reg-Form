@@ -1,7 +1,7 @@
 <?php
-include('../include/functions.php') ;
-require_once '../include/database.php';
-include ('../actions/admin/produitCrud/adminProduitList.php');
+include('../../include/functions.php');
+require_once '../../include/database.php';
+include('../../actions/admin/produitCrud/adminProduitCreate.php');
 logged_only();
 ?>
 <!DOCTYPE html>
@@ -16,18 +16,18 @@ logged_only();
     <meta content="aide humanitaire, ong, human heart" name="keywords">
 
     <!-- Favicons -->
-    <link href="../assets/img/iconfav.jpg" rel="icon">
+    <link href="../../assets/img/iconfav.jpg" rel="icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../../assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -35,8 +35,8 @@ logged_only();
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <img src="../assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
-        <a href="../dashboard.php" class="logo d-flex align-items-center">
+        <img src="../../assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
+        <a href="../../dashboard.php" class="logo d-flex align-items-center">
 
             <span class="d-none d-lg-block">Human-Heart</span>
         </a>
@@ -55,35 +55,28 @@ logged_only();
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="../dashboard.php">
+            <a class="nav-link collapsed" href="../../dashboard.php">
                 <i class="bi bi-house-heart"></i>
                 <span>Accueil</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="dashboardUser.php">
+            <a class="nav-link collapsed" href="../dashboardUser.php">
                 <i class="bi bi-person"></i>
                 <span>Utilisateurs</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="dashboardProduit.php">
+            <a class="nav-link collapsed" href="../dashboardProduit.php">
                 <i class="bi bi-card-list"></i>
-                <span>Produits</span>
+                <span>Produit</span>
             </a>
         </li>
 
         <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-cash"></i>
-          <span>Toutes les ashats</span>
-        </a>
-      </li>
-
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="../logout.php">
+            <a class="nav-link collapsed" href="../../logout.php">
                 <i class="bi bi-box-arrow-in-right"></i>
                 <span>Déconnexion</span>
             </a>
@@ -96,12 +89,7 @@ logged_only();
 
     <div class="pagetitle">
         <h1>Gestion des produits</h1>
-
     </div><!-- End Page Title -->
-    <div class="text-end">
-        <a href="category/dashCreateCategory.php" class="btn btn-primary"><i class="bi
-        bi-person-plus"></i> Créer un produit</a>
-    </div>
     <?php if (isset($_SESSION['flash'])) : ?>
         <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
             <div class="ms-1 me-3 alert alert-<?= $type; ?>">
@@ -110,38 +98,39 @@ logged_only();
         <?php endforeach; ?>
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
+    <?php if (!empty($errors)) : ?>
+        <div class="ms-1 me-3 alert alert-danger">
+            <p>Vous n'avez pas rempli le formulaire correctement</p>
+            <?php foreach ($errors as $error) : ?>
+                <ul>
+                    <li><?= $error; ?></li>
+                </ul>
+            <?php endforeach; ?>
+
+        </div>
+    <?php endif; ?>
     <section class="section">
         <div class="row">
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Produit</th>
-                    <th>Prix</th>
-                    <th>Lien pour image</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php foreach($produits as $produit):?>
-                    <tr>
-                        <td><?= $produit->id; ?></td>
-                        <td><?= $produit->name; ?></td>
-                        <td><?= $produit->price; ?></td>
-                        <td><?= $produit->image; ?></td>
-                        <td>
-                            <a href="produit/dashEditProduit.php?id=<?=$produit->id ?>" class="edit"
-                               data-toggle="modal"><i class="bi
-                        bi-pencil-square"></i></a>
-                            <a href="../actions/admin/produitCrud/adminProduitDelete.php?id=<?=$produit->id
-                            ?>"
-                               class="delete"
-                               data-toggle="modal"><i class="bi bi-trash"></i></a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
+            <div class="  profile-edit pt-3" id="profile-edit">
+
+                <!-- Profile Edit Form -->
+                <form method="POST">
+
+                    <div class="row mb-3">
+                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Titre</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="title" type="text" class="form-control" id="title" >
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary" name="validate">Enregistrer
+                            le produit</button>
+
+                    </div>
+                </form><!-- End Profile Edit Form -->
+
+            </div>
         </div>
     </section>
 
@@ -151,11 +140,11 @@ logged_only();
 
 <!-- Vendor JS Files -->
 
-<script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 <!-- Template Main JS File -->
-<script src="../assets/js/main.js"></script>
+<script src="../../assets/js/main.js"></script>
 
 </body>
 
