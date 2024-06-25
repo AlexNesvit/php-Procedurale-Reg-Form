@@ -11,9 +11,7 @@ logged_only();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Human Heart | Administration</title>
-    <meta content="ONG de solidarité internationale qui vise à alléger les souffrances des populations les plus pauvres du monde." name="description">
-    <meta content="aide humanitaire, ong, human heart" name="keywords">
+    <title>Boutique | Administration</title>
 
     <!-- Favicons -->
     <link href="../../assets/img/iconfav.jpg" rel="icon">
@@ -35,17 +33,13 @@ logged_only();
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <img src="../../assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
+        <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
         <a href="../../dashboard.php" class="logo d-flex align-items-center">
 
-            <span class="d-none d-lg-block">Human-Heart</span>
+            <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-
-
-
-
 
 </header><!-- End Header -->
 
@@ -129,9 +123,8 @@ logged_only();
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary" name="validate">Sauvegarder les
                             changements</button>
-                        <a href="../../actions/admin/produitCrud/adminProduitDelete.php?id=<?=$produit->id ?>"
-                           class="btn
-                        btn-danger">Supprimer la
+                        <a href="../../actions/admin/produitCrud/adminProduitDelete.php?id=<?= $produit->id ?>" class="btn
+                                            btn-danger">Supprimer la
                             produit</a>
                     </div>
                 </form>
