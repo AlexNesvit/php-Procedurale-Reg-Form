@@ -70,7 +70,7 @@ logged_only();
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="dashboardProduit.php">
-                <i class="bi bi-collection-fill"></i>
+                <i class="bi bi-card-list"></i>
                 <span>Produits</span>
             </a>
         </li>

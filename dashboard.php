@@ -67,7 +67,7 @@ session_start();
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="vueDashboard/dashboardProduit.php">
-          <i class="bi bi-collection-fill"></i>
+          <i class="bi bi-card-list"></i>
           <span>Produit</span>
         </a>
       </li>
