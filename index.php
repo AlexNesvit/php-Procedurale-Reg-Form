@@ -44,12 +44,9 @@ $currentDay = 24; // decommenter pour la test
 
 if ($currentMounth == 12 && $currentDay >= 24) {
 
-    //$result = $pdo->query("SELECT * FROM goods");
-	
-	//$result = $stmt->fetchAll();
 	$result = $pdo->prepare("SELECT * FROM goods");
 	$result->execute();
-	//$products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	
     $products = array();
 	
     while ($productInfo = $result->fetch(PDO::FETCH_ASSOC)) {

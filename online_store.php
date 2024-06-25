@@ -59,12 +59,12 @@
             <h2>Catalogue</h2>
             <div class="row">
                 <?php foreach ($products as $product): ?>
-                    <div class="col-6 col-md-4 col-lg-3" data-id="<?=$product['id'] ?>">
+                    <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
                         <div class="product card">
-                            <div class="product-pic card-img-top" style="background-image: url('<?=$product['image']?>');"></div>
+                            <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');"></div>
                             <div class="card-body text-center">
-                                <span class="product-name card-title"><?=$product['name']?></span>
-                                <span class="product_price card-text"><?=$product['price']?></span>
+                                <span class="product-name card-title"><?= $product['name'] ?></span>
+                                <span class="product_price card-text"><?= $product['price'] ?></span>
                                 <button class="btn btn-primary js_buy">Acheter</button>
                             </div>
                         </div>
