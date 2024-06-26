@@ -5,7 +5,7 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
 <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid p-3">
-            <a class="navbar-brand " href="index.php">Boutique</a>
+            <a class="navbar-brand" href="index.php">Boutique</a>
             <div class="main container">
         <header class="mb-4">
             <button class="btn btn-primary d-lg-none" id="mobileMenuOpenButton">
