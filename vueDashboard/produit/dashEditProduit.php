@@ -34,7 +34,7 @@ logged_only();
 
     <div class="d-flex align-items-center justify-content-between">
         <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
-        <a href="../../dashboard.php" class="logo d-flex align-items-center">
+        <a href="../../index.php" class="logo d-flex align-items-center">
 
             <span class="d-none d-lg-block">Boutique</span>
         </a>
@@ -112,13 +112,38 @@ logged_only();
                 <form method="POST">
 
                     <div class="row mb-3">
-                        <label for="id" class="col-md-4 col-lg-3 col-form-label">Nom</label>
+                        <label for="id" class="col-md-4 col-lg-3 col-form-label">Id</label>
                         <div class="col-md-8 col-lg-9">
                             <input name="id" type="text" class="form-control" id="id" value="<?=
                             $produit->id;
                             ?>" >
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Nom produit</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="title" type="text" class="form-control" id="title" value="<?=
+                            $produit->name;
+                            ?>" >
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Price</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="title" type="text" class="form-control" id="title" value="<?=
+                            $produit->price;
+                            ?>" >
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Image</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="title" type="text" class="form-control" id="title" value="<?=
+                            $produit->image;
+                            ?>" >
+                        </div>
+                    </div>
+
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary" name="validate">Sauvegarder les
@@ -128,13 +153,8 @@ logged_only();
                             produit</a>
                     </div>
                 </form>
-
-
-
             </div>
-
         </div>
-
     </section>
 
 </main>
