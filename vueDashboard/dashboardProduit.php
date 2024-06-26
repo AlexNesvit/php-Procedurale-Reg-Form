@@ -93,7 +93,7 @@ logged_only();
 
     </div><!-- End Page Title -->
     <div class="text-end">
-        <a href="category/dashCreateCategory.php" class="btn btn-primary"><i class="bi
+        <a href="produit/dashCreateProduit.php" class="btn btn-primary"><i class="bi
         bi-person-plus"></i> Créer un produit</a>
     </div>
     <?php if (isset($_SESSION['flash'])) : ?>

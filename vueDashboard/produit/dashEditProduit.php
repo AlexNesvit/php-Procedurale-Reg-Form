@@ -120,25 +120,25 @@ logged_only();
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Nom produit</label>
+                        <label for="name" class="col-md-4 col-lg-3 col-form-label">Nom produit</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="title" type="text" class="form-control" id="title" value="<?=
+                            <input name="name" type="text" class="form-control" id="name" value="<?=
                             $produit->name;
                             ?>" >
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Price</label>
+                        <label for="price" class="col-md-4 col-lg-3 col-form-label">Price</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="title" type="text" class="form-control" id="title" value="<?=
+                            <input name="price" type="text" class="form-control" id="price" value="<?=
                             $produit->price;
                             ?>" >
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Image</label>
+                        <label for="image" class="col-md-4 col-lg-3 col-form-label">Image</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="title" type="text" class="form-control" id="title" value="<?=
+                            <input name="image" type="text" class="form-control" id="image" value="<?=
                             $produit->image;
                             ?>" >
                         </div>

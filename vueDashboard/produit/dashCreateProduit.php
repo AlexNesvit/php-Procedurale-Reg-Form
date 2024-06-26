@@ -11,9 +11,7 @@ logged_only();
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Human Heart | Administration</title>
-    <meta content="ONG de solidarité internationale qui vise à alléger les souffrances des populations les plus pauvres du monde." name="description">
-    <meta content="aide humanitaire, ong, human heart" name="keywords">
+    <title>Boutique | Administration</title>
 
     <!-- Favicons -->
     <link href="../../assets/img/iconfav.jpg" rel="icon">
@@ -35,10 +33,10 @@ logged_only();
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <img src="../../assets/img/iconfav.jpg" alt="icon Human-Heart" class="logoD">
+        <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
         <a href="../../dashboard.php" class="logo d-flex align-items-center">
 
-            <span class="d-none d-lg-block">Human-Heart</span>
+            <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -88,7 +86,7 @@ logged_only();
 <main id="main" class="main">
 
     <div class="pagetitle">
-        <h1>Gestion des produits</h1>
+        <h1>Creation des produits</h1>
     </div><!-- End Page Title -->
     <?php if (isset($_SESSION['flash'])) : ?>
         <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
@@ -115,13 +113,25 @@ logged_only();
 
                 <!-- Profile Edit Form -->
                 <form method="POST">
-
                     <div class="row mb-3">
-                        <label for="title" class="col-md-4 col-lg-3 col-form-label">Titre</label>
+                        <label for="name" class="col-md-4 col-lg-3 col-form-label">Nom produit</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="title" type="text" class="form-control" id="title" >
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Nom du produit">
                         </div>
                     </div>
+                    <div class="row mb-3">
+                        <label for="price" class="col-md-4 col-lg-3 col-form-label">Price</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="price" type="text" class="form-control" id="price" placeholder="price ( __.__ €)">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="image" class="col-md-4 col-lg-3 col-form-label">Image</label>
+                        <div class="col-md-8 col-lg-9">
+                            <input name="image" type="text" class="form-control" id="image" placeholder="Image lien">
+                    </div>
+
+
 
                     <div class="text-center">
                         <button type="submit" class="btn btn-primary" name="validate">Enregistrer

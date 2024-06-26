@@ -11,21 +11,22 @@ if (isset($_POST['validate'])) {
     $errors = array();
     require_once '../../include/database.php'; //appel du fichier relationnel de la base de données
 
-if (empty($errors)) {
-    require_once '../../include/database.php';  //appel du fichier relationnel de la base de donnée
+if (empty($errors)) {  
+    $name = htmlspecialchars($_POST['name']);
+    $price = htmlspecialchars($_POST['price']);
+    $image = htmlspecialchars($_POST['image']);
+    $produit_id = $_GET['id'];
+    //appel du fichier relationnel de la base de donnée
     $req = $pdo->prepare("UPDATE goods  SET `name` = ?, `price` = ?, `image` = ? WHERE `id` = ?");
-    $req->execute([$name, $price, $image, $id]);
+    $req->execute([$name, $price, $image, $produit_id]);
     $_SESSION['flash']['success'] = 'Votre produit a bien été modifiée';
     header('Location: ../dashboardProduit.php');
     exit();
     } else {
         $_SESSION['flash']['errors'] = $errors;
+        header("Location: ../dashboardProduit.php");
+        exit();
     }
 }
 
-// affichage des errors
-if (!empty($errors)) {
-    $_SESSION['flash']['errors'] = $errors;
-    header("Location: ../modifierProduit.php?id=$produit_id");
-    exit();
-}
+
