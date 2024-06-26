@@ -1,7 +1,6 @@
 <?php 
 session_start();
-// var_dump($_SESSION['auth']->role);
-// die();
+
 require "include/database.php"; ?>
 
 <!DOCTYPE html>
@@ -19,7 +18,7 @@ require "include/database.php"; ?>
 </head>
 <body>
 	<div class="container">
-		<?php include ('include/menu.php')?>
+		
 	</div>
 	<?php
 function secondToDate($mounth, $day) {
@@ -57,8 +56,8 @@ $currentMounth = $currentDateArray[0];
 $currentDay = $currentDateArray[1];
 
 
-//$currentMounth = 12; // decommenter pour la test
-//$currentDay = 24; // decommenter pour la test
+$currentMounth = 12; // decommenter pour la test
+$currentDay = 24; // decommenter pour la test
 
 
 if ($currentMounth == 12 && $currentDay >= 24) {
@@ -76,10 +75,7 @@ if ($currentMounth == 12 && $currentDay >= 24) {
 } else {
 	include 'timer.php';
 }
-
 	?>
-
-
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
