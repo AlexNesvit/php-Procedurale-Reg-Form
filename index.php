@@ -1,8 +1,27 @@
 <?php 
-
 session_start();
-require "include/database.php"; 
+// var_dump($_SESSION['auth']->role);
+// die();
+require "include/database.php"; ?>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique en ligne de décoration de Noël</title>
+    
+    <!-- Favicons -->
+    <link href="assets/img/iconfav.jpg" rel="icon">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div class="container">
+		<?php include ('include/menu.php')?>
+	</div>
+	<?php
 function secondToDate($mounth, $day) {
 
 	$currentDate = date('Y.m.d.H.i.s', time());
@@ -57,3 +76,12 @@ if ($currentMounth == 12 && $currentDay >= 24) {
 } else {
 	include 'timer.php';
 }
+
+	?>
+
+
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,4 +1,5 @@
 <?php
+include 'include/functions.php';
 
     if (!empty($_POST) && !empty($_POST['username']) && !empty($_POST['password'])) {
         require_once 'include/database.php';
@@ -9,7 +10,8 @@
             if (password_verify($_POST['password'], $user->password)) {
                 session_start();
                 $_SESSION['auth'] = $user;
-
+                
+                
                 if($user->role == 0){
                     $_SESSION['flash']['success'] = "Vous êtes bien connecté";
                     header('Location: vueProfil/profile.php');
