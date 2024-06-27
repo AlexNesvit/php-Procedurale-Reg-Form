@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'include/database.php';
+require '../include/database.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $user_id = $_SESSION['user_id'];
+    $user_id = $_SESSION['auth']->id;
     $basket_id = $_POST['basket_id'];
 
     $stmt = $pdo->prepare('
