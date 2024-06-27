@@ -36,11 +36,6 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                         <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
                     <?php endif; ?>
                 </div>
-                
-                <!-- Корзина -->
-                <div class="main-container">
-                    <?php include('cart/cart.php'); ?>
-                </div>
             </div>
         </div>
     </nav>

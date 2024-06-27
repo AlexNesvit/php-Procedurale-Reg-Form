@@ -30,7 +30,7 @@ try {
 }
 ?>
 <body>
-    <div class="main container">
+    <div class="container">
         <section class="cart">
             <h1>Panier</h1>
             <?php if (!empty($basket_items)): ?>
@@ -74,4 +74,4 @@ try {
         </section>
     </div>
 </body>
-</html>
+
