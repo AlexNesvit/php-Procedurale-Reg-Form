@@ -15,9 +15,9 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  /*background: #f6f9ff;*/
+  background: #f6f9ff;
   color: #444444;
-  background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center fixed;
+  /*background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center fixed;*/
   background-size: 100% auto;
 }
 

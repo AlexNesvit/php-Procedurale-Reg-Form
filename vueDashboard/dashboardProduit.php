@@ -34,7 +34,7 @@ logged_only();
 
     <div class="d-flex align-items-center justify-content-between">
         <img src="../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
-        <a href="../dashboard.php" class="logo d-flex align-items-center">
+        <a href="../index.php" class="logo d-flex align-items-center">
 
             <span class="d-none d-lg-block">Boutique</span>
         </a>
