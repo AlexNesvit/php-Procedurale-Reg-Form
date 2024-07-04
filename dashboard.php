@@ -20,10 +20,6 @@ session_start();
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files 
-    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="node_modules/bootstrap-icons/bootstrap-icons.svg" rel="stylesheet">
--->
     <!-- Template Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
@@ -92,7 +88,7 @@ session_start();
       <h1>Tableau de bord</h1>
         <h2>Bonjour <?=  $_SESSION['auth']->username; ?> <?=  $_SESSION['auth']->name; ?> !</h2>
         <p>Bienvenu sur votre interface d'administration</p>
-        <q>Il n'y a pas de grande victoire sans petit pas</q>
+        <q>🟣 Le courage, c’est d’aller dans l’inconnu malgré toutes les peurs"(OSHO) 🟣</q>
     </div><!-- End Page Title -->
       <?php if (isset($_SESSION['flash'])) : ?>
           <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
