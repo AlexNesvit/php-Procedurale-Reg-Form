@@ -26,18 +26,19 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                 </ul>
 
                 <div class="text-center">
-                    <a class="nav-link d-inline-block" href="cart.php">
-                        🛒 Panier (<?= htmlspecialchars($item_count ?? 0, ENT_QUOTES, 'UTF-8') ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
-                    </a>
+                    
                     <?php if (isset($is_authenticated) && $is_authenticated): ?>
                         <a class="nav-link d-inline-block" href="vueProfil/profile.php">Mon profil</a>
                         <?php if (isset($is_admin) && $is_admin): ?>
                             <a class="nav-link d-inline-block" href="dashboard.php">Admin</a>
                         <?php endif; ?>
-                        <a class="nav-link d-inline-block" href="logout.php">Se déconnecter</a>
+                            <a class="nav-link d-inline-block" href="logout.php">Se déconnecter</a>
                     <?php else: ?>
-                        <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
+                            <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
                     <?php endif; ?>
+                            <a class="nav-link d-inline-block" href="cart/cart.php">
+                                🛒 Panier (<?= htmlspecialchars($item_count ?? 0, ENT_QUOTES, 'UTF-8') ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
+                            </a>
                 </div>
             </div>
         </div>

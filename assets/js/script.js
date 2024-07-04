@@ -78,3 +78,33 @@ document.addEventListener("DOMContentLoaded", function () {
     // Запуск таймера
     updateTimer();
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const forms = document.querySelectorAll('.js_add_to_cart');
+
+    forms.forEach(form => {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                body: formData,
+            })
+            .then(response => response.text())
+            .then(response => {
+                if (response === 'Données manquantes') {
+                    alert('Erreur: données manquantes');
+                    return;
+                }
+
+                // Показываем модальное окно
+                const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+                cartModal.show();
+            })
+            .catch(error => console.error('Erreur:', error));
+        });
+    });
+});
+
