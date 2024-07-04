@@ -6,17 +6,12 @@ $cart = $_SESSION['cart'] ?? [];
 $total_amount = 0;
 
 // Обход корзины и подсчет общей суммы
-foreach ($cart as $item) {
-    // Преобразование к числовым значениям
-    $product_price_cleaned = floatval(preg_replace('/[^\d.]/', '', $item['product_price'])); // Очищаем цену от символов валюты и пробелов
-    $quantity = intval($item['quantity']); // Преобразуем в целое число
+foreach ($cart as $index => $item) {
+    $product_price_cleaned = floatval(preg_replace('/[^\d.]/', '', $item['product_price'])); // Очистка цены от символов
+    $quantity = intval($item['quantity']);
 
-    // Проверка корректности значений перед расчетом
     if ($product_price_cleaned > 0 && $quantity > 0) {
         $total_amount += $product_price_cleaned * $quantity;
-    } else {
-        // Логирование проблемы для отладки
-        error_log("Invalid price or quantity for item: " . print_r($item, true));
     }
 }
 ?>
@@ -32,28 +27,37 @@ foreach ($cart as $item) {
     <div class="container">
         <h2>Votre Panier</h2>
         <?php if (!empty($cart)): ?>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Prix Unitaire</th>
-                        <th>Quantité</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php foreach ($cart as $item): ?>
+            <form action="update_cart.php" method="post">
+                <table class="table">
+                    <thead>
                         <tr>
-                            <td><?= htmlspecialchars($item['product_name']) ?></td>
-                            <td><?= number_format($product_price_cleaned, 2) ?> €</td> <!-- Используем очищенное значение цены -->
-                            <td><?= htmlspecialchars($item['quantity']) ?></td>
-                            <td><?= number_format($product_price_cleaned * $item['quantity'], 2) ?> €</td> <!-- Используем очищенное значение цены -->
+                            <th>Produit</th>
+                            <th>Prix Unitaire</th>
+                            <th>Quantité</th>
+                            <th>Total</th>
+                            <th>Actions</th>
                         </tr>
-                    <?php endforeach; ?>
-                </tbody>
-            </table>
-            <p><strong>Total: <?= number_format($total_amount, 2) ?> €</strong></p>
-            <a href="checkout.php" class="btn btn-primary">Passer à la Caisse</a>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($cart as $index => $item): ?>
+                            <tr>
+                                <td><?= htmlspecialchars($item['product_name']) ?></td>
+                                <td><?= number_format(floatval($item['product_price']), 2) ?> €</td> <!-- Используем очищенное значение цены -->
+                                <td>
+                                    <input type="number" name="quantities[<?= $index ?>]" value="<?= htmlspecialchars($item['quantity']) ?>" min="1" class="form-control" style="width: 80px;">
+                                </td>
+                                <td><?= number_format(floatval($item['product_price']) * intval($item['quantity']), 2) ?> €</td>
+                                <td>
+                                    <button type="submit" name="remove" value="<?= $index ?>" class="btn btn-danger">Supprimer</button>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <p><strong>Total: <?= number_format($total_amount, 2) ?> €</strong></p>
+                <button type="submit" name="update" class="btn btn-primary">Mettre à jour la Quantité</button>
+                <a href="checkout.php" class="btn btn-success">Passer à la Caisse</a>
+            </form>
         <?php else: ?>
             <p>Votre panier est vide.</p>
             <a href="catalog.php" class="btn btn-secondary">Continuer vos achats</a>
