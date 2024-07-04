@@ -1,7 +1,9 @@
 <?php
-//session_start();
-//require '../include/database.php';
+// Начало сессии и подключение к базе данных
+session_start();
+require '../include/database.php';
 
+// Проверка аутентификации
 if (!isset($_SESSION['auth'])) {
     header('Location: login.php');
     exit();
@@ -9,21 +11,25 @@ if (!isset($_SESSION['auth'])) {
 
 $user_id = $_SESSION['auth']->id;
 
+// Инициализация переменных по умолчанию
+$item_count = 0;
+$total_amount = 0.0;
+
 try {
+    // Выполняем запрос к базе данных для получения количества и общей суммы товаров в корзине
     $stmt = $pdo->prepare('
-        SELECT b.id, b.quantity, p.name, p.price, (b.quantity * p.price) AS total_price
+        SELECT COUNT(b.id) AS item_count, COALESCE(SUM(b.quantity * p.price), 0) AS total_price
         FROM basket b
         JOIN goods p ON b.produit_id = p.id
         WHERE b.user_id = :user_id
     ');
     $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
     $stmt->execute();
-    $basket_items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $basket_summary = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $total_amount = 0;
-    foreach ($basket_items as $item) {
-        $total_amount += $item['total_price'];
-    }
+    // Проверяем и присваиваем значения переменным
+    $item_count = isset($basket_summary['item_count']) ? (int)$basket_summary['item_count'] : 0;
+    $total_amount = isset($basket_summary['total_price']) ? (float)$basket_summary['total_price'] : 0.0;
 } catch (PDOException $e) {
     echo 'Database error: ' . $e->getMessage();
     exit();
@@ -32,7 +38,7 @@ try {
 <body>
     <div class="container">
         <section class="cart">
-            <h1>Panier</h1>
+            <h2>Panier</h2>
             <?php if (!empty($basket_items)): ?>
                 <table>
                     <thead>
