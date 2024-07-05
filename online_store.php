@@ -1,10 +1,11 @@
 <!--<div class="vein"></div> -->
 <div class="main container">
     <header class="mb-4">
-    <?php include ('include/menu.php')?>
-         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <?php include ('include/menu.php') ?>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button> 
+        </button>
         <div class="carousel slide" id="carouselExampleControls" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -40,43 +41,46 @@
     </header>
 
     <section class="product-box">
-    <h2 class="text-box">Catalogue</h2>
-    <div class="row">
-        <?php foreach ($products as $product): ?>
-            <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
-                <div class="product card">
-                    <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');"></div>
-                    <div class="card-body text-center">
-                        <span class="product-name card-title"><?= $product['name'] ?></span>
-                        <span class="product_price card-text"><?= $product['price'] ?> €</span>
-                        <form class="js_add_to_cart" action="cart/add_to_cart.php" method="post">
-                            <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
-                            <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
-                            <input type="hidden" name="product_price" value="<?= $product['price'] ?>">
-                            <button type="submit" class="btn btn-primary">Ajouter au Panier</button>
-                        </form>
+        <h2 class="text-box">Catalogue</h2>
+        <div class="row">
+            <?php foreach ($products as $product): ?>
+                <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
+                    <div class="product card">
+                        <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
+                        </div>
+                        <div class="card-body text-center">
+                            <span class="product-name card-title"><?= $product['name'] ?></span>
+                            <span class="product_price card-text"><?= $product['price'] ?> €</span>
+                            <form class="js_add_to_cart" action="cart/add_to_cart.php" method="post">
+                                <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
+                                <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
+                                <input type="hidden" name="product_price" value="<?= $product['price'] ?>">
+                                <button type="submit" class="btn btn-primary">Ajouter au Panier</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        <?php endforeach ?>
-    </div>
-</section>
+            <?php endforeach ?>
+        </div>
+    </section>
+    <?php include ('include/footer.php') ?>
 
-<!-- Модальное окно для подтверждения добавления товара -->
-<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="cartModalLabel">Produit ajouté au panier</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <p>Le produit a été ajouté à votre panier avec succès.</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuer les achats</button>
-                <a href="cart/cart.php" class="btn btn-primary">Voir le panier</a>
+    <!-- Модальное окно для подтверждения добавления товара -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="cartModalLabel">Produit ajouté au panier</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Le produit a été ajouté à votre panier avec succès.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuer les
+                        achats</button>
+                    <a href="cart/cart.php" class="btn btn-primary">Voir le panier</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
