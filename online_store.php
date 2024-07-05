@@ -75,7 +75,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuer les achats</button>
-                <a href="cart.php" class="btn btn-primary">Voir le panier</a>
+                <a href="cart/cart.php" class="btn btn-primary">Voir le panier</a>
             </div>
         </div>
     </div>

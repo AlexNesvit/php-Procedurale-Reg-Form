@@ -3,7 +3,7 @@ session_start();
 
 // Проверяем, существует ли корзина
 if (!isset($_SESSION['cart'])) {
-    header('Location: ../index.php');
+    header('Location: ./index.php');
     exit;
 }
 

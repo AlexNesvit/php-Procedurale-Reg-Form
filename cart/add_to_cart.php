@@ -35,6 +35,6 @@ if (!$found) {
 
 $_SESSION['message'] = 'Produit ajouté au panier avec succès!';
 
-header('Location: ../index.php');
+header('Location: index.php');
 exit;
 
