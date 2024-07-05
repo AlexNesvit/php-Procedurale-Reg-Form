@@ -51,7 +51,7 @@
                         <div class="card-body text-center">
                             <span class="product-name card-title"><?= $product['name'] ?></span>
                             <span class="product_price card-text"><?= $product['price'] ?> €</span>
-                            <form class="js_add_to_cart" action="cart/add_to_cart.php" method="post">
+                            <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                                 <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
                                 <input type="hidden" name="product_price" value="<?= $product['price'] ?>">

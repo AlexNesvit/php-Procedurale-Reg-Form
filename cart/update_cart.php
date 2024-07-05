@@ -1,9 +1,10 @@
 <?php
 session_start();
+require '../include/database.php';
 
 // Проверяем, существует ли корзина
 if (!isset($_SESSION['cart'])) {
-    header('Location: ./index.php');
+    header('Location: ../index.php');
     exit;
 }
 

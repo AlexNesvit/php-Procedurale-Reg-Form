@@ -1,5 +1,6 @@
 <?php
 session_start();
+require '../include/database.php';
 
 if (!isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'])) {
     echo 'Données manquantes';
@@ -34,7 +35,8 @@ if (!$found) {
 }
 
 $_SESSION['message'] = 'Produit ajouté au panier avec succès!';
+echo json_encode(['status' => 'success', 'message' => 'Produit ajouté au panier avec succès !']);
 
-header('Location: index.php');
+header('Location: cart.php');
 exit;
 

@@ -79,6 +79,8 @@ document.addEventListener("DOMContentLoaded", function () {
     updateTimer();
 });
 
+
+// Ajouter au panier
 document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('.js_add_to_cart');
 
@@ -88,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const formData = new FormData(form);
 
-            fetch('add_to_cart.php', {
+            fetch('cart/add_to_cart.php', {
                 method: 'POST',
                 body: formData,
             })
@@ -107,4 +109,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+// // Ajouter au panier v2.0
+// document.addEventListener('DOMContentLoaded', () => {
+//     const forms = document.querySelectorAll('.js_add_to_cart');
+
+//     forms.forEach(form => {
+//         form.addEventListener('submit', (e) => {
+//             e.preventDefault();
+
+//             const formData = new FormData(form);
+
+//             fetch('add_to_cart.php', {
+//                 method: 'POST',
+//                 body: formData,
+//             })
+//             .then(response => response.json())
+//             .then(data => {
+//                 if (data.status === 'error') {
+//                     alert(`Erreur: ${data.message}`);
+//                     return;
+//                 }
+
+//                 // Показать модальное окно с сообщением
+//                 const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
+//                 document.getElementById('cartModalMessage').textContent = data.message;
+//                 cartModal.show();
+
+//                 // Обновить flash сообщения на главной странице
+//                 const flashContainer = document.getElementById('flashMessages');
+//                 const alertDiv = document.createElement('div');
+//                 alertDiv.className = 'alert alert-success';
+//                 alertDiv.textContent = data.message;
+//                 flashContainer.appendChild(alertDiv);
+
+//                 // Скрыть сообщение через несколько секунд
+//                 setTimeout(() => {
+//                     alertDiv.remove();
+//                 }, 3000);
+//             })
+//             .catch(error => console.error('Erreur:', error));
+//         });
+//     });
+// });
 

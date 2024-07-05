@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require '../include/database.php';
+
 // Инициализация корзины и общей суммы
 $cart = $_SESSION['cart'] ?? [];
 $total_amount = 0;
@@ -16,6 +18,12 @@ foreach ($cart as $index => $item) {
         $total_amount += $product_price_cleaned * $quantity;
     }
 }
+
+// if (!isset($_SESSION['cart'])) {
+//     echo "Votre panier est vide.";
+// } else {
+//     var_dump($_SESSION['cart']); // Вывести содержимое корзины для отладки
+// }
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +81,9 @@ foreach ($cart as $index => $item) {
                 </table>
                 <p><strong>Total: <?= number_format($total_amount, 2) ?> €</strong></p>
                 <button type="submit" name="update" class="btn btn-primary">Mettre à jour la Quantité</button>
+                <a href="../index.php" class="btn btn-secondary">Continuer vos achats</a>
                 <a href="checkout.php" class="btn btn-success">Passer à la Caisse</a>
+                
             </form>
         <?php else: ?>
             <p>Votre panier est vide.</p>
