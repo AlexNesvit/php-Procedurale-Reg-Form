@@ -3,12 +3,13 @@ session_start();
 
 // Проверяем, существует ли корзина
 if (!isset($_SESSION['cart'])) {
-    header('Location: index.php');
+    header('Location: ../index.php');
     exit;
 }
 
 // Получаем корзину из сессии
 $cart = $_SESSION['cart'];
+$message = '';
 
 // Если пользователь нажал "Mettre à jour la Quantité"
 if (isset($_POST['update'])) {
@@ -24,6 +25,7 @@ if (isset($_POST['update'])) {
             }
         }
     }
+    $message = 'Quantité mise à jour avec succès!';
 }
 
 // Если пользователь нажал "Supprimer"
@@ -32,12 +34,14 @@ if (isset($_POST['remove'])) {
     if (isset($cart[$index])) {
         unset($cart[$index]);
     }
+    $message = 'Produit supprimé avec succès!';
 }
 
 // Обновляем корзину в сессии
 $_SESSION['cart'] = $cart;
+$_SESSION['message'] = $message;
 
 // Возвращаем пользователя на страницу корзины
 header('Location: cart.php');
 exit;
-?>
+

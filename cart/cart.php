@@ -4,6 +4,8 @@ session_start();
 // Инициализация корзины и общей суммы
 $cart = $_SESSION['cart'] ?? [];
 $total_amount = 0;
+$message = $_SESSION['message'] ?? '';
+unset($_SESSION['message']); // Очищаем сообщение после его отображения
 
 // Обход корзины и подсчет общей суммы
 foreach ($cart as $index => $item) {
@@ -22,10 +24,25 @@ foreach ($cart as $index => $item) {
     <meta charset="UTF-8">
     <title>Votre Panier</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        .alert {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <h2>Votre Panier</h2>
+        <?php if (!empty($message)): ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <?= htmlspecialchars($message) ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php endif; ?>
         <?php if (!empty($cart)): ?>
             <form action="update_cart.php" method="post">
                 <table class="table">
@@ -60,8 +77,10 @@ foreach ($cart as $index => $item) {
             </form>
         <?php else: ?>
             <p>Votre panier est vide.</p>
-            <a href="catalog.php" class="btn btn-secondary">Continuer vos achats</a>
+            <a href="../index.php" class="btn btn-secondary">Continuer vos achats</a>
         <?php endif; ?>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

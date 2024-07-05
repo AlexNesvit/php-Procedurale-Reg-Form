@@ -1,6 +1,5 @@
 <?php
 session_start();
-require '../include/database.php';
 
 if (!isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'])) {
     echo 'Données manquantes';
@@ -12,12 +11,10 @@ $product_name = $_POST['product_name'];
 $product_price = $_POST['product_price'];
 $quantity = 1;
 
-// Инициализация корзины в сессии, если она еще не существует
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
 
-// Проверка, есть ли продукт уже в корзине
 $found = false;
 foreach ($_SESSION['cart'] as &$item) {
     if ($item['product_id'] == $product_id) {
@@ -35,6 +32,8 @@ if (!$found) {
         'quantity' => $quantity,
     ];
 }
+
+$_SESSION['message'] = 'Produit ajouté au panier avec succès!';
 
 header('Location: ../index.php');
 exit;

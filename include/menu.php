@@ -17,9 +17,9 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                     <li class="nav-item me-5">
                         <a class="nav-link" href="#">Paiement</a>
                     </li>
-                    <li class="nav-item me-5">
+                    <!-- <li class="nav-item me-5">
                         <a class="nav-link" href="#">Livraison</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
@@ -36,6 +36,8 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                     <?php else: ?>
                             <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
                     <?php endif; ?>
+                </div>
+                <div class="text-left">s
                             <a class="nav-link d-inline-block" href="cart/cart.php">
                                 🛒 Panier (<?= htmlspecialchars($item_count ?? 0, ENT_QUOTES, 'UTF-8') ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
                             </a>

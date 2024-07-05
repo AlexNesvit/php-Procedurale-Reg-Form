@@ -1,7 +1,8 @@
 <?php 
 session_start();
 
-require "include/database.php"; ?>
+require "include/database.php"; 
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
