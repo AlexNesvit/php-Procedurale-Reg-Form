@@ -72,3 +72,4 @@ function extracted(PDO $pdo, mixed $user_id): array
     return array($req, $name, $username, $phone, $address, $zipcode, $city);
 }
 
+

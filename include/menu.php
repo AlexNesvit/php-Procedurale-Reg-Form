@@ -1,4 +1,6 @@
 <?php
+
+
 $is_authenticated = isset($_SESSION['auth']);
 $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
 ?>
