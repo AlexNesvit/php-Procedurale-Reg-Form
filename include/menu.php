@@ -1,6 +1,5 @@
 <?php
 
-
 $is_authenticated = isset($_SESSION['auth']);
 $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
 ?>
@@ -41,7 +40,7 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                 </div>
                 <div class="text-left">
                             <a class="nav-link d-inline-block" href="cart/cart.php">
-                                🛒 Panier (<?= htmlspecialchars($item_count ?? 0, ENT_QUOTES, 'UTF-8') ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
+                                🛒 Panier (<?= array_sum($_SESSION['cart']) ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
                             </a>
                 </div>
             </div>
