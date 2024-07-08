@@ -36,7 +36,7 @@ logged_only();
     <img src="../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
     <a href="../index.php" class="logo d-flex align-items-center">
 
-      <span class="d-none d-lg-block">Boutiqie</span>
+      <span class="d-none d-lg-block">Boutique</span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn"></i>
   </div><!-- End Logo -->
@@ -120,6 +120,7 @@ logged_only();
         <div class="col-xl-8">
 
           <div class="card">
+            
             <div class="card-body pt-3">
               <!-- Bordered Tabs -->
               <ul class="nav nav-tabs nav-tabs-bordered">
