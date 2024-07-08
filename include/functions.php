@@ -73,3 +73,4 @@ function extracted(PDO $pdo, mixed $user_id): array
 }
 
 
+

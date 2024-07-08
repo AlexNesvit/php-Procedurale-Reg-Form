@@ -3,11 +3,11 @@ session_start();
 require '../include/database.php';
 
 // Проверка авторизации пользователя
-if (!isset($_SESSION['user_id'])) {
-    // Если пользователь не авторизован, перенаправляем его на страницу входа
-    header('Location: ../login.php');
-    exit;
-}
+// if (!isset($_SESSION['user_id'])) {
+//     // Если пользователь не авторизован, перенаправляем его на страницу входа
+//     header('Location: ../login.php');
+//     exit;
+// }
 
 // Инициализация корзины и общей суммы
 $cart = $_SESSION['cart'] ?? [];
@@ -82,7 +82,7 @@ foreach ($cart as $index => $item) {
     <li class="nav-item">
     <a class="nav-link collapsed" href="#">
       <i class="bi bi-cash"></i>
-      <span>Toutes les ashats</span>
+      <span>Toutes les achats</span>
     </a>
   </li>
   

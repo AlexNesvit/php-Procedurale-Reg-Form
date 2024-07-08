@@ -2,6 +2,13 @@
 session_start();
 require '../include/database.php';
 
+// Проверка авторизации пользователя
+// if (!isset($_SESSION['user_id'])) {
+//     // Если пользователь не авторизован, перенаправляем его на страницу входа
+//     header('Location: ../login.php');
+//     exit;
+// }
+
 if (!isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'])) {
     echo 'Données manquantes';
     exit;

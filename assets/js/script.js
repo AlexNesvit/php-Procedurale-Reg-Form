@@ -110,3 +110,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// document.addEventListener('DOMContentLoaded', function () {
+//     const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+//     addToCartButtons.forEach(button => {
+//         button.addEventListener('click', function (event) {
+//             event.preventDefault();
+            
+//             // Проверка авторизации
+//             fetch('../include/is_logged_in.php')
+//                 .then(response => response.json())
+//                 .then(data => {
+//                     if (data.status === 'success') {
+//                         // Пользователь авторизован, добавляем товар в корзину
+//                         addToCart(this);
+//                     } else {
+//                         // Пользователь не авторизован, показываем сообщение
+//                         alert('Вы должны войти в систему, чтобы добавлять товары в корзину.');
+//                         window.location.href = '../login.php';
+//                     }
+//                 })
+//                 .catch(error => {
+//                     console.error('Ошибка при проверке авторизации:', error);
+//                 });
+//         });
+//     });
+
+//     function addToCart(button) {
+//         const productId = button.dataset.productId;
+//         const productName = button.dataset.productName;
+//         const productPrice = button.dataset.productPrice;
+
+//         fetch('add_to_cart.php', {
+//             method: 'POST',
+//             headers: {
+//                 'Content-Type': 'application/x-www-form-urlencoded',
+//             },
+//             body: `product_id=${productId}&product_name=${encodeURIComponent(productName)}&product_price=${productPrice}`,
+//         })
+//         .then(response => response.json())
+//         .then(data => {
+//             if (data.status === 'success') {
+//                 alert('Товар добавлен в корзину!');
+//             } else {
+//                 alert('Ошибка при добавлении товара в корзину.');
+//             }
+//         })
+//         .catch(error => {
+//             console.error('Ошибка при добавлении товара в корзину:', error);
+//         });
+//     }
+// });

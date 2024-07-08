@@ -2,6 +2,12 @@
 session_start();
 require '../include/database.php';
 
+// Проверка авторизации пользователя
+// if (!isset($_SESSION['user_id'])) {
+//     header('Location: ../login.php');
+//     exit;
+// }
+
 // Проверяем, существует ли корзина
 if (!isset($_SESSION['cart'])) {
     header('Location: ../index.php');
