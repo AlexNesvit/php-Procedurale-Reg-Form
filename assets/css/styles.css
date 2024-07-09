@@ -28,19 +28,27 @@ body {
 
 /* Snowflakes */
 @keyframes fall {
-    0% { transform: translateY(-100px); }
-    100% { transform: translateY(100vh); }
+    0% {
+        transform: translateY(-100px) translateX(0) scale(1);
+    }
+    50% {
+        transform: translateY(50vh) translateX(20px) scale(0.8);
+    }
+    100% {
+        transform: translateY(100vh) translateX(-20px) scale(1.2);
+    }
 }
 
 .snowflake {
     position: absolute;
     top: -10px;
-    color: #666666;
-    font-size: 1em;
+    color: #5d76d8;
+    font-size: 3em;
     user-select: none;
     z-index: 9999;
     animation: fall linear infinite;
     opacity: 0.8;
+    animation-duration: 15s; /* Увеличиваем продолжительность анимации */
 }
 
 .vein {

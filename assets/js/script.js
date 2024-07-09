@@ -114,25 +114,28 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function () {
     const body = document.querySelector('body');
 
+    // Массив символов снежинок
+    const snowflakeSymbols = ['❅', '❆'];
+
     // Function to create a snowflake element
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
         snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
-        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
-        snowflake.textContent = '❄️';
+        snowflake.style.animationDuration = `${Math.random() * 5 + 15}s`; // Увеличиваем продолжительность анимации
+        snowflake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
         body.appendChild(snowflake);
 
         // Remove snowflake after it falls
         setTimeout(() => {
             snowflake.remove();
-        }, 10000);
+        }, 10000); // Увеличиваем время удаления снежинки
     }
 
-    // Create snowflakes every 500ms
-    setInterval(createSnowflake, 500);
+    // Create snowflakes every 800ms
+    setInterval(createSnowflake, 3000); // Увеличиваем интервал создания снежинок
 });
+
 
 
 
