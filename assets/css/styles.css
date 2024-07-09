@@ -149,23 +149,33 @@ section.product-box {
 }
 
 section.product-box .product {
-	min-height: 250px;
-	margin-bottom: 30px;
+    min-height: 250px; /* Минимальная высота карточки продукта */
+    margin-bottom: 30px; /* Отступ между карточками продуктов */
+    border: 1px solid #ddd; /* Граница для карточки (по желанию) */
+    border-radius: 5px; /* Закругление углов (по желанию) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень для карточки (по желанию) */
+    overflow: hidden; /* Скрытие содержимого, выходящего за пределы */
+    transition: transform 0.3s ease; /* Плавное изменение размера при наведении */
 }
 
 section.product-box .product .product-pic {
-	min-height: 270px;
+    min-height: 280px; /* Минимальная высота изображения продукта */
+    background-size: 80% no-repeat;  /*Масштабирование изображения, чтобы оно занимало всю область */
+    background-position: center; /* Центрирование изображения */
 }
 
+
 section.product-box .product .product-name {
-	display: block;
-	font-size: 18px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+    display: block; /* Убедитесь, что имя продукта отображается как блочный элемент */
+    font-size: 18px; /* Размер шрифта имени продукта */
+    margin-top: 5px; /* Верхний отступ имени продукта */
+    margin-bottom: 5px; /* Нижний отступ имени продукта */
 }
+
 
 .product:hover {
     transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Тень при наведении (по желанию) */
 }
 
 .product button {
