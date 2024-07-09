@@ -8,7 +8,7 @@
 :root {
     --main-bg-color-1: #000;
     --main-bg-color-2: #fff;
-    --main-color-1: #650000;
+    --main-color-1: #9f0202;
     --main-color-2: #fff;
 }
 
@@ -28,22 +28,16 @@ body {
 
 /* Snowflakes */
 @keyframes fall {
-    0% {
-        transform: translateY(-100px) translateX(0) scale(1);
-    }
-    50% {
-        transform: translateY(50vh) translateX(20px) scale(0.8);
-    }
-    100% {
-        transform: translateY(100vh) translateX(-20px) scale(1.2);
-    }
+    0% { transform: translateY(-100px); }
+    100% { transform: translateY(100vh); }
 }
 
 .snowflake {
     position: absolute;
     top: -10px;
-    color: #5d76d8;
-    font-size: 3em;
+    color: var(--main-bg-color-2);
+    /* color: #5d76d8; */
+    font-size: 2em;
     user-select: none;
     z-index: 9999;
     animation: fall linear infinite;

@@ -8,20 +8,22 @@
 :root {
     --main-bg-color-1: #000;
     --main-bg-color-2: #fff;
-    --main-color-1: #650000;
+    --main-color-1: #9f0202;
     --main-color-2: #fff;
-    --neon-color: #8e2de2; /* Цвет неона */
 }
 
 body {
-    background: var(--main-bg-color-1);
+    background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center fixed;
     background-size: 100% auto;
     font-family: Ouroboros, sans-serif;
     color: #444444;
+}
+
+.online-container {
     overflow: hidden;
 }
 
-/* Snowflakes */
+/* Snowflakes Animation */
 @keyframes fall {
     0% { transform: translateY(-100px); }
     100% { transform: translateY(100vh); }
@@ -30,12 +32,13 @@ body {
 .snowflake {
     position: absolute;
     top: -10px;
-    color: white;
-    font-size: 1em;
+    color: var(--main-bg-color-2);
+    font-size: 2em;
     user-select: none;
     z-index: 9999;
     animation: fall linear infinite;
     opacity: 0.8;
+    animation-duration: 15s;
 }
 
 .vein {
@@ -58,7 +61,6 @@ body {
     height: auto;
 }
 
-/* Mobile menu styles */
 #menu {
     display: none;
     flex-direction: column;
@@ -74,7 +76,6 @@ body {
     margin: 10px 0;
 }
 
-/* Hide menu on larger screens */
 @media (min-width: 992px) {
     #menu {
         display: flex;
@@ -102,17 +103,6 @@ body {
          0  2px 0 #000;
 }
 
-/* Неоновый стиль для заголовков */
-.neon-text {
-    color: var(--neon-color);
-    text-shadow: 
-        0 0 2px var(--neon-color),
-        0 0 4px var(--neon-color),
-        0 0 6px var(--neon-color),
-        0 0 8px var(--neon-color),
-        0 0 10px var(--neon-color);
-}
-
 section.product-box h2 {
     margin-bottom: 20px;
     text-align: center;
@@ -127,7 +117,6 @@ section.product-box h2 {
          0  2px 0 #000;
 }
 
-/* Product box styles */
 section.product-box {
     margin: 30px 20px 30px 20px;
 }
@@ -252,27 +241,15 @@ section.product-box .product .product-name {
     display: block;
     font-size: 60px;
     text-transform: uppercase;
-    color: var(--neon-color); /* Неон для заголовка таймера */
-    text-shadow: 
-        0 0 2px var(--neon-color),
-        0 0 4px var(--neon-color),
-        0 0 6px var(--neon-color),
-        0 0 8px var(--neon-color),
-        0 0 10px var(--neon-color);
+    color: var(--main-color-2);
 }
 
 .timer {
     display: inline-block;
-    color: var(--neon-color); /* Неон для цифр таймера */
+    color: var(--main-color-2);
     font-size: 30px;
     font-weight: 100;
     text-align: center;
-    text-shadow: 
-        0 0 2px var(--neon-color),
-        0 0 4px var(--neon-color),
-        0 0 6px var(--neon-color),
-        0 0 8px var(--neon-color),
-        0 0 10px var(--neon-color);
 }
 
 .timer > div {
@@ -282,7 +259,7 @@ section.product-box .product .product-name {
     display: inline-block;
 }
 
-.timer div > span {
+.timer div > span{
     padding: 15px;
     border-radius: 3px;
     background: var(--main-color-1);
@@ -294,6 +271,7 @@ section.product-box .product .product-name {
     font-size: 16px;
 }
 
+/* Timer.php */
 .title {
     text-align: center;
     text-shadow: 
@@ -386,15 +364,6 @@ section.product-box .product .product-name {
     border-top: 1px solid #cddfff;
     font-family: Arial, sans-serif;
     color: var(--main-color-2);
-    text-shadow: 
-        -2px -2px 0 #000,  
-         2px -2px 0 #000,  
-        -2px  2px 0 #000,  
-         2px  2px 0 #000,
-        -2px  0 0 #000,
-         2px  0 0 #000,
-         0 -2px 0 #000,
-         0  2px 0 #000;
 }
 
 .footer .copyright {

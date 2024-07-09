@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remove snowflake after it falls
         setTimeout(() => {
             snowflake.remove();
-        }, 10000); // Увеличиваем время удаления снежинки
+        }, 15000); // Увеличиваем время удаления снежинки
     }
 
     // Create snowflakes every 800ms

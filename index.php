@@ -58,8 +58,8 @@ $currentMounth = $currentDateArray[0];
 $currentDay = $currentDateArray[1];
 
 
-//$currentMounth = 12; // decommenter pour la test
-//$currentDay = 24; // decommenter pour la test
+$currentMounth = 12; // decommenter pour la test
+$currentDay = 24; // decommenter pour la test
 
 
 if ($currentMounth == 12 && $currentDay >= 24) {
