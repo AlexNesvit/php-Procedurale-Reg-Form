@@ -139,6 +139,10 @@ section.product-box .product .product-name {
 	margin-bottom: 5px;
 }
 
+.product:hover {
+    transform: scale(1.1);
+}
+
 .product button {
 	position: absolute;
 	top: 35%;

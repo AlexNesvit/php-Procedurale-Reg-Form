@@ -1,4 +1,5 @@
 <?php
+
 $is_authenticated = isset($_SESSION['auth']);
 $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
 ?>
@@ -17,24 +18,30 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                     <li class="nav-item me-5">
                         <a class="nav-link" href="#">Paiement</a>
                     </li>
-                    <li class="nav-item me-5">
+                    <!-- <li class="nav-item me-5">
                         <a class="nav-link" href="#">Livraison</a>
-                    </li>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#">Contact</a>
                     </li>
                 </ul>
-                
+
                 <div class="text-center">
-                    <?php if ($is_authenticated): ?>
+                    
+                    <?php if (isset($is_authenticated) && $is_authenticated): ?>
                         <a class="nav-link d-inline-block" href="vueProfil/profile.php">Mon profil</a>
-                        <?php if ($is_admin): ?>
+                        <?php if (isset($is_admin) && $is_admin): ?>
                             <a class="nav-link d-inline-block" href="dashboard.php">Admin</a>
                         <?php endif; ?>
-                        <a class="nav-link d-inline-block" href="logout.php">Se déconnecter</a>
+                            <a class="nav-link d-inline-block" href="logout.php">Se déconnecter</a>
                     <?php else: ?>
-                        <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
+                            <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
                     <?php endif; ?>
+                </div>
+                <div class="text-left">
+                            <a class="nav-link d-inline-block" href="cart/cart.php">
+                                🛒 Panier (<?= array_sum($_SESSION['cart']) ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
+                            </a>
                 </div>
             </div>
         </div>

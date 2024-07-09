@@ -31,12 +31,12 @@ function getArr(array $errors): array
 
     //email conditions et implémentation dans la base de données
     if (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        $errors['email'] = "votre email n'est pas valide";
+        $errors['email'] = "Votre email n'est pas valide";
     }
 
     //téléphone conditions et implémentation dans la base de données
     if (empty($_POST['phone']) || !preg_match('/^(?:(?:\+|00)33|0)\s*[1-9](?:[\s.-]*\d{2}){4}$/', $_POST['phone'])) {
-        $errors['phone'] = "votre téléphone n'est pas valide";
+        $errors['phone'] = "Votre téléphone n'est pas valide";
     }
 
     //adresse utilisateur conditions et implémentation dans la base de données
@@ -54,7 +54,7 @@ function getArr(array $errors): array
     return $errors;
 }
 //permet la moditification  des informations de profil
-/**
+/** 
  * @param PDO $pdo
  * @param mixed $user_id
  * @return array
@@ -71,4 +71,6 @@ function extracted(PDO $pdo, mixed $user_id): array
     $req->execute([$name, $username, $phone, $_POST['email'], $address, $zipcode, $city]);
     return array($req, $name, $username, $phone, $address, $zipcode, $city);
 }
+
+
 
