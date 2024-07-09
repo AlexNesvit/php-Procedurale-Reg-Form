@@ -10,19 +10,14 @@
     --main-bg-color-2: #fff;
     --main-color-1: #650000;
     --main-color-2: #fff;
+    --neon-color: #8e2de2; /* Цвет неона */
 }
 
 body {
-    background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center fixed;
-    /* background: var(--main-bg-color-1); */
+    background: var(--main-bg-color-1);
     background-size: 100% auto;
     font-family: Ouroboros, sans-serif;
-    /*color: var(--main-color-2);*/
     color: #444444;
-}
-
-/* Стили для файла online.php */
-.online-container {
     overflow: hidden;
 }
 
@@ -35,7 +30,7 @@ body {
 .snowflake {
     position: absolute;
     top: -10px;
-    color: #666666;
+    color: white;
     font-size: 1em;
     user-select: none;
     z-index: 9999;
@@ -44,11 +39,11 @@ body {
 }
 
 .vein {
-	position: fixed;
-	width: 100%;
-	height: 100%;
-	z-index: 5;
-	background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .flag-container {
@@ -58,35 +53,34 @@ body {
 }
 
 .flag-container img {
-    width: 100%; /* Сделать изображение адаптивным */
-    max-width: 200px; /* Максимальная ширина для больших экранов */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 }
 
-/* Стили для мобильного меню */
+/* Mobile menu styles */
 #menu {
-    display: none; /* По умолчанию скрыто на мобильных устройствах */
-    flex-direction: column; /* Вертикальное расположение элементов */
+    display: none;
+    flex-direction: column;
     align-items: center;
-    background-color: transparent; /* Цвет фона */
+    background-color: transparent;
 }
 
 #menu.show {
-    display: flex; /* Отображаем на мобильных устройствах */
+    display: flex;
 }
 
 .menu-item {
-    margin: 10px 0; /* Отступы между пунктами меню */
+    margin: 10px 0;
 }
 
-/* Скрытие меню на больших экранах */
+/* Hide menu on larger screens */
 @media (min-width: 992px) {
     #menu {
-        display: flex; /* Отображаем на больших экранах */
-        flex-direction: row; /* Горизонтальное расположение элементов */
+        display: flex;
+        flex-direction: row;
     }
 }
-
 
 .header, .footer {
     background-color: var(--main-color-1);
@@ -108,8 +102,19 @@ body {
          0  2px 0 #000;
 }
 
+/* Неоновый стиль для заголовков */
+.neon-text {
+    color: var(--neon-color);
+    text-shadow: 
+        0 0 2px var(--neon-color),
+        0 0 4px var(--neon-color),
+        0 0 6px var(--neon-color),
+        0 0 8px var(--neon-color),
+        0 0 10px var(--neon-color);
+}
+
 section.product-box h2 {
-	margin-bottom: 20px;
+    margin-bottom: 20px;
     text-align: center;
     text-shadow: 
         -2px -2px 0 #000,  
@@ -122,9 +127,9 @@ section.product-box h2 {
          0  2px 0 #000;
 }
 
-/* Блок товаров */
+/* Product box styles */
 section.product-box {
-	margin: 30px 20px 30px 20px;
+    margin: 30px 20px 30px 20px;
 }
 
 .text-box {
@@ -147,19 +152,19 @@ section.product-box {
 }
 
 section.product-box .product {
-	min-height: 250px;
-	margin-bottom: 30px;
+    min-height: 250px;
+    margin-bottom: 30px;
 }
 
 section.product-box .product .product-pic {
-	min-height: 270px;
+    min-height: 270px;
 }
 
 section.product-box .product .product-name {
-	display: block;
-	font-size: 18px;
-	margin-top: 5px;
-	margin-bottom: 5px;
+    display: block;
+    font-size: 18px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .product:hover {
@@ -167,21 +172,21 @@ section.product-box .product .product-name {
 }
 
 .product button {
-	position: absolute;
-	top: 35%;
-	left: 50%;
-	width: 66%;
-	margin-left: -33%;
-	background: var(--main-color-1);
-	border: none;
-	text-transform: uppercase;
-	padding: 10px 30px 10px 30px;
-	color: white;
-	display: none;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    width: 66%;
+    margin-left: -33%;
+    background: var(--main-color-1);
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 30px 10px 30px;
+    color: white;
+    display: none;
 }
 
 .product:hover button {
-	display: block;
+    display: block;
 }
 
 .product-pic {
@@ -230,57 +235,67 @@ section.product-box .product .product-name {
     cursor: pointer;
 }
 
-/* Таймер */
+/* Timer */
 .timer-main {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 310px;
-	width: 1000px;
-	margin-top: -155px;
-	margin-left: -500px;
-	background: none;
-	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 310px;
+    width: 1000px;
+    margin-top: -155px;
+    margin-left: -500px;
+    background: none;
+    text-align: center;
 }
 
 .timer-main > .title {
-	display: block;
-	font-size: 60px;
-	text-transform: uppercase;
-	color: var(--main-color-2);
+    display: block;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: var(--neon-color); /* Неон для заголовка таймера */
+    text-shadow: 
+        0 0 2px var(--neon-color),
+        0 0 4px var(--neon-color),
+        0 0 6px var(--neon-color),
+        0 0 8px var(--neon-color),
+        0 0 10px var(--neon-color);
 }
 
 .timer {
-	display: inline-block;
-	color: var(--main-color-2);
-	font-size: 30px;
-	font-weight: 100;
-	text-align: center;
+    display: inline-block;
+    color: var(--neon-color); /* Неон для цифр таймера */
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    text-shadow: 
+        0 0 2px var(--neon-color),
+        0 0 4px var(--neon-color),
+        0 0 6px var(--neon-color),
+        0 0 8px var(--neon-color),
+        0 0 10px var(--neon-color);
 }
 
 .timer > div {
-	padding: 10px;
-	border-radius: 3px;
-	background: var(--main-color-1);
-	display: inline-block;
+    padding: 10px;
+    border-radius: 3px;
+    background: var(--main-color-1);
+    display: inline-block;
 }
 
-.timer div > span{
-	padding: 15px;
-	border-radius: 3px;
-	background: var(--main-color-1);
-	display: inline-block;
+.timer div > span {
+    padding: 15px;
+    border-radius: 3px;
+    background: var(--main-color-1);
+    display: inline-block;
 }
 
-.small-text{
-	padding-top: 5px;
-	font-size: 16px;
+.small-text {
+    padding-top: 5px;
+    font-size: 16px;
 }
 
-/* timer.php */
 .title {
     text-align: center;
-    /*color: var(--main-color-1) !important;  à regarder! */
     text-shadow: 
         -2px -2px 0 #000,  
          2px -2px 0 #000,  
@@ -293,7 +308,6 @@ section.product-box .product .product-name {
 }
 
 /* inscription.php */
-
 .form {
     width: 200px;
 }
@@ -308,7 +322,6 @@ section.product-box .product .product-name {
     font-size: 16px;
 }
 
-/* Style CSS pour le bouton au survol */
 .button-inscription:hover {
     background-color: #4CAF50;
 }
@@ -334,7 +347,7 @@ section.product-box .product .product-name {
     border-radius: 5px;
     box-shadow: 0 0 30px rgba(1, 41, 112, 0.1);
 }
-  
+
 .card-header,
 .card-footer {
     border-color: #ebeef4;
@@ -342,7 +355,7 @@ section.product-box .product .product-name {
     color: #798eb3;
     padding: 15px;
 }
-  
+
 .card-title {
     padding: 20px 0 15px 0;
     font-size: 18px;
@@ -350,32 +363,38 @@ section.product-box .product .product-name {
     color: #012970;
     font-family: "Poppins", sans-serif;
 }
-  
+
 .card-title span {
     color: #899bbd;
     font-size: 14px;
     font-weight: 400;
 }
-  
+
 .card-body {
     padding: 0 20px 20px 20px;
 }
-  
+
 .card-img-overlay {
     background-color: rgba(255, 255, 255, 0.6);
 }
- 
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
+/* Footer */
 .footer {
     padding: 20px 0;
     font-size: 16px;
     transition: all 0.3s;
     border-top: 1px solid #cddfff;
     font-family: Arial, sans-serif;
-    color: var(--main-color-2); 
+    color: var(--main-color-2);
+    text-shadow: 
+        -2px -2px 0 #000,  
+         2px -2px 0 #000,  
+        -2px  2px 0 #000,  
+         2px  2px 0 #000,
+        -2px  0 0 #000,
+         2px  0 0 #000,
+         0 -2px 0 #000,
+         0  2px 0 #000;
 }
 
 .footer .copyright {

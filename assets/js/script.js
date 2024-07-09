@@ -110,6 +110,32 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+//animation snow
+document.addEventListener('DOMContentLoaded', function () {
+    const body = document.querySelector('body');
+
+    // Function to create a snowflake element
+    function createSnowflake() {
+        const snowflake = document.createElement('div');
+        snowflake.classList.add('snowflake');
+        snowflake.style.left = `${Math.random() * 100}vw`;
+        snowflake.style.animationDuration = `${Math.random() * 5 + 5}s`;
+        snowflake.style.fontSize = `${Math.random() * 10 + 10}px`;
+        snowflake.textContent = '❄️';
+        body.appendChild(snowflake);
+
+        // Remove snowflake after it falls
+        setTimeout(() => {
+            snowflake.remove();
+        }, 10000);
+    }
+
+    // Create snowflakes every 500ms
+    setInterval(createSnowflake, 500);
+});
+
+
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     const addToCartButtons = document.querySelectorAll('.add-to-cart');
 
