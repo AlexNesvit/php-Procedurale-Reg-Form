@@ -2,6 +2,14 @@
 <div class="main container">
     <header class="mb-4">
         <?php include ('include/menu.php') ?>
+        <?php if ($message): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= htmlspecialchars($message) ?>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif; ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -52,6 +60,7 @@
                             <span class="product-name card-title"><?= $product['name'] ?></span>
                             <span class="product_price card-text"><?= $product['price'] ?> €</span>
                             <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
+                            <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">
                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                                 <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
                                 <input type="hidden" name="product_price" value="<?= $product['price'] ?>">

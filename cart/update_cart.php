@@ -26,6 +26,10 @@ if (isset($_POST['update'])) {
             $quantity = intval($quantity);
             if ($quantity > 0) {
                 $cart[$index]['quantity'] = $quantity;
+                $req = $pdo->prepare('UPDATE basket SET quantity = :quantity WHERE id = :id');
+                $req->bindParam('quantity', $quantity);
+                $req->bindParam('id', $cart[$index]['basket_id']);
+                $req->execute();
             } else {
                 // Удаляем товар, если количество равно нулю или меньше
                 unset($cart[$index]);
@@ -36,19 +40,33 @@ if (isset($_POST['update'])) {
 }
 
 // Если пользователь нажал "Supprimer"
+$cart = $_SESSION['cart'];
+
+// Если пользователь нажал "Supprimer"
 if (isset($_POST['remove'])) {
     $index = $_POST['remove'];
     if (isset($cart[$index])) {
+        // Получаем ID корзины
+        $basket_id = $cart[$index]['basket_id'];
+
+        // Удаляем запись из базы данных
+        $req = $pdo->prepare('DELETE FROM basket WHERE id = :id');
+        $req->bindParam('id', $basket_id);
+        $req->execute();
+
+        // Удаляем запись из сессии
         unset($cart[$index]);
+
+        // Обновляем сессию
+        $_SESSION['cart'] = $cart;
+
+        // Сообщение об успешном удалении
+        $_SESSION['message'] = 'Produit supprimé avec succès!';
     }
-    $message = 'Produit supprimé avec succès!';
 }
 
-// Обновляем корзину в сессии
-$_SESSION['cart'] = $cart;
-$_SESSION['message'] = $message;
-
-// Возвращаем пользователя на страницу корзины
+// Перенаправляем пользователя обратно на страницу корзины или главную страницу
 header('Location: cart.php');
 exit;
+
 

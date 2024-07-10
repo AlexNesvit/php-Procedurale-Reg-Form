@@ -11,9 +11,9 @@ require '../include/database.php';
 
 if (!isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'])) {
     echo 'Données manquantes';
-    exit;
+    die();
 }
-
+$user_id = $_SESSION['auth']->id;
 $product_id = $_POST['product_id'];
 $product_name = $_POST['product_name'];
 $product_price = $_POST['product_price'];
@@ -33,17 +33,24 @@ foreach ($_SESSION['cart'] as &$item) {
 }
 
 if (!$found) {
+    $req = $pdo->prepare('INSERT INTO basket (user_id, produit_id, quantity) VALUES (?, ?, ?)');
+    $req->execute([$_SESSION['auth']->id, $product_id, $quantity]);
+
+    $basket_id = $pdo->lastInsertId(); // Получение последнего вставленного ID
+
     $_SESSION['cart'][] = [
+        'basket_id' => $basket_id,
+        'user_id' => $user_id,
         'product_id' => $product_id,
         'product_name' => $product_name,
         'product_price' => $product_price,
         'quantity' => $quantity,
     ];
+  
 }
-
 $_SESSION['message'] = 'Produit ajouté au panier avec succès!';
-echo json_encode(['status' => 'success', 'message' => 'Produit ajouté au panier avec succès !']);
+header('Location: ../index.php');
+// echo json_encode(['status' => 'success', 'message' => 'Produit ajouté au panier avec succès !']);
 
-header('Location: cart.php');
-exit;
+
 

@@ -85,8 +85,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('.js_add_to_cart');
 
     forms.forEach(form => {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
+        form.addEventListener('submit', () => {
+            console.log('test');
+            //e.preventDefault();
 
             const formData = new FormData(form);
 
@@ -100,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     alert('Erreur: données manquantes');
                     return;
                 }
-
+                console.log(response);
                 // Показываем модальное окно
                 const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
                 cartModal.show();
