@@ -36,7 +36,8 @@ if (isset($_POST['update'])) {
             }
         }
     }
-    $message = 'Quantité mise à jour avec succès!';
+    $_SESSION['message'] = 'Quantité mise à jour avec succès!';
+  
 }
 
 // Если пользователь нажал "Supprimer"

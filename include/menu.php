@@ -40,7 +40,7 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                 </div>
                 <div class="text-left">
                             <a class="nav-link d-inline-block" href="cart/cart.php">
-                                🛒 Panier (<?= array_sum($_SESSION['cart']) ?>) - <?= htmlspecialchars(number_format($total_amount ?? 0.0, 2), ENT_QUOTES, 'UTF-8') ?> €
+                                🛒 Panier  €
                             </a>
                 </div>
             </div>
