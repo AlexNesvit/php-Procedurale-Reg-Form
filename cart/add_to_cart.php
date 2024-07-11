@@ -33,8 +33,11 @@ foreach ($_SESSION['cart'] as &$item) {
 }
 
 if (!$found) {
-    $req = $pdo->prepare('INSERT INTO basket (user_id, produit_id, quantity) VALUES (?, ?, ?)');
-    $req->execute([$_SESSION['auth']->id, $product_id, $quantity]);
+    // $req = $pdo->prepare('INSERT INTO basket (user_id, produit_id, quantity) VALUES (?, ?, ?)');
+    // $req->execute([$_SESSION['auth']->id, $product_id, $quantity]);
+
+    $req = $pdo->prepare('INSERT INTO basket (user_id, createdAT) VALUES (?, ?)');
+    $req->execute([$_SESSION['auth']->id, date('Y-m-d H:i:s')]);
 
     $basket_id = $pdo->lastInsertId(); // Получение последнего вставленного ID
 
