@@ -20,25 +20,25 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Показать попап при нажатии на "Acheter"
-    buyButtons.forEach(button => {
-        button.addEventListener('click', function () {
-            overlay.style.display = 'block';
-            popup.style.display = 'block';
-        });
-    });
+//     buyButtons.forEach(button => {
+//         button.addEventListener('click', function () {
+//             overlay.style.display = 'block';
+//             popup.style.display = 'block';
+//         });
+//     });
 
-    // Закрыть попап
-    closePopupButton.addEventListener('click', function () {
-        overlay.style.display = 'none';
-        popup.style.display = 'none';
-    });
+//     // Закрыть попап
+//     closePopupButton.addEventListener('click', function () {
+//         overlay.style.display = 'none';
+//         popup.style.display = 'none';
+//     });
 
-    // Закрыть попап при нажатии на overlay
-    overlay.addEventListener('click', function () {
-        overlay.style.display = 'none';
-        popup.style.display = 'none';
-    });
-});
+//     // Закрыть попап при нажатии на overlay
+//     overlay.addEventListener('click', function () {
+//         overlay.style.display = 'none';
+//         popup.style.display = 'none';
+//     });
+// });
 
 //Timer
 document.addEventListener("DOMContentLoaded", function () {

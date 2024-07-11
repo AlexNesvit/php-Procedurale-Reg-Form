@@ -172,11 +172,28 @@ section.product-box .product .product-name {
     margin-bottom: 5px; /* Нижний отступ имени продукта */
 }
 
+.product {
+    position: relative;
+    perspective: 1000px; /* Создаём перспективу для эффекта 3D */
+    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1); /* Увеличиваем продолжительность и добавляем плавное изменение */
+}
+
+.product .card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden; /* Скрываем обратную сторону карточки */
+}
 
 .product:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Тень при наведении (по желанию) */
+    transform: rotateY(360deg); /* Поворачиваем на 180-360 градусов */
 }
+
+
+/* .product:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+} */
 
 .product button {
 	position: absolute;
