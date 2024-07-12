@@ -40,10 +40,6 @@ uploads/
 *.php.swp
 *.php.bak
 
-# Композитор
-vendor/
-composer.lock
-
 # Сборщики и кэш
 dist/
 .build/
