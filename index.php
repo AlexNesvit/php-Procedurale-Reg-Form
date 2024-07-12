@@ -3,10 +3,10 @@ session_start();
 
 
 require "include/database.php"; 
-if (isset($_SESSION['message'])) {
-    $message = $_SESSION['message'];
-    unset($_SESSION['message']);
-}
+
+    $message = isset($_SESSION['message']) ? $_SESSION['message'] : null;
+unset($_SESSION['message']);
+
 ?>
 
 <!DOCTYPE html>
