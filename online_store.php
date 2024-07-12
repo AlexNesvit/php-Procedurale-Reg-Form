@@ -49,29 +49,35 @@
     </header>
 
     <section class="product-box">
-        <h2 class="text-box">Catalogue</h2>
-        <div class="row">
-            <?php foreach ($products as $product): ?>
-                <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
-                    <div class="product card">
-                        <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
-                        </div>
-                        <div class="card-body text-center">
-                            <span class="product-name card-title"><?= $product['name'] ?></span>
-                            <span class="product_price card-text"><?= $product['price'] ?> €</span>
+    <h2 class="text-box">Catalogue</h2>
+    <div class="row">
+        <?php foreach ($products as $product): ?>
+            <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
+                <div class="product card">
+                    <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="product-name card-title"><?= $product['name'] ?></span>
+                        <span class="product_price card-text"><?= $product['price'] ?> €</span>
+                        <?php if (isset($_SESSION['auth'])): ?>
                             <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
-                            <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">
                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                                 <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
                                 <input type="hidden" name="product_price" value="<?= $product['price'] ?>">
                                 <button type="submit" class="btn btn-primary">Ajouter au Panier</button>
                             </form>
-                        </div>
+                        <?php else: ?>
+                            <p class="text-danger">Veuillez vous connecter pour ajouter des produits au panier.</p>
+                            <a href="login.php" class="btn btn-secondary">Se connecter</a>
+                        <?php endif; ?>
                     </div>
                 </div>
-            <?php endforeach ?>
-        </div>
-    </section>
+            </div>
+        <?php endforeach ?>
+    </div>
+</section>
+
     <?php include ('include/footer.php') ?>
 
     <!-- Модальное окно для подтверждения добавления товара -->

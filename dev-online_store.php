@@ -52,13 +52,13 @@
         <h2 class="text-box">Catalogue</h2>
         <div class="row">
             <?php foreach ($products as $product): ?>
-                <div class="ccontainer d-flex align-items-center justify-content-center flex-wrap" data-id="<?= $product['id'] ?>">
-                    <div class="box">
-                        <div class="imgContainer" style="background-image: url('<?= $product['image'] ?>');">
+                <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
+                    <div class="product card">
+                        <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
                         </div>
-                        <div class="content d-flex flex-column align-items-center justify-content-center">
-                            <span class="product-name text-white fs-5"><?= $product['name'] ?></span>
-                            <span class="product_price fs-6 text-white"><?= $product['price'] ?> €</span>
+                        <div class="card-body text-center">
+                            <span class="product-name card-title"><?= $product['name'] ?></span>
+                            <span class="product_price card-text"><?= $product['price'] ?> €</span>
                             <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
                             <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">
                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
