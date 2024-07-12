@@ -3,11 +3,11 @@ session_start();
 require '../include/database.php';
 
 // Vérification de l'authentification de l'utilisateur
-// if (!isset($_SESSION['user_id'])) {
-//     // Si l'utilisateur n'est pas authentifié, le rediriger vers la page de connexion
-//     header('Location: ../login.php');
-//     exit;
-// }
+if (!isset($_SESSION['auth'])) {
+    // Si l'utilisateur n'est pas authentifié, le rediriger vers la page de connexion
+    header('Location: ../login.php');
+    exit;
+}
 
 if (!isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'])) {
     echo 'Données manquantes';
