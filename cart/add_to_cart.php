@@ -39,6 +39,9 @@ if (!$found) {
     $req = $pdo->prepare('INSERT INTO basket (user_id, createdAT) VALUES (?, ?)');
     $req->execute([$_SESSION['auth']->id, date('Y-m-d H:i:s')]);
 
+    $req = $pdo->prepare('INSERT INTO basket_has_goods (basket_id, goods_id, quantity) VALUES (?, ?, ?)');
+    $req->execute([$_SESSION['auth']->id, $product_id, $quantity]);
+
     $basket_id = $pdo->lastInsertId(); // Получение последнего вставленного ID
 
     $_SESSION['cart'][] = [
@@ -48,6 +51,8 @@ if (!$found) {
         'product_name' => $product_name,
         'product_price' => $product_price,
         'quantity' => $quantity,
+        'createdAT' => date('Y-m-d H:i:s'),
+        'goods_id' => $product_id,
     ];
   
 }
