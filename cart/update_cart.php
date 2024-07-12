@@ -26,9 +26,10 @@ if (isset($_POST['update'])) {
             $quantity = intval($quantity);
             if ($quantity > 0) {
                 $cart[$index]['quantity'] = $quantity;
-                $req = $pdo->prepare('UPDATE basket SET quantity = :quantity WHERE id = :id');
-                $req->bindParam('quantity', $quantity);
-                $req->bindParam('id', $cart[$index]['basket_id']);
+                $req = $pdo->prepare('UPDATE basket_has_goods SET quantity = :quantity WHERE basket_id = :basket_id AND goods_id = :goods_id');
+                $req->bindParam(':quantity', $quantity);
+                $req->bindParam(':basket_id', $basket_id);
+                $req->bindParam(':goods_id', $goods_id);
                 $req->execute();
             } else {
                 // Удаляем товар, если количество равно нулю или меньше
