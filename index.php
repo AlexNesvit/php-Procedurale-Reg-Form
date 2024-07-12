@@ -1,6 +1,7 @@
 <?php 
 session_start();
 
+
 require "include/database.php"; 
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
