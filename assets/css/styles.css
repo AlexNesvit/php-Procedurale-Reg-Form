@@ -423,7 +423,7 @@ section.product-box .product .product-name {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-.footer {
+/* .footer {
     padding: 20px 0;
     font-size: 16px;
     transition: all 0.3s;
@@ -436,6 +436,25 @@ section.product-box .product .product-name {
     text-align: center;
     color: var(--main-color-2);
     margin-bottom: 0;
+} */
+
+.footer {
+    background-color: #343a40; /* Темный фон для футера */
+    color: #ffffff; /* Белый текст для футера */
+    padding: 20px; /* Внутренние отступы для футера */
+    text-align: center; /* Выравнивание текста по центру */
+    font-size: 14px; /* Размер шрифта для футера */
+    border-top: 1px solid #dee2e6; /* Верхняя граница для футера */
+}
+
+.footer a {
+    color: #ffc107; /* Цвет ссылок в футере */
+    text-decoration: none; /* Убираем подчеркивание у ссылок */
+    transition: color 0.3s; /* Анимация при наведении на ссылку */
+}
+
+.footer a:hover {
+    color: #fff; /* Изменение цвета ссылки при наведении */
 }
 
 /* cadeaux */
@@ -447,15 +466,18 @@ section.product-box .product .product-name {
 /* Стили для list-group-item */
 .list-group-item {
     background-color: #f8f9fa; /* Цвет фона для элементов списка */
-    border-color: #dee2e6; /* Цвет границы для элементов списка */
+    border: 1px solid #dee2e6; /* Цвет границы для элементов списка */
     margin-bottom: 10px; /* Отступ снизу для элементов списка */
-    font-size: 16px; /* Размер шрифта для элементов списка */
-    padding: 10px 15px; /* Внутренние отступы для элементов списка */
-    border-radius: 5px; /* Скругление углов для элементов списка */
+    font-size: 18px; /* Размер шрифта для элементов списка */
+    padding: 15px 20px; /* Внутренние отступы для элементов списка */
+    border-radius: 10px; /* Скругление углов для элементов списка */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень для создания глубины */
+    transition: background-color 0.3s, transform 0.3s; /* Анимация при наведении */
 }
 
 .list-group-item:hover {
     background-color: #e9ecef; /* Изменение цвета фона при наведении на элемент списка */
+    transform: translateY(-5px); /* Подъем элемента при наведении */
 }
 
 
