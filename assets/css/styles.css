@@ -210,7 +210,7 @@ section.product-box .product .product-name {
 
 .product:hover {
     /* Поворачиваем на 180-360 градусов */
-    animation: slowRotateY 1s linear;
+    animation: slowRotateY 1.5s linear;
     animation-iteration-count: 1;
 }
 
