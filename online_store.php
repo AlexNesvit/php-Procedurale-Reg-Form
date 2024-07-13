@@ -19,19 +19,19 @@
                 <div class="carousel-item active">
                     <img src="assets/img/slide-1.jpg" class="d-block w-100" alt="Slide 1">
                     <div class="carousel-caption d-none d-md-block">
-                        <span class="text-box">Jouets de Noël avec une réduction de 30%</span>
+                        <span class="text-box">Achetez 2 Pères Noël en chocolat, 1 offert!</span>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/slide-2.jpg" class="d-block w-100" alt="Slide 2">
                     <div class="carousel-caption d-none d-md-block">
-                        <span class="text-box">Large choix de couronnes de Noël</span>
+                        <span class="text-box">1 produit offert pour tout achat de 50€!</span>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/slide-3.jpg" class="d-block w-100" alt="Slide 3">
                     <div class="carousel-caption d-none d-md-block">
-                        <span class="text-box">Ferez une fête à votre enfant, invitez le Père Noël !</span>
+                        <span class="text-box">Fête pour enfants: invitez le Père Noël!</span>
                     </div>
                 </div>
             </div>

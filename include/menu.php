@@ -16,7 +16,7 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                         <a class="nav-link" href="index.php">Accueil</a>
                     </li>
                     <li class="nav-item me-5">
-                        <a class="nav-link" href="#">Paiement</a>
+                        <a class="nav-link" href="cadeaux.php">Idées de cadeaux</a>
                     </li>
                     <!-- <li class="nav-item me-5">
                         <a class="nav-link" href="#">Livraison</a>

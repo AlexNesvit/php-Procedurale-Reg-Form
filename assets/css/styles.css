@@ -437,3 +437,28 @@ section.product-box .product .product-name {
     color: var(--main-color-2);
     margin-bottom: 0;
 }
+
+/* cadeaux */
+/* Стили для list-group */
+.list-group {
+    margin-bottom: 20px; /* Отступ снизу для группы списков */
+}
+
+/* Стили для list-group-item */
+.list-group-item {
+    background-color: #f8f9fa; /* Цвет фона для элементов списка */
+    border-color: #dee2e6; /* Цвет границы для элементов списка */
+    margin-bottom: 10px; /* Отступ снизу для элементов списка */
+    font-size: 16px; /* Размер шрифта для элементов списка */
+    padding: 10px 15px; /* Внутренние отступы для элементов списка */
+    border-radius: 5px; /* Скругление углов для элементов списка */
+}
+
+.list-group-item:hover {
+    background-color: #e9ecef; /* Изменение цвета фона при наведении на элемент списка */
+}
+
+
+
+
+
