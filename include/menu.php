@@ -22,7 +22,7 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                         <a class="nav-link" href="#">Livraison</a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                 </ul>
 
