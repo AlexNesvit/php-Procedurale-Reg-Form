@@ -1,7 +1,12 @@
 <?php 
 session_start();
 
+
 require "include/database.php"; 
+
+    $message = isset($_SESSION['message']) ? $_SESSION['message'] : null;
+unset($_SESSION['message']);
+
 ?>
 
 <!DOCTYPE html>

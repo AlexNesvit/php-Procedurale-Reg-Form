@@ -110,7 +110,7 @@ foreach ($cart as $index => $item) {
         <section class="section">
             <div class="container">
                 <?php if (!empty($cart)): ?>
-                    <form action="update_cart.php" method="post">
+                    <form action="update_cart.php" method="POST">
                         <table class="table">
                             <thead>
                                 <tr>
@@ -122,12 +122,13 @@ foreach ($cart as $index => $item) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($cart as $index => $item): ?>
+                                <?php foreach ($cart as $index => $item):?>
+
                                     <tr>
                                         <td><?= htmlspecialchars($item['product_name']) ?></td>
                                         <td><?= number_format(floatval($item['product_price']), 2) ?> €</td>
                                         <td>
-                                            <input type="number" name="quantities[<?= $index ?>]" value="<?= htmlspecialchars($item['quantity']) ?>" min="1" class="form-control" style="width: 80px;">
+                                            <input type="number" name="quantities[<?= $index ?>]" value="<?= $item['quantity']?>" min="1" class="form-control" style="width: 80px;">
                                         </td>
                                         <td><?= number_format(floatval($item['product_price']) * intval($item['quantity']), 2) ?> €</td>
                                         <td>

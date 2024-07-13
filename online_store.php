@@ -2,6 +2,14 @@
 <div class="main container">
     <header class="mb-4">
         <?php include ('include/menu.php') ?>
+        <?php if ($message): ?>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <?= htmlspecialchars($message) ?>
+            <button type="button" class="close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    <?php endif; ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -11,19 +19,19 @@
                 <div class="carousel-item active">
                     <img src="assets/img/slide-1.jpg" class="d-block w-100" alt="Slide 1">
                     <div class="carousel-caption d-none d-md-block">
-                        <span class="text-box">Jouets de Noël avec une réduction de 30%</span>
+                        <span class="text-box">Achetez 2 Pères Noël en chocolat, 1 offert!</span>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/slide-2.jpg" class="d-block w-100" alt="Slide 2">
                     <div class="carousel-caption d-none d-md-block">
-                        <span class="text-box">Large choix de couronnes de Noël</span>
+                        <span class="text-box">1 produit offert pour tout achat de 50€!</span>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <img src="assets/img/slide-3.jpg" class="d-block w-100" alt="Slide 3">
                     <div class="carousel-caption d-none d-md-block">
-                        <span class="text-box">Ferez une fête à votre enfant, invitez le Père Noël !</span>
+                        <span class="text-box">Fête pour enfants: invitez le Père Noël!</span>
                     </div>
                 </div>
             </div>
@@ -41,28 +49,35 @@
     </header>
 
     <section class="product-box">
-        <h2 class="text-box">Catalogue</h2>
-        <div class="row">
-            <?php foreach ($products as $product): ?>
-                <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
-                    <div class="product card">
-                        <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
-                        </div>
-                        <div class="card-body text-center">
-                            <span class="product-name card-title"><?= $product['name'] ?></span>
-                            <span class="product_price card-text"><?= $product['price'] ?> €</span>
+    <h2 class="text-box">Catalogue</h2>
+    <div class="row">
+        <?php foreach ($products as $product): ?>
+            <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
+                <div class="product card">
+                    <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
+                    </div>
+                    <div class="card-body text-center">
+                        <span class="product-name card-title"><?= $product['name'] ?></span>
+                        <span class="product_price card-text"><?= $product['price'] ?> €</span>
+                        <?php if (isset($_SESSION['auth'])): ?>
                             <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
+                                <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">
                                 <input type="hidden" name="product_id" value="<?= $product['id'] ?>">
                                 <input type="hidden" name="product_name" value="<?= $product['name'] ?>">
                                 <input type="hidden" name="product_price" value="<?= $product['price'] ?>">
                                 <button type="submit" class="btn btn-primary">Ajouter au Panier</button>
                             </form>
-                        </div>
+                        <?php else: ?>
+                            <p class="text-danger">Veuillez vous connecter pour ajouter des produits au panier.</p>
+                            <a href="login.php" class="btn btn-secondary">Se connecter</a>
+                        <?php endif; ?>
                     </div>
                 </div>
-            <?php endforeach ?>
-        </div>
-    </section>
+            </div>
+        <?php endforeach ?>
+    </div>
+</section>
+
     <?php include ('include/footer.php') ?>
 
     <!-- Модальное окно для подтверждения добавления товара -->
