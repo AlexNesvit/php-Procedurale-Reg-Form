@@ -8,37 +8,42 @@ document.addEventListener('DOMContentLoaded', function () {
     const closePopupButton = document.querySelector('.js_close-popup');
 
     // Открытие мобильного меню
-    mobileMenuButton.addEventListener('click', function () {
-        menu.classList.add('d-flex');
-        menu.classList.remove('d-none');
-    });
+    if(mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function () {
+            menu.classList.add('d-flex');
+            menu.classList.remove('d-none');
+        });
+    }
 
     // Закрытие мобильного меню
-    closeMenuButton.addEventListener('click', function () {
-        menu.classList.remove('d-flex');
-        menu.classList.add('d-none');
-    });
+    if (closeMenuButton) {
+        closeMenuButton.addEventListener('click', function () {
+            menu.classList.remove('d-flex');
+            menu.classList.add('d-none');
+        });
+    }
 
     // Показать попап при нажатии на "Acheter"
-//     buyButtons.forEach(button => {
-//         button.addEventListener('click', function () {
-//             overlay.style.display = 'block';
-//             popup.style.display = 'block';
-//         });
-//     });
+    //     buyButtons.forEach(button => {
+    //         button.addEventListener('click', function () {
+    //             overlay.style.display = 'block';
+    //             popup.style.display = 'block';
+    //         });
+    //     });
 
-//     // Закрыть попап
-//     closePopupButton.addEventListener('click', function () {
-//         overlay.style.display = 'none';
-//         popup.style.display = 'none';
-//     });
+    //     // Закрыть попап
+    //     closePopupButton.addEventListener('click', function () {
+    //         overlay.style.display = 'none';
+    //         popup.style.display = 'none';
+    //     });
 
-//     // Закрыть попап при нажатии на overlay
-//     overlay.addEventListener('click', function () {
-//         overlay.style.display = 'none';
-//         popup.style.display = 'none';
-//     });
-// });
+    //     // Закрыть попап при нажатии на overlay
+    //     overlay.addEventListener('click', function () {
+    //         overlay.style.display = 'none';
+    //         popup.style.display = 'none';
+    //     });
+    // });
+});
 
 //Timer
 document.addEventListener("DOMContentLoaded", function () {
@@ -66,10 +71,18 @@ document.addEventListener("DOMContentLoaded", function () {
         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
         // Обновляем значения на странице
-        daysElement.textContent = days;
-        hoursElement.textContent = hours;
-        minutesElement.textContent = minutes;
-        secondsElement.textContent = seconds;
+        if (daysElement) {
+            daysElement.textContent = days;
+        }
+        if (hoursElement) {
+            hoursElement.textContent = hours;
+        }
+        if (minutesElement) {
+            minutesElement.textContent = minutes;
+        }
+        if (secondsElement) {
+            secondsElement.textContent = seconds;
+        }
 
         // Устанавливаем таймер для обновления значений каждую секунду
         setTimeout(updateTimer, 1000);

@@ -29,18 +29,18 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                 <div class="text-center">
                     
                     <?php if (isset($is_authenticated) && $is_authenticated): ?>
-                        <a class="nav-link d-inline-block" href="vueProfil/profile.php">Mon profil</a>
+                        <a class="nav-link d-inline-block me-3" href="vueProfil/profile.php">Mon profil</a>
                         <?php if (isset($is_admin) && $is_admin): ?>
-                            <a class="nav-link d-inline-block" href="dashboard.php">Admin</a>
+                            <a class="nav-link d-inline-block me-3" href="dashboard.php">Admin</a>
                         <?php endif; ?>
-                            <a class="nav-link d-inline-block" href="logout.php">Se déconnecter</a>
+                            <a class="nav-link d-inline-block me-3" href="logout.php">Se déconnecter</a>
                     <?php else: ?>
-                            <a class="nav-link d-inline-block" href="login.php">Se connecter</a>
+                            <a class="nav-link d-inline-block me-3" href="login.php">Se connecter</a>
                     <?php endif; ?>
                 </div>
                 <div class="text-left">
                             <a class="nav-link d-inline-block" href="cart/cart.php">
-                                🛒 Panier  €
+                                🛒 Panier
                             </a>
                 </div>
             </div>
