@@ -6,11 +6,11 @@
 # ✅ E-commerce Boutique Exam DWWM 2024 ✅  
 
 
-## 💻 Internet Shop de Matériel 💻
+## 🎄🎁 Internet Shop de Noël 🎄🎁
 
 - [🟣 E-commerce Boutique Exam DWWM-2024 🟣](#-e-commerce-boutique-exam-dwwm-2024-)
 - [✅ E-commerce Boutique Exam DWWM 2024 ✅](#-e-commerce-boutique-exam-dwwm-2024--1)
-  - [💻 Internet Shop de Matériel 💻](#-internet-shop-de-matériel-)
+  - [🎄🎁 Internet Shop de Noël 🎄🎁](#-internet-shop-de-noël-)
   - [✔ Présentation du projet](#-présentation-du-projet)
   - [✔ Ressources](#-ressources)
 - [✔ Accès au Site](#-accès-au-site)
@@ -25,8 +25,8 @@
 - [✔ Principaux Problèmes Rencontrés](#-principaux-problèmes-rencontrés)
 - [✔ Prochaines étapes](#-prochaines-étapes)
 - [✔ Contributions](#-contributions)
-- [✔ Remerciements](#-remerciements)
-  - [🟣Le courage, c’est d’aller dans l’inconnu malgré toutes les peurs(OSHO)🟣](#le-courage-cest-daller-dans-linconnu-malgré-toutes-les-peursosho)
+- [Remerciements](#remerciements)
+  - [🟣"Tout grand voyage commence par un simple pas" (Bouddha) 🟣](#tout-grand-voyage-commence-par-un-simple-pas-bouddha-)
   - [✅ To download, copy the project by clicking "Fork" ✅](#-to-download-copy-the-project-by-clicking-fork-)
   - [☕ Support Me](#-support-me)
   
@@ -34,7 +34,16 @@
 
 ## ✔ Présentation du projet
 
-Le projet Boutique E-commerce-2024 est une application web pour.... Son objectif est de répondre aux besoins des professionnels du développement et de divers domaines, en leur permettant de présenter leurs travaux et de découvrir d'autres projets.
+Le projet Boutique E-commerce-2024 est une application web pour la vente de produits festifs pour le Nouvel An. Son objectif est de répondre aux besoins des professionnels du développement et de divers domaines, en leur permettant de présenter leurs travaux et de découvrir d'autres projets. “Boutique du Nouvel An”, cette boutique en ligne présente un concept innovant où le site reste fermé pendant
+l’année, avec un compte à rebours jusqu’à l’ouverture 7 jours avant le Nouvel An. Ce projet a nécessité l’utilisation de plusieurs compétences techniques :
+
+• Structurer et styliser les pages avec HTML et CSS.
+• Gérer le compte à rebours et les interactions utilisateur dynamiques avec JavaScript.
+• Développer la logique serveur et la gestion des données backend avec PHP.
+• Utiliser SQL pour la gestion des produits et des utilisateurs.
+• Concevoir des maquettes et interfaces utilisateur avec Figma.
+
+La boutique offre des fonctionnalités complètes pour les utilisateurs et les administrateurs, incluant l’inscription, l’authentification, la gestion des utilisateurs et des produits, ainsi qu’un système de paiement sécurisé via Stripe.
 
 ---
 
@@ -42,8 +51,10 @@ Le projet Boutique E-commerce-2024 est une application web pour.... Son objectif
 
 - Enregistrement de nouveaux utilisateurs du site
 - Connexion des utilisateurs existants
-- La possibilité de choisir le ... et le ...
-- Creation de ...
+- La possibilité de choisir le produit si vous êtes connectez
+ Pour l'admin: 
+- Creation nouveaux profil utilisateur, corriger profil admin/utilisateur(ajouter, changer, supprimer les info), changer le mot des passe. 
+ Creation nouveaux profil utilisateur, corriger profil admin/utilisateur(ajouter, changer, supprimer les info),
 
 # ✔ Accès au Site
 
@@ -72,9 +83,9 @@ Le site est disponible sur ... . Vous pouvez y accéder via l'URL suivante :
 
 ## ✔ Back-end:
 - Langage de Programmation: [PHP]
-- Framework: 
+- Framework: Non (PHP Procedural)
 - Bibliothèque:
-- Fetch API: Récoupérer les donées de destinations spatiales, depuis des APIs publiques.
+
 
 ---
 
@@ -93,14 +104,9 @@ Le site est disponible sur ... . Vous pouvez y accéder via l'URL suivante :
 
 ## ✔ Back-end:
 
-1. Installez node.js 
-2. Dans le terminal exécutez la commande `npm install`
-3. Installez express
-4. Dans le terminal exécutez la commande `npm install express`
-5. Installez cors
-6. fans le terminal exécutez la commande `npm install cors`
-7. Installez nodemon
-6. Dans le terminal exécutez la commande `npm install nodemon`
+1. Installez ... 
+2. Dans le terminal exécutez la commande `...`
+
 
 ---
 
@@ -142,11 +148,11 @@ Si vous êtes intéressé à aborder l'un des problèmes mentionnés ou à contr
 
 ---
 
-# ✔ Remerciements
+# Remerciements
 
-Je tiens à exprimer ma sincère gratitude envers ..., dont la disponibilité constante et la précision ont grandement contribué à la réalisation de ce projet. Son aide précieuse a transformé cette expérience en une aventure épique.
+Je tiens à exprimer ma sincère gratitude envers Pierre Danaës, dont la disponibilité constante et la précision ont grandement contribué à la réalisation de ce projet. Son aide précieuse a transformé cette expérience en une aventure épique.
 
-## 🟣Le courage, c’est d’aller dans l’inconnu malgré toutes les peurs(OSHO)🟣
+## 🟣"Tout grand voyage commence par un simple pas" (Bouddha) 🟣
 
 ----
 
