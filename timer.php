@@ -1,6 +1,5 @@
-<div class="online-container">
-    <!--<div class="vein"></div>-->
-    <div class="container main timer-main">
+<div class="timer-container">
+    <div class="timer-main">
         <span class="title">Il reste jusqu'au Nouvel An:</span>
         <div id="timer" class="timer">
             <div>
@@ -21,7 +20,7 @@
             </div>
         </div>
     </div>
-    <script>
-        const secondTo = <?=$secondTo?>;
-    </script>
 </div>
+<script>
+    const secondTo = <?=$secondTo?>;
+</script>

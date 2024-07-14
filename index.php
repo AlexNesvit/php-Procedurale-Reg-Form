@@ -24,9 +24,6 @@ unset($_SESSION['message']);
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<div class="container">
-		
-	</div>
 	<?php
 function secondToDate($mounth, $day) {
 
