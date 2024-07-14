@@ -101,20 +101,6 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `users`
---
-
-INSERT INTO `users` (`id`, `name`, `username`, `phone`, `email`, `address`, `zipcode`, `city`, `password`, `role`) VALUES
-(1, 'NESVIT', 'Alex', '0768261879', 'alex.nesvit2000@gmail.com', '170 avenue du Caporal Chef Alain Deruy, Domaine de la Tour', 13600, 'La Ciotat', '$2y$10$jNwPh6ryMEjmrd.ZgT9zN.UGFx0mncPH.VdOHd/mp1WmX3Om6qXpq', 1),
-(2, 'AZER', 'Azer', '0102030405', 'azer@azer.com', 'azer', 13600, 'La Ciotat', '$2y$10$xFw5EZKsk71lsVQkwZcw4ekkoQp9Ck1RN9cDCzQarVCvu0/jjQoQ.', 0),
-(3, 'TEST', 'Test', '0102030405', 'test@test.com', 'avenue du test', 13000, 'Marseille', '$2y$10$lGPA6b5Rf69ufCZOiiWgPutdpt6KVfKq5k.qwM8rN7anjXp6IL/Ay', 0),
-(5, 'TOTO', 'Toto', '0101010102', 'toto@toto.com', 'toto', 13001, 'Marseille', '$2y$10$PYqRBxhtetV1ZoRycfuUWObBB3ckxkgO7reFox4yTOtct7ZCjwvmW', 0);
-
---
--- Индексы сохранённых таблиц
---
-
---
 -- Индексы таблицы `basket`
 --
 ALTER TABLE `basket`
