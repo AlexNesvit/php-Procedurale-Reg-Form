@@ -1,4 +1,4 @@
-<body class="online-container">
+<div class="online-container">
     <!--<div class="vein"></div>-->
     <div class="container main timer-main">
         <span class="title">Il reste jusqu'au Nouvel An:</span>
@@ -24,6 +24,4 @@
     <script>
         const secondTo = <?=$secondTo?>;
     </script>
-    <script src="assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+</div>
