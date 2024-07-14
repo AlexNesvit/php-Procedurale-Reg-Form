@@ -49,16 +49,41 @@ La boutique offre des fonctionnalités complètes pour les utilisateurs et les a
 
 ## ✔ Ressources
 
-- Enregistrement de nouveaux utilisateurs du site
-- Connexion des utilisateurs existants
-- La possibilité de choisir le produit si vous êtes connectez
- Pour l'admin: 
-- Creation nouveaux profil utilisateur, corriger profil admin/utilisateur(ajouter, changer, supprimer les info), changer le mot des passe. 
- Creation nouveaux profil utilisateur, corriger profil admin/utilisateur(ajouter, changer, supprimer les info),
+Fonctionnalités du site:
+
+Pour les utilisateurs:
+    Enregistrement de nouveaux utilisateurs : Permet aux nouveaux utilisateurs de créer un compte sur le site.
+    Connexion des utilisateurs existants : Permet aux utilisateurs déjà enregistrés de se connecter à leur compte.
+    Sélection de produits : Une fois connectés, les utilisateurs peuvent choisir des produits.
+
+Pour les administrateurs:
+    Création de nouveaux profils utilisateurs : Les administrateurs peuvent créer de nouveaux profils pour les utilisateurs.
+    Édition des profils (admin/utilisateur) :
+        Ajouter, modifier ou supprimer des informations.
+        Changer le mot de passe.
+    Création de nouveaux produits : Les administrateurs peuvent ajouter de nouveaux produits au catalogue.
+    Édition des produits :
+        Ajouter ou modifier le prix.
+        Supprimer des produits.
+    Visualisation de l'historique des achats :
+        Voir l'historique de ses propres achats.
+        Voir l'historique des achats des utilisateurs.
+
+Pour les utilisateurs connectés:
+    Édition du profil utilisateur :
+        Ajouter, modifier ou supprimer des informations.
+        Changer le mot de passe.
+    Visualisation de l'historique des achats : Consulter l'historique de ses propres achats.
+    Gestion du panier :
+        Ajouter des produits au panier.
+        Modifier la quantité des produits dans le panier.
+        Supprimer des lignes de produits du panier.
+
+Note : Si vous ne payez pas votre panier avant de vous déconnecter, celui-ci sera supprimé. Les paiements peuvent être effectués via le système de paiement Stripe.
 
 # ✔ Accès au Site
 
-Le site est disponible sur ... . Vous pouvez y accéder via l'URL suivante :
+Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante :
 
 [Boutique-2024](http://localhost:8888)
 
@@ -84,8 +109,6 @@ Le site est disponible sur ... . Vous pouvez y accéder via l'URL suivante :
 ## ✔ Back-end:
 - Langage de Programmation: [PHP]
 - Framework: Non (PHP Procedural)
-- Bibliothèque:
-
 
 ---
 
