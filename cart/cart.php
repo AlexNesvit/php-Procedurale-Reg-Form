@@ -38,7 +38,7 @@ foreach ($cart as $index => $item) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 

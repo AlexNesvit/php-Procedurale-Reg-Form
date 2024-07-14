@@ -21,7 +21,7 @@ require 'actions/users/registerAction.php';
 
   
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 <?php if (isset($_SESSION['flash'])) : ?>
