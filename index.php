@@ -81,6 +81,6 @@ if ($currentMounth == 12 && $currentDay >= 24) {
 }
 	?>
 
-	<?php include 'include/footer_js.php' ?>
+	<?php include 'include/footer_js.php'; ?>
 </body>
 </html>

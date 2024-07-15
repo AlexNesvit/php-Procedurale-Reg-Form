@@ -47,11 +47,8 @@
     </div>
 </div>
 
-<footer class="footer mt-auto py-3 bg-light">
-    <?php include 'include/footer.php'; ?>
-</footer>
 
-<?php include 'include/footer_js.php' ?>
-
+<?php include 'include/footer.php'; ?>
+<?php include 'include/footer_js.php'; ?>
 </body>
 </html>
