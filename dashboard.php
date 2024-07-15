@@ -66,7 +66,7 @@ session_start();
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="vueProfil/profileAchats.php">
+        <a class="nav-link collapsed" href="vueDashboard/dashboardAchats.php">
           <i class="bi bi-cash"></i>
           <span>Mon historique des achats</span>
         </a>
