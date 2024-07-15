@@ -200,6 +200,39 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 ## ✔ Front-end:
 - Langage de Programmation: [HTML] [CSS] [JavaScript]
 - Framework: [Bootstrap 5.3.3](https://getbootstrap.com/)
+  Ajouter le link [Bootstrap] `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">` dans `index.php`.
+
+1. Compatibilité entre navigateurs 🌐:
+    Assure-toi que ton site s'affiche correctement sur tous les navigateurs populaires (Chrome, Firefox, Safari, Edge).
+
+2. Validité selon les standards ✅
+    Le code doit être propre et valide :
+    Utilise des validateurs HTML et CSS (par exemple, W3C Markup Validation Service).
+    Évite les balises et attributs obsolètes ou non pris en charge.
+
+3. Erreurs dans la console 🔍:
+    La console du navigateur doit être exempte d'erreurs :
+
+    Vérifie et corrige toutes les erreurs et avertissements.
+    Utilise console.log pour le débogage, mais pense à les supprimer ou les commenter avant le déploiement.
+
+4. Adaptabilité du site 📱💻:
+    Le site doit s'afficher correctement sur tous les appareils :
+    Utilise des media queries (@media).
+    Vérifie le site sur différents appareils et résolutions.
+    Envisage d'utiliser des frameworks pour le design adaptatif, comme Bootstrap ou Tailwind CSS.
+
+5. Optimisation du site ⚡:
+    La performance du site est cruciale :
+    Optimise les images (compression sans perte de qualité).
+    Minimise les fichiers CSS et JS.
+    Charge les images et le contenu de manière paresseuse (lazy loading).
+    Utilise des outils comme Google Lighthouse pour évaluer les performances.
+
+6. Attribut alt pour les images 🖼️
+    Remplis l'attribut alt pour toutes les images :
+    C'est important pour l'accessibilité et le SEO.
+    Décris l'image de manière claire et concise.
 
 ---
 
@@ -229,7 +262,7 @@ CRUD est un acronyme qui désigne les quatre opérations principales effectuées
 ## ✔ Front-end:
 
 - Bootstrap 5.3.3:
-  Ajouter le link [Bootstrap] `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">` dans `index.php`
+  
 
 ## ✔ Back-end:
 
