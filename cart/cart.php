@@ -80,9 +80,9 @@ foreach ($cart as $index => $item) {
     </li>
 
     <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
+    <a class="nav-link collapsed" href="dashboardAchat.php">
       <i class="bi bi-cash"></i>
-      <span>Toutes les achats</span>
+      <span>Mon historique des achats</span>
     </a>
   </li>
   
@@ -141,7 +141,7 @@ foreach ($cart as $index => $item) {
                         <p><strong>Total: <?= number_format($total_amount, 2) ?> €</strong></p>
                         <button type="submit" name="update" class="btn btn-primary">Mettre à jour la Quantité</button>
                         <a href="../index.php" class="btn btn-secondary">Continuer vos achats</a>
-                        <a href="checkout.php" class="btn btn-success">Passer à la Caisse</a>
+                        <a href="checkout.php" class="btn btn-success">Passer ou paiement</a>
                     </form>
                 <?php else: ?>
                     <p>Votre panier est vide.</p>
