@@ -308,7 +308,10 @@ section.product-box .product .product-name {
 }
 
 .timer {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
     color: var(--main-color-2);
     font-size: 30px;
     font-weight: 100;
@@ -316,17 +319,17 @@ section.product-box .product .product-name {
 }
 
 .timer > div {
+    width: 100px;
     padding: 10px;
+    margin: 5px;
     border-radius: 3px;
     background: var(--main-color-1);
-    display: inline-block;
 }
 
-.timer div > span{
-    padding: 15px;
-    border-radius: 3px;
-    background: var(--main-color-1);
-    display: inline-block;
+@media (max-width: 600px) {
+    .timer > div {
+        width: 45%; /* Adjust the width to fit two divs in a row */
+    }
 }
 
 .small-text{
