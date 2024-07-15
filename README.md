@@ -27,7 +27,7 @@
 - [✔ Installation des Frameworks et des bibliothèques:](#-installation-des-frameworks-et-des-bibliothèques)
   - [✔ Front-end:](#-front-end-1)
   - [✔ Back-end:](#-back-end-1)
-  - [✔ Stripe:](#-stripe)
+  - [✔ Payment](#-payment)
 - [✔ Principaux Problèmes Rencontrés](#-principaux-problèmes-rencontrés)
 - [✔ Prochaines étapes](#-prochaines-étapes)
 - [✔ Contributions](#-contributions)
@@ -238,10 +238,8 @@ CRUD est un acronyme qui désigne les quatre opérations principales effectuées
 
 ---
 
-## ✔ Stripe:
+## ✔ Payment
 
-1. Commencez par installer le SDK Stripe via Composer:
-2. Dans le terminal exécutez la commande `composer require stripe/stripe-php`
 
 
 # ✔ Principaux Problèmes Rencontrés
