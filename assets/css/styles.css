@@ -164,7 +164,7 @@ section.product-box .product {
     border-radius: 5px; /* Закругление углов (по желанию) */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень для карточки (по желанию) */
     overflow: hidden; /* Скрытие содержимого, выходящего за пределы */
-    transition: transform 0.3s ease; /* Плавное изменение размера при наведении */
+    /* transition: transform 0.3s ease; Плавное изменение размера при наведении */
 }
 
 section.product-box .product .product-pic {
@@ -177,14 +177,16 @@ section.product-box .product .product-pic {
 section.product-box .product .product-name {
     display: block; /* Убедитесь, что имя продукта отображается как блочный элемент */
     font-size: 18px; /* Размер шрифта имени продукта */
-    margin-top: 5px; /* Верхний отступ имени продукта */
-    margin-bottom: 5px; /* Нижний отступ имени продукта */
+    margin-top: 3px; /* Верхний отступ имени продукта */
+    margin-bottom: 3px; /* Нижний отступ имени продукта */
 }
 
+/* Flip Card Animation */
 .product {
     position: relative;
     perspective: 1000px; /* Создаём перспективу для эффекта 3D */
-    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1); /* Увеличиваем продолжительность и добавляем плавное изменение */
+    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1); /* Увеличиваем продолжительность и добавляем плавное изменение */
+    transform-style: preserve-3d;
 }
 
 .product .card {
@@ -205,10 +207,9 @@ section.product-box .product .product-name {
 
 .product:hover {
     /* Поворачиваем на 360 градусов */
-    animation: slowRotateY 1.5s linear;
+    animation: slowRotateY 2s linear;
     animation-iteration-count: 1;
 }
-
 
 /* .product:hover {
     transform: scale(1.1);
@@ -239,6 +240,7 @@ section.product-box .product .product-name {
     background-position: center;
 }
 
+/* test avant supprimer
 .popup, .overlay {
     display: none;
     position: fixed;
@@ -277,7 +279,7 @@ section.product-box .product .product-name {
     background: none;
     border: none;
     cursor: pointer;
-}
+} */
 
 /* Таймер */
 .timer-container {

@@ -68,7 +68,7 @@
                                 <button type="submit" class="btn btn-primary">Ajouter au Panier</button>
                             </form>
                         <?php else: ?>
-                            <p class="text-danger">Veuillez vous connecter pour ajouter des produits au panier.</p>
+                            <p class="text-danger">Connectez-vous pour ajouter au panier</p>
                             <a href="login.php" class="btn btn-secondary">Se connecter</a>
                         <?php endif; ?>
                     </div>
