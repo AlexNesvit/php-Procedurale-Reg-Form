@@ -80,7 +80,7 @@ foreach ($cart as $index => $item) {
     </li>
 
     <li class="nav-item">
-    <a class="nav-link collapsed" href="dashboardAchat.php">
+    <a class="nav-link collapsed" href="../vueProfil/profileAchats.php">
       <i class="bi bi-cash"></i>
       <span>Mon historique des achats</span>
     </a>
