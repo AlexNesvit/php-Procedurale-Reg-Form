@@ -204,7 +204,7 @@ section.product-box .product .product-name {
 }
 
 .product:hover {
-    /* Поворачиваем на 180-360 градусов */
+    /* Поворачиваем на 360 градусов */
     animation: slowRotateY 1.5s linear;
     animation-iteration-count: 1;
 }
@@ -439,11 +439,11 @@ section.product-box .product .product-name {
 } */
 
 .footer {
-    background-color: #343a40; /* Темный фон для футера */
-    color: #ffffff; /* Белый текст для футера */
+    background-color: #343a40; 
+    color: #ffffff; 
     padding: 20px; /* Внутренние отступы для футера */
     text-align: center; /* Выравнивание текста по центру */
-    font-size: 14px; /* Размер шрифта для футера */
+    font-size: 14px; 
     border-top: 1px solid #dee2e6; /* Верхняя граница для футера */
 }
 
@@ -476,7 +476,7 @@ section.product-box .product .product-name {
 }
 
 .list-group-item:hover {
-    background-color: #e9ecef; /* Изменение цвета фона при наведении на элемент списка */
+    background-color: #e9ecef;
     transform: translateY(-5px); /* Подъем элемента при наведении */
 }
 

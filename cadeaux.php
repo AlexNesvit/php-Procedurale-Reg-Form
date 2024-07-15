@@ -15,7 +15,7 @@
 
 <?php include 'include/menu.php'; ?>
 
-<div class="container mt-4">
+<div class="container main mt-4">
     <h1>Idées de cadeaux faits maison</h1>
 
     <h2>Cadeaux pour les enfants</h2>
@@ -48,11 +48,11 @@
         <li class="list-group-item">Cadres photo avec des photos communes, ornés de perles – Doux et romantique.</li>
     </ul>
 
-    <h2>Cadeaux pour les animaux de compagnie</h2>
+    <!-- <h2>Cadeaux pour les animaux de compagnie</h2>
     <ul class="list-group">
         <li class="list-group-item">Jouets et paniers faits main – De l'amour et du soin pour votre compagnon poilu.</li>
         <li class="list-group-item">Colliers et laisses faits à la main – Des accessoires élégants pour le confort de votre animal.</li>
-    </ul>
+    </ul> -->
 </div>
 
 <footer class="footer mt-auto py-3 bg-light">

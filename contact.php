@@ -15,7 +15,7 @@
 
 <?php include 'include/menu.php'; ?>
 
-<div class="container mt-4 flex-grow-1">
+<div class="container main mt-4 flex-grow-1">
     <h1>Contactez-nous</h1>
 
     <div class="row">
