@@ -109,12 +109,13 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td><?= htmlspecialchars($detail['name']) ?></td>
                             <td><?= htmlspecialchars($detail['quantity']) ?></td>
                             <td><?= number_format(floatval($detail['price']), 2) ?> €</td>
-                            <td><?= number_format(floatval($detail['price']) * intval($detail['quantity']), 2) ?> €</td>
+                            <td><?= number_format(floatval($detail['price']) * intval($detail['quantity']), 2) ?> €</td>   
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
+            <td><a href="dashboardAchats.php" class="btn btn-primary">Historique des Achats</a></td>
         <?php else : ?>
             <p>Aucun détail disponible.</p>
         <?php endif; ?>
