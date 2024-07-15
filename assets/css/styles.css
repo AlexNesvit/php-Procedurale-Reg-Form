@@ -423,21 +423,6 @@ section.product-box .product .product-name {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-/* .footer {
-    padding: 20px 0;
-    font-size: 16px;
-    transition: all 0.3s;
-    border-top: 1px solid #cddfff;
-    font-family: Arial, sans-serif;
-    color: var(--main-color-2); 
-}
-
-.footer .copyright {
-    text-align: center;
-    color: var(--main-color-2);
-    margin-bottom: 0;
-} */
-
 .footer {
     background-color: #343a40; 
     color: #ffffff; 

@@ -17,13 +17,13 @@
 - [✔ Technologies Utilisées:](#-technologies-utilisées)
   - [✔ Technologies d'organisation du projet:](#-technologies-dorganisation-du-projet)
   - [✔ PHP prcédural:](#-php-prcédural)
-  - [✔ CRUD](#-crud)
   - [✔ Programmation Orientée Objet (POO):](#-programmation-orientée-objet-poo)
   - [✔ MVC (Model-View-Controller):](#-mvc-model-view-controller)
   - [✔ POO vs Style Procédural:](#-poo-vs-style-procédural)
   - [✔ Front-end:](#-front-end)
   - [✔ Back-end:](#-back-end)
   - [✔ Base de données :](#-base-de-données-)
+  - [✔ CRUD](#-crud)
 - [✔ Installation des Frameworks et des bibliothèques:](#-installation-des-frameworks-et-des-bibliothèques)
   - [✔ Front-end:](#-front-end-1)
   - [✔ Back-end:](#-back-end-1)
@@ -144,11 +144,6 @@ Le PHP procédural peut être utile pour les petits projets où la rapidité de 
 
 ---
 
-## ✔ CRUD
-
-CRUD est une conception des opérations sur les données dans une base de données. Elle peut être réalisée à la fois dans un style procédural et dans un style orienté objet.
-
-
 ## ✔ Programmation Orientée Objet (POO):
 
 La programmation orientée objet (POO) est un paradigme de programmation basé sur le concept d'« objets », qui peuvent contenir des données et du code : les données sous forme de champs (souvent appelés attributs ou propriétés) et le code sous forme de procédures (souvent appelées méthodes). Les principes fondamentaux de la POO incluent l'encapsulation, l'héritage et le polymorphisme.
@@ -215,7 +210,17 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 ## ✔ Base de données :
 - Base de Données: [MySQL]
 - PhpMyAdmin: [PhpMyAdmin]
-  
+
+## ✔ CRUD
+
+CRUD est une conception des opérations sur les données dans une base de données. Elle peut être réalisée à la fois dans un style procédural et dans un style orienté objet.
+CRUD est un acronyme qui désigne les quatre opérations principales effectuées sur les données dans une base de données :
+
+    Create: Ajout de nouvelles entrées dans la base de données.
+    Read: Lecture des données à partir de la base de données.
+    Update: Mise à jour des entrées existantes dans la base de données.
+    Delete: Suppression des entrées de la base de données.
+
 ---
 
 # ✔ Installation des Frameworks et des bibliothèques:
