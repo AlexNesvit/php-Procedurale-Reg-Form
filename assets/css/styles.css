@@ -182,18 +182,19 @@ section.product-box .product .product-name {
 }
 
 /* Flip Card Animation */
+
 .product {
     position: relative;
-    perspective: 1000px; /* Создаём перспективу для эффекта 3D */
-    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1); /* Увеличиваем продолжительность и добавляем плавное изменение */
+    perspective: 1000px; 
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); 
     transform-style: preserve-3d;
 }
-
+/* 
 .product .card {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden;  /* Скрываем обратную сторону карточки */
+    backface-visibility: hidden;  
 }
 
 @keyframes slowRotateY {
@@ -206,15 +207,15 @@ section.product-box .product .product-name {
 }
 
 .product:hover {
-    /* Поворачиваем на 360 градусов */
+    /* Поворачиваем на 360 градусов 
     animation: slowRotateY 2s linear;
     animation-iteration-count: 1;
-}
-
-/* .product:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 } */
+
+.product:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+} 
 
 .product button {
 	position: absolute;
