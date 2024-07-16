@@ -11,24 +11,21 @@
 - [🟣 E-commerce Boutique Exam DWWM-2024 🟣](#-e-commerce-boutique-exam-dwwm-2024-)
 - [✅ E-commerce Boutique Exam DWWM 2024 ✅](#-e-commerce-boutique-exam-dwwm-2024--1)
   - [🎄🎁 Internet Shop de Noël 🎄🎁](#-internet-shop-de-noël-)
-  - [✔ Présentation du projet](#-présentation-du-projet)
-  - [✔ Ressources](#-ressources)
+- [✔ Présentation du projet](#-présentation-du-projet)
+- [✔ Ressources](#-ressources)
 - [✔ Accès au Site](#-accès-au-site)
 - [✔ Technologies Utilisées:](#-technologies-utilisées)
   - [✔ Technologies d'organisation du projet:](#-technologies-dorganisation-du-projet)
+  - [✔ GitHub:](#-github)
+  - [✔ChatGPT:](#chatgpt)
   - [✔ PHP prcédural:](#-php-prcédural)
   - [✔ Programmation Orientée Objet (POO):](#-programmation-orientée-objet-poo)
   - [✔ MVC (Model-View-Controller):](#-mvc-model-view-controller)
   - [✔ POO vs Style Procédural:](#-poo-vs-style-procédural)
-  - [✔ Front-end:](#-front-end)
-  - [✔ Back-end:](#-back-end)
+- [✔ Front-end:](#-front-end)
+- [✔ Back-end:](#-back-end)
   - [✔ Base de données :](#-base-de-données-)
   - [✔ CRUD](#-crud)
-- [✔ Installation des Frameworks et des bibliothèques:](#-installation-des-frameworks-et-des-bibliothèques)
-  - [✔ Front-end:](#-front-end-1)
-  - [✔ Back-end:](#-back-end-1)
-  - [✔ Payment](#-payment)
-  - [✔ ChatGPT](#-chatgpt)
 - [✔ Principaux Problèmes Rencontrés](#-principaux-problèmes-rencontrés)
 - [✔ Prochaines étapes](#-prochaines-étapes)
 - [✔ Contributions](#-contributions)
@@ -39,7 +36,7 @@
   
 ---
 
-## ✔ Présentation du projet
+# ✔ Présentation du projet
 
 Le projet Boutique E-commerce-2024 est une application web pour la vente de produits festifs pour le Nouvel An. Son objectif est de répondre aux besoins des professionnels du développement et de divers domaines, en leur permettant de présenter leurs travaux et de découvrir d'autres projets. “Boutique du Nouvel An”, cette boutique en ligne présente un concept innovant où le site reste fermé pendant
 l’année, avec un compte à rebours jusqu’à l’ouverture 7 jours avant le Nouvel An. Ce projet a nécessité l’utilisation de plusieurs compétences techniques :
@@ -54,7 +51,7 @@ La boutique offre des fonctionnalités complètes pour les utilisateurs et les a
 
 ---
 
-## ✔ Ressources
+# ✔ Ressources
 
 Fonctionnalités du site:
 
@@ -100,13 +97,39 @@ Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante 
 
 ## ✔ Technologies d'organisation du projet:
 - La modele[Figma](https://www.figma.com/)
+  
   - Maquetage Figma pour Desktop
   - Maquetage Figma pour Ipad 768 * 981
   - Maquetage Figma pour Iphone 14 Pro & 15 Pro 393 * 852
-  - 
+  
 - Organisation de projet: [Trello](https://trello.com/)
 
 ---
+
+## ✔ GitHub:
+
+    GitHub est une plateforme très utilisée en France par les développeurs, les équipes de développement et les entreprises pour la gestion et la collaboration sur des projets de développement logiciel. 
+  - Collaboration : GitHub facilite la collaboration entre développeurs, même à distance.
+  - Communauté : Grande communauté de développeurs en France et dans le monde, permettant l'échange de connaissances et de bonnes pratiques.
+  - Gestion de projets open source : GitHub est la plateforme de référence pour de nombreux projets open source.
+  - Intégration avec d'autres outils : Compatible avec divers outils de développement et de gestion de projets.
+
+## ✔ChatGPT:
+ChatGPT pour les développeurs web: Un outil précieux.
+
+ChatGPT peut être un outil extrêmement utile pour les développeurs web. Voici quelques raisons pour lesquelles il peut s'avérer précieux :
+1. Aide au codage et au débogage.
+2. Explication des concepts.
+3. Génération de code.
+4. Recommandations et meilleures pratiques.
+5. Documentation.
+  Il peut aider à rédiger la documentation de votre code, facilitant ainsi la maintenance et l'évolution du projet.
+6. Résolution de problèmes et de bugs.
+  ChatGPT peut proposer des solutions pour les bugs et les erreurs dans le code, aidant ainsi à comprendre où et pourquoi quelque chose ne fonctionne pas.
+7. Apprentissage de nouvelles technologies.
+  Il peut servir de ressource éducative en fournissant des informations sur de nouvelles bibliothèques, frameworks et outils, aidant ainsi à rester à jour avec les dernières tendances en développement web.
+8. Amélioration des performances.
+  ChatGPT peut suggérer des moyens d'optimiser le code et d'améliorer les performances des applications web.
 
 ## ✔ PHP prcédural:
 
@@ -199,7 +222,7 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 
 ---
 
-## ✔ Front-end:
+# ✔ Front-end:
 - Langage de Programmation: [HTML] [CSS] [JavaScript]
 - Framework: [Bootstrap 5.3.3](https://getbootstrap.com/)
   Ajouter le link [Bootstrap] `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">` dans `index.php`.
@@ -226,9 +249,10 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 
 5. Optimisation du site ⚡:
     La performance du site est cruciale :
-    Optimise les images (compression sans perte de qualité).
+    Optimise les images (compression sans perte de qualité jpg-webP).
     Minimise les fichiers CSS et JS.
     Charge les images et le contenu de manière paresseuse (lazy loading).
+    Utiliser meta description pour SEO `<meta name="description" content="">`
     Utilise des outils comme Google Lighthouse pour évaluer les performances.
 
 6. Attribut alt pour les images 🖼️
@@ -238,17 +262,22 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 
 ---
 
-## ✔ Back-end:
+# ✔ Back-end:
 - Langage de Programmation: [PHP ]
 
 ---
 
 ## ✔ Base de données :
 - Base de Données: [MySQL]
-- MAMP []
+- MAMP [Macintosh,Apache,MySQL,PHP]
 - PhpMyAdmin: [PhpMyAdmin]
+  Avantages de MAMP:
+    Facilité d'installation : En quelques clics, MAMP est installé et prêt à être utilisé, ce qui est parfait pour les débutants.
+    Développement local : Travailler localement signifie que vous n'avez pas besoin d'être connecté à Internet pour développer et tester vos sites web.
+    Sécurité : Vos projets restent sur votre ordinateur jusqu'à ce que vous décidiez de les mettre en ligne, réduisant ainsi les risques de sécurité pendant le développement.
+    Polyvalence : En plus de PHP, MAMP supporte également d'autres langages comme Python, Perl et Ruby.
 
-## ✔ CRUD
+## ✔ CRUD 
 
 CRUD est une conception des opérations sur les données dans une base de données. Elle peut être réalisée à la fois dans un style procédural et dans un style orienté objet.
 CRUD est un acronyme qui désigne les quatre opérations principales effectuées sur les données dans une base de données :
@@ -258,24 +287,8 @@ CRUD est un acronyme qui désigne les quatre opérations principales effectuées
     Update: Mise à jour des entrées existantes dans la base de données.
     Delete: Suppression des entrées de la base de données.
 
----
-
-# ✔ Installation des Frameworks et des bibliothèques:
-
-## ✔ Front-end:
-
-- Bootstrap 5.3.3:
-  
-
-## ✔ Back-end:
-
-1. Installez ... 
-2. Dans le terminal exécutez la commande `...`
 
 ---
-
-## ✔ Payment
-## ✔ ChatGPT
 
 
 

@@ -14,8 +14,6 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-
-
 <div class="container main mt-4 flex-grow-1">
 <?php include 'include/menu.php'; ?>
     <h1>Contactez-nous</h1>
@@ -50,6 +48,7 @@
 </div>
 <div class="container main">
     <?php include 'include/footer.php'; ?>
+    <?php include 'include/footer_js.php'; ?>
     </div>
 </body>
 </html>
