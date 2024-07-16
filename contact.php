@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plongez dans la magie de Noël avec notre boutique en ligne ! 🎄🎅 Des cadeaux et décorations aux délices festifs, nous avons tout pour rendre vos fêtes inoubliables. 🌟 Livraison rapide dans tout le pays et offres spéciales pour nos clients préférés.">
+
     <title>Contact</title>
 
     <link href="assets/img/iconfav.jpg" rel="icon">

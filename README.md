@@ -28,6 +28,7 @@
   - [✔ Front-end:](#-front-end-1)
   - [✔ Back-end:](#-back-end-1)
   - [✔ Payment](#-payment)
+  - [✔ ChatGPT](#-chatgpt)
 - [✔ Principaux Problèmes Rencontrés](#-principaux-problèmes-rencontrés)
 - [✔ Prochaines étapes](#-prochaines-étapes)
 - [✔ Contributions](#-contributions)
@@ -102,6 +103,7 @@ Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante 
   - Maquetage Figma pour Desktop
   - Maquetage Figma pour Ipad 768 * 981
   - Maquetage Figma pour Iphone 14 Pro & 15 Pro 393 * 852
+  - 
 - Organisation de projet: [Trello](https://trello.com/)
 
 ---
@@ -243,6 +245,7 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 
 ## ✔ Base de données :
 - Base de Données: [MySQL]
+- MAMP []
 - PhpMyAdmin: [PhpMyAdmin]
 
 ## ✔ CRUD
@@ -272,6 +275,9 @@ CRUD est un acronyme qui désigne les quatre opérations principales effectuées
 ---
 
 ## ✔ Payment
+## ✔ ChatGPT
+
+
 
 
 
