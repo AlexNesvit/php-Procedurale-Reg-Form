@@ -58,7 +58,7 @@
                     </div>
                     <div class="card-body text-center">
                         <span class="product-name card-title"><?= $product['name'] ?></span>
-                        <span class="product_price card-text"><?= $product['price'] ?> €</span>
+                        <span class="product_price card-text"><?= $product['price'] ?></span>
                         <?php if (isset($_SESSION['auth'])): ?>
                             <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
                                 <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">

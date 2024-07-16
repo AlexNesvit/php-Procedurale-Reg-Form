@@ -95,7 +95,7 @@ session_start();
   </main><!-- End #main -->
 
 
-  <?php include '../include/footer_js.php' ?>
+  <?php include 'include/footer_js.php'; ?>
 
 </body>
 
