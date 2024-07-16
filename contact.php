@@ -47,9 +47,9 @@
             </form>
         </div>
     </div>
-    <?php include 'include/footer.php'; ?>
-    <?php include 'include/footer_js.php'; ?>   
 </div>
-
+<div class="container main">
+    <?php include 'include/footer.php'; ?>
+    </div>
 </body>
 </html>
