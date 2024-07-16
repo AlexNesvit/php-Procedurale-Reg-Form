@@ -237,7 +237,8 @@ section.product-box .product .product-name {
 
 .product-pic {
     height: 200px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
