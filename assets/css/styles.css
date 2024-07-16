@@ -19,7 +19,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center;
+    background: var(--main-bg-color-1) url("../img/background.webp") no-repeat center center;
     background-size: cover;
     opacity: 0.8; /* Adjust opacity as needed */
     z-index: -1; /* Place it behind the content */
