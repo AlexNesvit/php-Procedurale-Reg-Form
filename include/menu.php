@@ -25,24 +25,31 @@ $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
                         <a class="nav-link" href="contact.php">Contact</a>
                     </li>
                 </ul>
-
-                <div class="text-center">
-                    
+                
+                <ul class="navbar-nav">
                     <?php if (isset($is_authenticated) && $is_authenticated): ?>
-                        <a class="nav-link d-inline-block me-3" href="vueProfil/profile.php">Mon profil</a>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="vueProfil/profile.php">Mon profil</a>
+                        </li>
                         <?php if (isset($is_admin) && $is_admin): ?>
-                            <a class="nav-link d-inline-block me-3" href="dashboard.php">Admin</a>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="dashboard.php">Admin</a>
+                        </li>
                         <?php endif; ?>
-                            <a class="nav-link d-inline-block me-3" href="logout.php">Se déconnecter</a>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="logout.php">Se déconnecter</a>
+                        </li>
                     <?php else: ?>
-                            <a class="nav-link d-inline-block me-3" href="login.php">Se connecter</a>
+                        <li class="nav-item me-2">
+                            <a class="nav-link" href="login.php">Se connecter</a>
+                        </li>
                     <?php endif; ?>
-                </div>
-                <div class="text-left">
-                            <a class="nav-link d-inline-block" href="cart/cart.php">
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart/cart.php">
                                 🛒 Panier
                             </a>
-                </div>
+                        </li>
+                </ul>
             </div>
         </div>
     </nav>
