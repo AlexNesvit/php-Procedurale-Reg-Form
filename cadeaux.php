@@ -15,9 +15,10 @@
 </head>
 <body>
 
-<?php include 'include/menu.php'; ?>
+
 
 <div class="container main mt-4">
+<?php include 'include/menu.php'; ?>
     <h1>Idées de cadeaux faits maison</h1>
 
     <h2>Cadeaux pour les enfants</h2>
@@ -49,9 +50,9 @@
         <li class="list-group-item">Pull ou écharpe tricoté à la main – Un cadeau chaleureux et spécial.</li>
         <li class="list-group-item">Cadres photo avec des photos communes, ornés de perles – Doux et romantique.</li>
     </ul>
+    <?php include 'include/footer.php'; ?>
+    <?php include 'include/footer_js.php'; ?>
 </div>
 
-<?php include 'include/footer.php'; ?>
-<?php include 'include/footer_js.php'; ?>
 </body>
 </html>
