@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plongez dans la magie de Noël avec notre boutique en ligne ! 🎄🎅 Des cadeaux et décorations aux délices festifs, nous avons tout pour rendre vos fêtes inoubliables. 🌟 Livraison rapide dans tout le pays et offres spéciales pour nos clients préférés.">
+
     <title>Idées de cadeaux faits maison</title>
 
     <link href="assets/img/iconfav.jpg" rel="icon">
@@ -13,9 +15,10 @@
 </head>
 <body>
 
-<?php include 'include/menu.php'; ?>
 
-<div class="container mt-4">
+
+<div class="container main mt-4">
+<?php include 'include/menu.php'; ?>
     <h1>Idées de cadeaux faits maison</h1>
 
     <h2>Cadeaux pour les enfants</h2>
@@ -47,20 +50,9 @@
         <li class="list-group-item">Pull ou écharpe tricoté à la main – Un cadeau chaleureux et spécial.</li>
         <li class="list-group-item">Cadres photo avec des photos communes, ornés de perles – Doux et romantique.</li>
     </ul>
-
-    <h2>Cadeaux pour les animaux de compagnie</h2>
-    <ul class="list-group">
-        <li class="list-group-item">Jouets et paniers faits main – De l'amour et du soin pour votre compagnon poilu.</li>
-        <li class="list-group-item">Colliers et laisses faits à la main – Des accessoires élégants pour le confort de votre animal.</li>
-    </ul>
+    <?php include 'include/footer.php'; ?>
+    <?php include 'include/footer_js.php'; ?>
 </div>
 
-<footer class="footer mt-auto py-3 bg-light">
-    <?php include 'include/footer.php'; ?>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/script.js"></script>
 </body>
 </html>

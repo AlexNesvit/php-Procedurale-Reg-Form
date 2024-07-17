@@ -24,7 +24,7 @@ session_start();
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 
@@ -95,10 +95,7 @@ session_start();
   </main><!-- End #main -->
 
 
-  <!-- Vendor JS Files -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <?php include 'include/footer_js.php'; ?>
 
 </body>
 

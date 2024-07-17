@@ -38,7 +38,7 @@ foreach ($cart as $index => $item) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 
@@ -80,9 +80,9 @@ foreach ($cart as $index => $item) {
     </li>
 
     <li class="nav-item">
-    <a class="nav-link collapsed" href="#">
+    <a class="nav-link collapsed" href="../vueProfil/profileAchats.php">
       <i class="bi bi-cash"></i>
-      <span>Toutes les achats</span>
+      <span>Mon historique des achats</span>
     </a>
   </li>
   
@@ -141,7 +141,7 @@ foreach ($cart as $index => $item) {
                         <p><strong>Total: <?= number_format($total_amount, 2) ?> €</strong></p>
                         <button type="submit" name="update" class="btn btn-primary">Mettre à jour la Quantité</button>
                         <a href="../index.php" class="btn btn-secondary">Continuer vos achats</a>
-                        <a href="checkout.php" class="btn btn-success">Passer à la Caisse</a>
+                        <a href="checkout.php" class="btn btn-success">Passer ou paiement</a>
                     </form>
                 <?php else: ?>
                     <p>Votre panier est vide.</p>
@@ -153,9 +153,6 @@ foreach ($cart as $index => $item) {
 
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Vendor JS Files -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Template Main JS File -->
-    <script src="../assets/js/main.js"></script>    
+    <?php include '../include/footer_js.php' ?>
 </body>
 </html>

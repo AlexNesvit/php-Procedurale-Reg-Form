@@ -98,9 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const forms = document.querySelectorAll('.js_add_to_cart');
 
     forms.forEach(form => {
-        form.addEventListener('submit', () => {
-            console.log('test');
-            //e.preventDefault();
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
 
             const formData = new FormData(form);
 

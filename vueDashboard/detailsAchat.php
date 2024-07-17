@@ -4,16 +4,23 @@ require_once '../include/database.php';
 include ('../actions/users/profileAction.php');
 logged_only();
 
+$basket_id = $_GET['basket_id'] ?? null;
 
-// Получение всех корзин, которые были оплачены (isPaid = 1)
-$stmt = $pdo->query("SELECT b.id AS basket_id, b.createdAt, b.user_id, SUM(bhg.quantity) AS total_quantity, SUM(g.price * bhg.quantity) AS total_amount
-                     FROM basket b
-                     JOIN basket_has_goods bhg ON b.id = bhg.basket_id
-                     JOIN goods g ON bhg.goods_id = g.id
-                     WHERE b.isPaid = 1
-                     GROUP BY b.id
-                     ORDER BY b.createdAt DESC");
-$baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
+if (!$basket_id) {
+    // Перенаправление в случае отсутствия идентификатора корзины
+    header('Location: dashboardAchats.php');
+    exit();
+}
+
+// Получение деталей корзины
+$stmt = $pdo->prepare("SELECT b.createdAt, u.username, g.name, bhg.quantity, g.price 
+                       FROM basket b
+                       JOIN basket_has_goods bhg ON b.id = bhg.basket_id
+                       JOIN goods g ON bhg.goods_id = g.id
+                       JOIN users u ON b.user_id = u.id
+                       WHERE b.id = :basket_id");
+$stmt->execute(['basket_id' => $basket_id]);
+$details = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +28,7 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Boutique | Dashboard | Historique des Achats</title>
+    <title>Boutique | Dashboard | Détails de l'achat</title>
     <link href="../assets/img/iconfav.jpg" rel="icon">
     <link href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -77,37 +84,40 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 <main id="main" class="main">
     <div class="pagetitle">
-        <h1>Historique des Achats</h1>
+        <h1>Détails de l'achat</h1>
     </div><!-- End Page Title -->
 
     <section class="section">
-        <?php if (!empty($baskets)) : ?>
+        <?php if (!empty($details)) : ?>
             <div class="row">
                 <table class="table table-striped table-hover">
                     <thead>
                     <tr>
                         <th>Date</th>
                         <th>Utilisateur</th>
-                        <th>Nombre total d'articles</th>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>Prix Unitaire</th>
                         <th>Montant Total</th>
-                        <th>Détails</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <?php foreach($baskets as $basket): ?>
+                    <?php foreach($details as $detail): ?>
                         <tr>
-                            <td><?= htmlspecialchars($basket['createdAt']) ?></td>
-                            <td><?= htmlspecialchars($basket['user_id']) ?></td>
-                            <td><?= htmlspecialchars($basket['total_quantity']) ?></td>
-                            <td><?= number_format(floatval($basket['total_amount']), 2) ?> €</td>
-                            <td><a href="detailsAchat.php?basket_id=<?= $basket['basket_id'] ?>" class="btn btn-primary">Détails</a></td>
+                            <td><?= htmlspecialchars($detail['createdAt']) ?></td>
+                            <td><?= htmlspecialchars($detail['username']) ?></td>
+                            <td><?= htmlspecialchars($detail['name']) ?></td>
+                            <td><?= htmlspecialchars($detail['quantity']) ?></td>
+                            <td><?= number_format(floatval($detail['price']), 2) ?> €</td>
+                            <td><?= number_format(floatval($detail['price']) * intval($detail['quantity']), 2) ?> €</td>   
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
+            <td><a href="dashboardAchats.php" class="btn btn-primary">Historique des Achats</a></td>
         <?php else : ?>
-            <p>Aucun achat effectué.</p>
+            <p>Aucun détail disponible.</p>
         <?php endif; ?>
     </section>
 </main>

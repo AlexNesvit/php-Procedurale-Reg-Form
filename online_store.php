@@ -17,19 +17,19 @@
         <div class="carousel slide" id="carouselExampleControls" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/img/slide-1.jpg" class="d-block w-100" alt="Slide 1">
+                    <img src="assets/img/slide-1.webp" class="d-block w-100" alt="slide 1 Achetez 2 Pères Noël en chocolat, 1 offert!">
                     <div class="carousel-caption d-none d-md-block">
                         <span class="text-box">Achetez 2 Pères Noël en chocolat, 1 offert!</span>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/slide-2.jpg" class="d-block w-100" alt="Slide 2">
+                    <img src="assets/img/slide-2.webp" class="d-block w-100" alt="slide 2 produit offert pour tout achat de 50€!">
                     <div class="carousel-caption d-none d-md-block">
                         <span class="text-box">1 produit offert pour tout achat de 50€!</span>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/img/slide-3.jpg" class="d-block w-100" alt="Slide 3">
+                    <img src="assets/img/slide-3.webp" class="d-block w-100" alt="slide 3 Fête pour enfants: invitez le Père Noël">
                     <div class="carousel-caption d-none d-md-block">
                         <span class="text-box">Fête pour enfants: invitez le Père Noël!</span>
                     </div>
@@ -58,7 +58,7 @@
                     </div>
                     <div class="card-body text-center">
                         <span class="product-name card-title"><?= $product['name'] ?></span>
-                        <span class="product_price card-text"><?= $product['price'] ?> €</span>
+                        <span class="product_price card-text"><?= $product['price'] ?></span>
                         <?php if (isset($_SESSION['auth'])): ?>
                             <form class="js_add_to_cart" action="cart/add_to_cart.php" method="POST">
                                 <input type="hidden" name="user_id" value="<?= $_SESSION['auth']->id ?>">
@@ -68,7 +68,7 @@
                                 <button type="submit" class="btn btn-primary">Ajouter au Panier</button>
                             </form>
                         <?php else: ?>
-                            <p class="text-danger">Veuillez vous connecter pour ajouter des produits au panier.</p>
+                            <p class="text-danger">Connectez-vous pour ajouter au panier</p>
                             <a href="login.php" class="btn btn-secondary">Se connecter</a>
                         <?php endif; ?>
                     </div>
@@ -78,24 +78,24 @@
     </div>
 </section>
 
-    <?php include ('include/footer.php') ?>
-
-    <!-- Модальное окно для подтверждения добавления товара -->
-    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Produit ajouté au panier</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Le produit a été ajouté à votre panier avec succès.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuer les
-                        achats</button>
-                    <a href="cart/cart.php" class="btn btn-primary">Voir le panier</a>
-                </div>
+<!-- Модальное окно для подтверждения добавления товара -->
+<div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cartModalLabel">Produit ajouté au panier</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Le produit a été ajouté à votre panier avec succès.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continuer les
+                    achats</button>
+                <a href="cart/cart.php" class="btn btn-primary">Voir le panier</a>
             </div>
         </div>
     </div>
+</div>
+
+<?php include ('include/footer.php') ?>

@@ -21,7 +21,7 @@ require 'actions/users/registerAction.php';
 
   
     <!-- Template Main CSS File -->
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
 <?php if (isset($_SESSION['flash'])) : ?>
@@ -159,11 +159,8 @@ require 'actions/users/registerAction.php';
 
     </div>
   </main><!-- End #main -->
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
+  <?php include 'include/footer_js.php' ?>
 </body>
 
 </html>

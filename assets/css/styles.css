@@ -19,7 +19,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--main-bg-color-1) url("../img/background.jpg") no-repeat center center;
+    background: var(--main-bg-color-1) url("../img/background.webp") no-repeat center center;
     background-size: cover;
     opacity: 0.8; /* Adjust opacity as needed */
     z-index: -1; /* Place it behind the content */
@@ -32,11 +32,6 @@ body {
     font-family: Ouroboros, sans-serif;
     /*color: var(--main-color-2);*/
     color: #444444;
-}
-
-/* Стили для файла online.php */
-.online-container {
-    overflow: hidden;
 }
 
 /* Snowflakes */
@@ -169,7 +164,7 @@ section.product-box .product {
     border-radius: 5px; /* Закругление углов (по желанию) */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Тень для карточки (по желанию) */
     overflow: hidden; /* Скрытие содержимого, выходящего за пределы */
-    transition: transform 0.3s ease; /* Плавное изменение размера при наведении */
+    /* transition: transform 0.3s ease; Плавное изменение размера при наведении */
 }
 
 section.product-box .product .product-pic {
@@ -182,21 +177,24 @@ section.product-box .product .product-pic {
 section.product-box .product .product-name {
     display: block; /* Убедитесь, что имя продукта отображается как блочный элемент */
     font-size: 18px; /* Размер шрифта имени продукта */
-    margin-top: 5px; /* Верхний отступ имени продукта */
-    margin-bottom: 5px; /* Нижний отступ имени продукта */
+    margin-top: 3px; /* Верхний отступ имени продукта */
+    margin-bottom: 3px; /* Нижний отступ имени продукта */
 }
+
+/* Flip Card Animation */
 
 .product {
     position: relative;
-    perspective: 1000px; /* Создаём перспективу для эффекта 3D */
-    transition: transform 2s cubic-bezier(0.4, 0, 0.2, 1); /* Увеличиваем продолжительность и добавляем плавное изменение */
+    perspective: 1000px; 
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); 
+    transform-style: preserve-3d;
 }
-
+/* 
 .product .card {
     width: 100%;
     height: 100%;
     position: absolute;
-    backface-visibility: hidden;  /* Скрываем обратную сторону карточки */
+    backface-visibility: hidden;  
 }
 
 @keyframes slowRotateY {
@@ -209,16 +207,15 @@ section.product-box .product .product-name {
 }
 
 .product:hover {
-    /* Поворачиваем на 180-360 градусов */
-    animation: slowRotateY 1.5s linear;
+    /* Поворачиваем на 360 градусов 
+    animation: slowRotateY 2s linear;
     animation-iteration-count: 1;
-}
-
-
-/* .product:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 } */
+
+.product:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+} 
 
 .product button {
 	position: absolute;
@@ -240,10 +237,12 @@ section.product-box .product .product-name {
 
 .product-pic {
     height: 200px;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
 }
 
+/* test avant supprimer popup +overlay
 .popup, .overlay {
     display: none;
     position: fixed;
@@ -282,53 +281,61 @@ section.product-box .product .product-name {
     background: none;
     border: none;
     cursor: pointer;
-}
+} */
 
 /* Таймер */
+.timer-container {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
 .timer-main {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	height: 310px;
-	width: 1000px;
-	margin-top: -155px;
-	margin-left: -500px;
-	background: none;
-	text-align: center;
+    background: none;
+    text-align: center;
 }
 
 .timer-main > .title {
-	display: block;
-	font-size: 60px;
-	text-transform: uppercase;
-	color: var(--main-color-2);
+    display: block;
+    font-size: 60px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    color: var(--main-color-2);
 }
 
 .timer {
-	display: inline-block;
-	color: var(--main-color-2);
-	font-size: 30px;
-	font-weight: 100;
-	text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    color: var(--main-color-2);
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
 }
 
 .timer > div {
-	padding: 10px;
-	border-radius: 3px;
-	background: var(--main-color-1);
-	display: inline-block;
+    width: 100px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 3px;
+    background: var(--main-color-1);
 }
 
-.timer div > span{
-	padding: 15px;
-	border-radius: 3px;
-	background: var(--main-color-1);
-	display: inline-block;
+@media (max-width: 600px) {
+    .timer > div {
+        width: 45%; /* Adjust the width to fit two divs in a row */
+    }
 }
 
 .small-text{
-	padding-top: 5px;
-	font-size: 16px;
+    padding-top: 5px;
+    font-size: 16px;
 }
 
 /* timer.php */
@@ -423,27 +430,12 @@ section.product-box .product .product-name {
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
-/* .footer {
-    padding: 20px 0;
-    font-size: 16px;
-    transition: all 0.3s;
-    border-top: 1px solid #cddfff;
-    font-family: Arial, sans-serif;
-    color: var(--main-color-2); 
-}
-
-.footer .copyright {
-    text-align: center;
-    color: var(--main-color-2);
-    margin-bottom: 0;
-} */
-
 .footer {
-    background-color: #343a40; /* Темный фон для футера */
-    color: #ffffff; /* Белый текст для футера */
+    background-color: #343a40; 
+    color: #ffffff; 
     padding: 20px; /* Внутренние отступы для футера */
     text-align: center; /* Выравнивание текста по центру */
-    font-size: 14px; /* Размер шрифта для футера */
+    font-size: 14px; 
     border-top: 1px solid #dee2e6; /* Верхняя граница для футера */
 }
 
@@ -476,7 +468,7 @@ section.product-box .product .product-name {
 }
 
 .list-group-item:hover {
-    background-color: #e9ecef; /* Изменение цвета фона при наведении на элемент списка */
+    background-color: #e9ecef;
     transform: translateY(-5px); /* Подъем элемента при наведении */
 }
 

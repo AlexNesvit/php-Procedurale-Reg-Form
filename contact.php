@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plongez dans la magie de Noël avec notre boutique en ligne ! 🎄🎅 Des cadeaux et décorations aux délices festifs, nous avons tout pour rendre vos fêtes inoubliables. 🌟 Livraison rapide dans tout le pays et offres spéciales pour nos clients préférés.">
+
     <title>Contact</title>
 
     <link href="assets/img/iconfav.jpg" rel="icon">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
+<div class="container main mt-4 flex-grow-1">
 <?php include 'include/menu.php'; ?>
-
-<div class="container mt-4 flex-grow-1">
     <h1>Contactez-nous</h1>
 
     <div class="row">
@@ -46,13 +46,9 @@
         </div>
     </div>
 </div>
-
-<footer class="footer mt-auto py-3 bg-light">
+<div class="container main">
     <?php include 'include/footer.php'; ?>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/script.js"></script>
+    <?php include 'include/footer_js.php'; ?>
+    </div>
 </body>
 </html>
