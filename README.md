@@ -23,6 +23,7 @@
   - [✔ MVC (Model-View-Controller):](#-mvc-model-view-controller)
   - [✔ Visual Studio Code, PyCharm, WebStorm](#-visual-studio-code-pycharm-webstorm)
   - [✔ POO vs Style Procédural:](#-poo-vs-style-procédural)
+- [✔ Demarage le projet (!)](#-demarage-le-projet-)
 - [✔ Front-end:](#-front-end)
   - [✔ HTML](#-html)
   - [✔ CSS](#-css)
@@ -119,7 +120,7 @@ Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante 
   - Gestion de projets open source : GitHub est la plateforme de référence pour de nombreux projets open source.
   - Intégration avec d'autres outils : Compatible avec divers outils de développement et de gestion de projets.
   - Projet à presenter (Iphone14, Lambordghini, Solar, achivements, README+sponsors, github-bot, telegrambot, symfonyExoAdvanced, Personal-Card, wp-Event-Marseille, Portfolio, php-Panier, Nissan calculateur)
-  - Code `git init`...
+  - Code `git init`, `git add remote origin SSH`, `git add .`, `git checkout -b dev`, `git commit -m"comment"`, `git push origin main`.
 
 ## ✔ChatGPT:
 ChatGPT pour les développeurs web: Un outil précieux.
@@ -228,6 +229,12 @@ Conclusion:
         Style procédural : Toutes les données sont accessibles globalement, ce qui peut entraîner des erreurs.
         POO : Les données sont encapsulées dans des objets, ce qui améliore la sécurité.
 La POO offre des outils puissants pour organiser, gérer et étendre le code. Elle est particulièrement utile pour les grands projets où il est important de maintenir une structure, une sécurité et une réutilisation du code. Le style procédural, bien que plus simple pour les petites tâches, peut devenir encombrant et complexe dans les grands projets. Chacun de ces concepts et outils a ses propres caractéristiques et domaines d'application. Le choix entre eux dépend des exigences spécifiques du projet et des préférences du développeur.
+
+---
+
+# ✔ Demarage le projet (!)
+
+Terminal + code 
 
 ---
 
