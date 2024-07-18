@@ -6,11 +6,11 @@
 # ✅ E-commerce Boutique Exam DWWM 2024 ✅  
 
 
-## 🎄🎁 Internet Shop de Noël 🎄🎁
+## 🎄🎁 Internet Boutique de Noël 🎄🎁
 
 - [🟣 E-commerce Boutique Exam DWWM-2024 🟣](#-e-commerce-boutique-exam-dwwm-2024-)
 - [✅ E-commerce Boutique Exam DWWM 2024 ✅](#-e-commerce-boutique-exam-dwwm-2024--1)
-  - [🎄🎁 Internet Shop de Noël 🎄🎁](#-internet-shop-de-noël-)
+  - [🎄🎁 Internet Boutique de Noël 🎄🎁](#-internet-boutique-de-noël-)
 - [✔ Présentation du projet](#-présentation-du-projet)
 - [✔ Ressources](#-ressources)
 - [✔ Accès au Site](#-accès-au-site)
@@ -21,11 +21,16 @@
   - [✔ PHP prcédural:](#-php-prcédural)
   - [✔ Programmation Orientée Objet (POO):](#-programmation-orientée-objet-poo)
   - [✔ MVC (Model-View-Controller):](#-mvc-model-view-controller)
+  - [✔ Visual Studio Code, PyCharm, WebStorm](#-visual-studio-code-pycharm-webstorm)
   - [✔ POO vs Style Procédural:](#-poo-vs-style-procédural)
 - [✔ Front-end:](#-front-end)
+  - [✔ HTML](#-html)
+  - [✔ CSS](#-css)
+  - [✔ JavaScript](#-javascript)
 - [✔ Back-end:](#-back-end)
   - [✔ Base de données :](#-base-de-données-)
   - [✔ CRUD](#-crud)
+- [✔ Payement](#-payement)
 - [✔ Principaux Problèmes Rencontrés](#-principaux-problèmes-rencontrés)
 - [✔ Prochaines étapes](#-prochaines-étapes)
 - [✔ Contributions](#-contributions)
@@ -89,7 +94,7 @@ Note : Si vous ne payez pas votre panier avant de vous déconnecter, celui-ci se
 
 Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante :
 
-[Boutique-2024](http://localhost:8888)
+[Boutique-2024](http://localhost:8888/phpProceduraleRegForm/index.php)
 
 ---
 
@@ -113,22 +118,24 @@ Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante 
   - Communauté : Grande communauté de développeurs en France et dans le monde, permettant l'échange de connaissances et de bonnes pratiques.
   - Gestion de projets open source : GitHub est la plateforme de référence pour de nombreux projets open source.
   - Intégration avec d'autres outils : Compatible avec divers outils de développement et de gestion de projets.
+  - Projet à presenter (Iphone14, Lambordghini, Solar, achivements, README+sponsors, github-bot, telegrambot, symfonyExoAdvanced, Personal-Card, wp-Event-Marseille, Portfolio, php-Panier, Nissan calculateur)
+  - Code `git init`...
 
 ## ✔ChatGPT:
 ChatGPT pour les développeurs web: Un outil précieux.
 
 ChatGPT peut être un outil extrêmement utile pour les développeurs web. Voici quelques raisons pour lesquelles il peut s'avérer précieux :
-1. Aide au codage et au débogage.
-2. Explication des concepts.
-3. Génération de code.
-4. Recommandations et meilleures pratiques.
-5. Documentation.
+ - Aide au codage et au débogage.
+ - Explication des concepts.
+ - Génération de code.
+ - Recommandations et meilleures pratiques.
+ - Documentation.
   Il peut aider à rédiger la documentation de votre code, facilitant ainsi la maintenance et l'évolution du projet.
-6. Résolution de problèmes et de bugs.
+ - Résolution de problèmes et de bugs.
   ChatGPT peut proposer des solutions pour les bugs et les erreurs dans le code, aidant ainsi à comprendre où et pourquoi quelque chose ne fonctionne pas.
-7. Apprentissage de nouvelles technologies.
+ - Apprentissage de nouvelles technologies.
   Il peut servir de ressource éducative en fournissant des informations sur de nouvelles bibliothèques, frameworks et outils, aidant ainsi à rester à jour avec les dernières tendances en développement web.
-8. Amélioration des performances.
+ - Amélioration des performances.
   ChatGPT peut suggérer des moyens d'optimiser le code et d'améliorer les performances des applications web.
 
 ## ✔ PHP prcédural:
@@ -201,6 +208,8 @@ Conclusion:
     MVC : modèle architectural pour organiser le code.
     PHP procédural : style de programmation se concentrant sur la séquence de procédures et de fonctions.
 
+## ✔ Visual Studio Code, PyCharm, WebStorm
+
 ## ✔ POO vs Style Procédural:
 
     Structure du code :
@@ -224,6 +233,18 @@ La POO offre des outils puissants pour organiser, gérer et étendre le code. El
 
 # ✔ Front-end:
 - Langage de Programmation: [HTML] [CSS] [JavaScript]
+
+## ✔ HTML
+    Description.
+
+## ✔ CSS
+    Description.
+
+## ✔ JavaScript
+    Description.
+
+
+
 - Framework: [Bootstrap 5.3.3](https://getbootstrap.com/)
   Ajouter le link [Bootstrap] `<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">` dans `index.php`.
 
@@ -290,7 +311,8 @@ CRUD est un acronyme qui désigne les quatre opérations principales effectuées
 
 ---
 
-
+# ✔ Payement 
+    Discription (ex Stripe)
 
 
 
