@@ -114,7 +114,7 @@ Le site est disponible sur localhost. Vous pouvez y accéder via l'URL suivante 
 
 ## ✔ GitHub:
 
-    GitHub est une plateforme très utilisée en France par les développeurs, les équipes de développement et les entreprises pour la gestion et la collaboration sur des projets de développement logiciel. 
+GitHub est une plateforme très utilisée en France par les développeurs, les équipes de développement et les entreprises pour la gestion et la collaboration sur des projets de développement logiciel. 
   - Collaboration : GitHub facilite la collaboration entre développeurs, même à distance.
   - Communauté : Grande communauté de développeurs en France et dans le monde, permettant l'échange de connaissances et de bonnes pratiques.
   - Gestion de projets open source : GitHub est la plateforme de référence pour de nombreux projets open source.
