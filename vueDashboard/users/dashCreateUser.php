@@ -1,7 +1,14 @@
 <?php
+// Inclure les fonctions nécessaires
 include('../../include/functions.php');
+
+// Inclure le fichier de connexion à la base de données
 require_once '../../include/database.php';
+
+// Inclure le fichier pour la création d'un utilisateur administrateur
 include('../../actions/admin/userCrud/adminUserCreate.php');
+
+// Vérifier si l'utilisateur est authentifié
 logged_only();
 ?>
 <!DOCTYPE html>
@@ -31,55 +38,42 @@ logged_only();
 
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
-
     <div class="d-flex align-items-center justify-content-between">
         <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
         <a href="../../dashboard.php" class="logo d-flex align-items-center">
-
             <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-
-
-
-
-
-</header><!-- End Header -->
+    </div><!-- Fin du logo -->
+</header><!-- Fin de l'en-tête -->
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="../../dashboard.php">
                 <i class="bi bi-house-heart"></i>
                 <span>Accueil</span>
             </a>
         </li>
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="../dashboardUser.php">
                 <i class="bi bi-person"></i>
                 <span>Utilisateurs</span>
             </a>
         </li>
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="dashboardProduit.php">
                 <i class="bi bi-card-list"></i>
                 <span>Produits</span>
             </a>
         </li>
-
         <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-          <i class="bi bi-cash"></i>
-          <span>Toutes les ashats</span>
-        </a>
-      </li>
-
+            <a class="nav-link collapsed" href="#">
+                <i class="bi bi-cash"></i>
+                <span>Toutes les achats</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="../../logout.php">
                 <i class="bi bi-box-arrow-in-right"></i>
@@ -87,14 +81,15 @@ logged_only();
             </a>
         </li>
     </ul>
+</aside><!-- Fin de la barre latérale -->
 
-</aside><!-- End Sidebar-->
-
+<!-- Contenu principal -->
 <main id="main" class="main">
-
     <div class="pagetitle">
         <h1>Gestion Utilisateurs</h1>
-    </div><!-- End Page Title -->
+    </div><!-- Fin du titre de la page -->
+
+    <!-- Affichage des messages flash de session -->
     <?php if (isset($_SESSION['flash'])) : ?>
         <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
             <div class="ms-1 me-3 alert alert-<?= $type; ?>">
@@ -103,6 +98,8 @@ logged_only();
         <?php endforeach; ?>
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
+
+    <!-- Affichage des erreurs de formulaire -->
     <?php if (!empty($errors)) : ?>
         <div class="ms-1 me-3 alert alert-danger">
             <p>Vous n'avez pas rempli le formulaire correctement</p>
@@ -111,21 +108,19 @@ logged_only();
                     <li><?= $error; ?></li>
                 </ul>
             <?php endforeach; ?>
-
         </div>
     <?php endif; ?>
+
+    <!-- Formulaire de création d'utilisateur -->
     <section class="section">
         <div class="row">
-            <div class="  profile-edit pt-3" id="profile-edit">
-
-
+            <div class="profile-edit pt-3" id="profile-edit">
                 <!-- Profile Edit Form -->
                 <form method="POST">
-
                     <div class="row mb-3">
                         <label for="name" class="col-md-4 col-lg-3 col-form-label">Nom</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="name" type="text" class="form-control" id="name" >
+                            <input name="name" type="text" class="form-control" id="name">
                         </div>
                     </div>
 
@@ -151,7 +146,7 @@ logged_only();
                     </div>
 
                     <div class="row mb-3">
-                        <label for="Address" class="col-md-4 col-lg-3 col-form-label">Address</label>
+                        <label for="Address" class="col-md-4 col-lg-3 col-form-label">Adresse</label>
                         <div class="col-md-8 col-lg-9">
                             <input name="address" type="text" class="form-control" id="Address">
                         </div>
@@ -182,17 +177,13 @@ logged_only();
                     </div>
 
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary" name="validate">Enregistrer
-                            l'utilisateur</button>
-
+                        <button type="submit" class="btn btn-primary" name="validate">Enregistrer l'utilisateur</button>
                     </div>
-                </form><!-- End Profile Edit Form -->
-
+                </form><!-- Fin du formulaire de création de profil -->
             </div>
         </div>
     </section>
-
-</main>
+</main><!-- Fin du contenu principal -->
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 

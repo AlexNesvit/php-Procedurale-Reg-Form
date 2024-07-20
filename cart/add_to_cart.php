@@ -1,5 +1,8 @@
 <?php
+// Démarrer la session
 session_start();
+
+// Inclure le fichier de connexion à la base de données
 require '../include/database.php';
 
 // Vérification de l'authentification de l'utilisateur
@@ -9,17 +12,20 @@ if (!isset($_SESSION['auth'])) {
     exit;
 }
 
+// Vérification des données POST requises
 if (!isset($_POST['product_id'], $_POST['product_name'], $_POST['product_price'])) {
     echo 'Données manquantes';
     die();
 }
 
+// Récupération des données de produit et de l'utilisateur
 $user_id = $_SESSION['auth']->id;
 $product_id = $_POST['product_id'];
 $product_name = $_POST['product_name'];
 $product_price = $_POST['product_price'];
 $quantity = 1;
 
+// Initialisation du panier si non existant
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = [];
 }
@@ -70,6 +76,10 @@ if (!$found) {
     ];
 }
 
+// Ajouter un message de succès à la session
 $_SESSION['message'] = 'Produit ajouté au panier avec succès!';
+
+// Rediriger vers la page d'accueil
 header('Location: ../index.php');
-?>
+exit();
+

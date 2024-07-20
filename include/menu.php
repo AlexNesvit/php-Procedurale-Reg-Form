@@ -1,5 +1,5 @@
 <?php
-
+// Vérifie si l'utilisateur est authentifié et s'il est un administrateur
 $is_authenticated = isset($_SESSION['auth']);
 $is_admin = $is_authenticated && $_SESSION['auth']->role === 1;
 ?>

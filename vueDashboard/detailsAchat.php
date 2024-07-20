@@ -1,18 +1,26 @@
 <?php
+// Inclure les fonctions nécessaires
 include('../include/functions.php');
+
+// Inclure le fichier de connexion à la base de données
 require_once '../include/database.php';
+
+// Inclure le fichier d'actions pour le profil utilisateur
 include ('../actions/users/profileAction.php');
+
+// Vérifier si l'utilisateur est authentifié
 logged_only();
 
+// Récupérer l'identifiant de la commande à partir de l'URL
 $basket_id = $_GET['basket_id'] ?? null;
 
 if (!$basket_id) {
-    // Перенаправление в случае отсутствия идентификатора корзины
+    // Rediriger si l'identifiant de la commande est manquant
     header('Location: dashboardAchats.php');
     exit();
 }
 
-// Получение деталей корзины
+// Récupérer les détails de la commande
 $stmt = $pdo->prepare("SELECT b.createdAt, u.username, g.name, bhg.quantity, g.price 
                        FROM basket b
                        JOIN basket_has_goods bhg ON b.id = bhg.basket_id
@@ -44,9 +52,10 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-</header><!-- End Header -->
+    </div><!-- Fin du logo -->
+</header><!-- Fin de l'en-tête -->
 
+<!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
@@ -80,12 +89,13 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
         </li>
     </ul>
-</aside><!-- End Sidebar-->
+</aside><!-- Fin de la barre latérale -->
 
+<!-- Contenu principal -->
 <main id="main" class="main">
     <div class="pagetitle">
         <h1>Détails de l'achat</h1>
-    </div><!-- End Page Title -->
+    </div><!-- Fin du titre de la page -->
 
     <section class="section">
         <?php if (!empty($details)) : ?>
@@ -102,6 +112,7 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                     </thead>
                     <tbody>
+                    <!-- Boucle pour afficher chaque détail de commande -->
                     <?php foreach($details as $detail): ?>
                         <tr>
                             <td><?= htmlspecialchars($detail['createdAt']) ?></td>
@@ -109,18 +120,18 @@ $details = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <td><?= htmlspecialchars($detail['name']) ?></td>
                             <td><?= htmlspecialchars($detail['quantity']) ?></td>
                             <td><?= number_format(floatval($detail['price']), 2) ?> €</td>
-                            <td><?= number_format(floatval($detail['price']) * intval($detail['quantity']), 2) ?> €</td>   
+                            <td><?= number_format(floatval($detail['price']) * intval($detail['quantity']), 2) ?> €</td>
                         </tr>
                     <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
-            <td><a href="dashboardAchats.php" class="btn btn-primary">Historique des Achats</a></td>
+            <a href="dashboardAchats.php" class="btn btn-primary">Retour à l'historique des Achats</a>
         <?php else : ?>
             <p>Aucun détail disponible.</p>
         <?php endif; ?>
     </section>
-</main>
+</main><!-- Fin du contenu principal -->
 
 <?php include '../include/footer_js.php' ?>
 

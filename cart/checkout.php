@@ -44,4 +44,4 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 // Rediriger vers la page du panier
 header('Location: cart.php');
 exit;
-?>
+

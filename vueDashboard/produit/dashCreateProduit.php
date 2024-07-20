@@ -1,7 +1,14 @@
 <?php
+// Inclure les fonctions nécessaires
 include('../../include/functions.php');
+
+// Inclure le fichier de connexion à la base de données
 require_once '../../include/database.php';
+
+// Inclure le fichier pour la création de produits administrateur
 include('../../actions/admin/produitCrud/adminProduitCreate.php');
+
+// Vérifier si l'utilisateur est authentifié
 logged_only();
 ?>
 <!DOCTYPE html>
@@ -13,7 +20,7 @@ logged_only();
 
     <title>Boutique | Administration</title>
 
-    <!-- Favicons -->
+    <!-- Favicon -->
     <link href="../../assets/img/iconfav.jpg" rel="icon">
 
     <!-- Google Fonts -->
@@ -31,27 +38,18 @@ logged_only();
 
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
-
     <div class="d-flex align-items-center justify-content-between">
         <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
         <a href="../../dashboard.php" class="logo d-flex align-items-center">
-
             <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-
-
-
-
-
 </header><!-- End Header -->
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="../../dashboard.php">
                 <i class="bi bi-house-heart"></i>
@@ -80,14 +78,14 @@ logged_only();
             </a>
         </li>
     </ul>
-
 </aside><!-- End Sidebar-->
 
 <main id="main" class="main">
-
     <div class="pagetitle">
-        <h1>Creation des produits</h1>
+        <h1>Création des produits</h1>
     </div><!-- End Page Title -->
+    
+    <!-- Affichage des messages flash de session -->
     <?php if (isset($_SESSION['flash'])) : ?>
         <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
             <div class="ms-1 me-3 alert alert-<?= $type; ?>">
@@ -96,6 +94,8 @@ logged_only();
         <?php endforeach; ?>
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
+
+    <!-- Affichage des erreurs de validation -->
     <?php if (!empty($errors)) : ?>
         <div class="ms-1 me-3 alert alert-danger">
             <p>Vous n'avez pas rempli le formulaire correctement</p>
@@ -104,14 +104,13 @@ logged_only();
                     <li><?= $error; ?></li>
                 </ul>
             <?php endforeach; ?>
-
         </div>
     <?php endif; ?>
+
     <section class="section">
         <div class="row">
-            <div class="  profile-edit pt-3" id="profile-edit">
-
-                <!-- Profile Edit Form -->
+            <div class="profile-edit pt-3" id="profile-edit">
+                <!-- Formulaire de création de produit -->
                 <form method="POST">
                     <div class="row mb-3">
                         <label for="name" class="col-md-4 col-lg-3 col-form-label">Nom produit</label>
@@ -120,30 +119,24 @@ logged_only();
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="price" class="col-md-4 col-lg-3 col-form-label">Price</label>
+                        <label for="price" class="col-md-4 col-lg-3 col-form-label">Prix</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="price" type="text" class="form-control" id="price" placeholder="price ( __.__ €)">
+                            <input name="price" type="text" class="form-control" id="price" placeholder="Prix ( __.__ €)">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="image" class="col-md-4 col-lg-3 col-form-label">Image</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="image" type="text" class="form-control" id="image" placeholder="Image lien">
+                            <input name="image" type="text" class="form-control" id="image" placeholder="Lien de l'image">
+                        </div>
                     </div>
-
-
-
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary" name="validate">Enregistrer
-                            le produit</button>
-
+                        <button type="submit" class="btn btn-primary" name="validate">Enregistrer le produit</button>
                     </div>
-                </form><!-- End Profile Edit Form -->
-
+                </form><!-- Fin du formulaire de création de produit -->
             </div>
         </div>
     </section>
-
 </main>
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -151,5 +144,4 @@ logged_only();
 <?php include '../../include/footer_js.php' ?>
 
 </body>
-
 </html>
