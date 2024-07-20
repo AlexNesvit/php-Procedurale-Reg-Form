@@ -177,8 +177,10 @@ section.product-box .product .product-pic {
 section.product-box .product .product-name {
     display: block; /* Убедитесь, что имя продукта отображается как блочный элемент */
     font-size: 18px; /* Размер шрифта имени продукта */
-    margin-top: 3px; /* Верхний отступ имени продукта */
-    margin-bottom: 3px; /* Нижний отступ имени продукта */
+    margin-top: 20px; /* Верхний отступ имени продукта */
+    margin-bottom: 0; /* Нижний отступ имени продукта */
+    padding: 0; /* Убирает отступы .card-title */
+    min-height: 55px; /* Для двух линий текста */
 }
 
 /* Flip Card Animation */

@@ -52,7 +52,7 @@
     <h2 class="text-box">Catalogue</h2>
     <div class="row">
         <?php foreach ($products as $product): ?>
-            <div class="col-6 col-md-4 col-lg-3" data-id="<?= $product['id'] ?>">
+            <div class="col-12 col-md-6 col-lg-3" data-id="<?= $product['id'] ?>">
                 <div class="product card">
                     <div class="product-pic card-img-top" style="background-image: url('<?= $product['image'] ?>');">
                     </div>
