@@ -1,11 +1,17 @@
 <?php
+// Inclure les fonctions nécessaires
 include('../include/functions.php');
+
+// Inclure le fichier de connexion à la base de données
 require_once '../include/database.php';
+
+// Inclure le fichier des actions pour le profil utilisateur
 include ('../actions/users/profileAction.php');
+
+// Vérifier si l'utilisateur est authentifié
 logged_only();
 
-
-// Получение всех корзин, которые были оплачены (isPaid = 1)
+// Récupération de toutes les commandes qui ont été payées (isPaid = 1)
 $stmt = $pdo->query("SELECT b.id AS basket_id, b.createdAt, b.user_id, SUM(bhg.quantity) AS total_quantity, SUM(g.price * bhg.quantity) AS total_amount
                      FROM basket b
                      JOIN basket_has_goods bhg ON b.id = bhg.basket_id
@@ -30,6 +36,7 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <link href="../assets/css/dashboard.css" rel="stylesheet">
 </head>
 <body>
+<!-- En-tête de la page -->
 <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
         <img src="../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
@@ -37,9 +44,10 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-</header><!-- End Header -->
+    </div><!-- Fin du logo -->
+</header><!-- Fin de l'en-tête -->
 
+<!-- Barre latérale -->
 <aside id="sidebar" class="sidebar">
     <ul class="sidebar-nav" id="sidebar-nav">
         <li class="nav-item">
@@ -73,14 +81,16 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
         </li>
     </ul>
-</aside><!-- End Sidebar-->
+</aside><!-- Fin de la barre latérale -->
 
+<!-- Contenu principal -->
 <main id="main" class="main">
     <div class="pagetitle">
         <h1>Historique des Achats</h1>
-    </div><!-- End Page Title -->
+    </div><!-- Fin du titre de la page -->
 
     <section class="section">
+        <!-- Affichage des achats payés -->
         <?php if (!empty($baskets)) : ?>
             <div class="row">
                 <table class="table table-striped table-hover">
@@ -94,6 +104,7 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                     </thead>
                     <tbody>
+                    <!-- Boucle pour afficher chaque achat -->
                     <?php foreach($baskets as $basket): ?>
                         <tr>
                             <td><?= htmlspecialchars($basket['createdAt']) ?></td>
@@ -110,7 +121,7 @@ $baskets = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <p>Aucun achat effectué.</p>
         <?php endif; ?>
     </section>
-</main>
+</main><!-- Fin du contenu principal -->
 
 <?php include '../include/footer_js.php' ?>
 

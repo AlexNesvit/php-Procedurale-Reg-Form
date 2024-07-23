@@ -1,60 +1,67 @@
 <?php
+// Inclure les fonctions nécessaires
 require_once '../../include/functions.php';
+
+// Démarrer la session
 session_start();
 
 if (isset($_POST['validate'])) {
-    // Список ошибок
+    // Liste des erreurs
     $errors = array();
 
-    // Проверка наличия имени продукта
+    // Vérification du nom du produit
     if (empty($_POST['name'])) {
         $errors['name'] = "Le nom du produit ne peut être vide";
     } else {
+        // Nettoyer le nom du produit
         $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
     }
 
-    // Проверка наличия цены продукта
+    // Vérification du prix du produit
     if (empty($_POST['price'])) {
         $errors['price'] = "Le prix ne peut être vide";
     } else {
-        $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION); // Позволяет использовать дробные числа
+        // Nettoyer le prix du produit (autoriser les nombres à virgule)
+        $price = filter_var($_POST['price'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
     }
 
-    // Проверка наличия изображения продукта
+    // Vérification de l'image du produit
     if (empty($_POST['image'])) {
         $errors['image'] = "L'image ne peut être vide";
     } else {
+        // Nettoyer l'URL de l'image
         $image = filter_var($_POST['image'], FILTER_SANITIZE_URL);
     }
 
-    // Если нет ошибок валидации, выполняем запрос к базе данных
+    // Si aucune erreur de validation, exécuter la requête vers la base de données
     if (empty($errors)) {
-        require_once '../../include/database.php'; // Подключение к базе данных
+        // Inclure le fichier de connexion à la base de données
+        require_once '../../include/database.php';
 
         try {
-            // Подготовка запроса
+            // Préparation de la requête
             $req = $pdo->prepare('INSERT INTO goods (`name`, `price`, `image`) VALUES (:name, :price, :image)');
             
-            // Привязка параметров
+            // Liaison des paramètres
             $req->bindParam(':name', $name, PDO::PARAM_STR);
-            $req->bindParam(':price', $price, PDO::PARAM_STR); // Можно использовать PARAM_INT, если цена целое число
+            $req->bindParam(':price', $price, PDO::PARAM_STR); // Utiliser PARAM_INT si le prix est un entier
             $req->bindParam(':image', $image, PDO::PARAM_STR);
 
-            // Выполнение запроса
+            // Exécution de la requête
             $req->execute();
 
-            // Успешное сообщение и перенаправление на страницу управления продуктами
+            // Message de succès et redirection vers la page de gestion des produits
             $_SESSION['flash']['success'] = 'Votre produit a bien été créé';
             header('Location: ../dashboardProduit.php');
             exit();
         } catch (PDOException $e) {
-            // В случае ошибки базы данных
+            // En cas d'erreur de base de données
             $_SESSION['flash']['errors'] = "Erreur lors de l'ajout du produit : " . $e->getMessage();
             header('Location: ../dashboardProduit.php');
             exit();
         }
     } else {
-        // Если есть ошибки валидации, сохраняем их в сессию
+        // S'il y a des erreurs de validation, les stocker dans la session
         $_SESSION['flash']['errors'] = $errors;
         header('Location: ../dashboardProduit.php');
         exit();

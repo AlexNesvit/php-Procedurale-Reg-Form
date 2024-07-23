@@ -1,7 +1,14 @@
 <?php
+// Inclure les fonctions nécessaires
 include('../include/functions.php');
+
+// Inclure le fichier de connexion à la base de données
 require_once '../include/database.php';
-include ('../actions/users/profileAction.php');
+
+// Inclure le fichier d'actions pour le profil utilisateur
+include('../actions/users/profileAction.php');
+
+// Vérifier si l'utilisateur est authentifié
 logged_only();
 
 $user_id = $_SESSION['auth']->id;
@@ -13,7 +20,7 @@ $stmt = $pdo->prepare("SELECT b.createdAt, bhg.quantity, g.name, g.price
                        JOIN goods g ON bhg.goods_id = g.id 
                        WHERE b.user_id = :user_id AND b.isPaid = 1 
                        ORDER BY b.createdAt DESC");
-$stmt->execute(['user_id' => $user_id]); // Передача параметра в виде ассоциативного массива
+$stmt->execute(['user_id' => $user_id]); // Passer le paramètre sous forme de tableau associatif
 $purchases = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <!DOCTYPE html>
@@ -40,8 +47,8 @@ $purchases = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
-</header><!-- End Header -->
+    </div><!-- Fin du logo -->
+</header><!-- Fin de l'en-tête -->
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
@@ -71,12 +78,14 @@ $purchases = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </a>
         </li>
     </ul>
-</aside><!-- End Sidebar-->
+</aside><!-- Fin de la barre latérale -->
 
+<!-- Contenu principal -->
 <main id="main" class="main">
     <div class="pagetitle">
         <h1>Mon historique des achats</h1>
-    </div><!-- End Page Title -->
+    </div><!-- Fin du titre de la page -->
+    <!-- Affichage des messages flash de session -->
     <?php if (isset($_SESSION['flash'])) : ?>
         <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
             <div class="ms-1 me-3 alert alert-<?= $type; ?>">
@@ -86,6 +95,7 @@ $purchases = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
     <section class="section">
+        <!-- Vérifier s'il y a des achats -->
         <?php if (!empty($purchases)) : ?>
             <div class="row">
                 <table class="table table-striped table-hover">
@@ -99,6 +109,7 @@ $purchases = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     </tr>
                     </thead>
                     <tbody>
+                    <!-- Boucle pour afficher chaque achat -->
                     <?php foreach($purchases as $purchase): ?>
                         <tr>
                             <td><?= htmlspecialchars($purchase['createdAt']) ?></td>

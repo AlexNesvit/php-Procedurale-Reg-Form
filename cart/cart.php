@@ -1,23 +1,19 @@
 <?php
+// Démarrer la session
 session_start();
+
+// Inclure le fichier de connexion à la base de données
 require '../include/database.php';
 
-// Проверка авторизации пользователя
-// if (!isset($_SESSION['user_id'])) {
-//     // Если пользователь не авторизован, перенаправляем его на страницу входа
-//     header('Location: ../login.php');
-//     exit;
-// }
-
-// Инициализация корзины и общей суммы
+// Initialisation du panier et du montant total
 $cart = $_SESSION['cart'] ?? [];
 $total_amount = 0;
 $message = $_SESSION['message'] ?? '';
-unset($_SESSION['message']); // Очищаем сообщение после его отображения
+unset($_SESSION['message']); // Effacer le message après l'affichage
 
-// Обход корзины и подсчет общей суммы
+// Parcourir le panier et calculer le montant total
 foreach ($cart as $index => $item) {
-    $product_price_cleaned = floatval(preg_replace('/[^\d.]/', '', $item['product_price'])); // Очистка цены от символов
+    $product_price_cleaned = floatval(preg_replace('/[^\d.]/', '', $item['product_price'])); // Nettoyer le prix des symboles
     $quantity = intval($item['quantity']);
 
     if ($product_price_cleaned > 0 && $quantity > 0) {
@@ -54,47 +50,47 @@ foreach ($cart as $index => $item) {
     </header><!-- End Header -->
 
     <!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar">
+    <aside id="sidebar" class="sidebar">
 
-<ul class="sidebar-nav" id="sidebar-nav">
+        <ul class="sidebar-nav" id="sidebar-nav">
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="bi bi-house-heart"></i>
-            <span>Accueil</span>
-        </a>
-    </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-house-heart"></i>
+                    <span>Accueil</span>
+                </a>
+            </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#">
-            <i class="bi bi-person"></i>
-            <span>Utilisateurs</span>
-        </a>
-    </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#">
+                    <i class="bi bi-person"></i>
+                    <span>Utilisateurs</span>
+                </a>
+            </li>
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="dashboardProduit.php">
-            <i class="bi bi-card-list"></i>
-            <span>Produits</span>
-        </a>
-    </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="dashboardProduit.php">
+                    <i class="bi bi-card-list"></i>
+                    <span>Produits</span>
+                </a>
+            </li>
 
-    <li class="nav-item">
-    <a class="nav-link collapsed" href="../vueProfil/profileAchats.php">
-      <i class="bi bi-cash"></i>
-      <span>Mon historique des achats</span>
-    </a>
-  </li>
-  
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="../logout.php">
-            <i class="bi bi-box-arrow-in-right"></i>
-            <span>Déconnexion</span>
-        </a>
-    </li>
-</ul>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../vueProfil/profileAchats.php">
+                    <i class="bi bi-cash"></i>
+                    <span>Mon historique des achats</span>
+                </a>
+            </li>
 
-</aside><!-- End Sidebar-->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="../logout.php">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+
+    </aside><!-- End Sidebar-->
 
     <main id="main" class="main">
         <div class="pagetitle">
@@ -122,13 +118,12 @@ foreach ($cart as $index => $item) {
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($cart as $index => $item):?>
-
+                                <?php foreach ($cart as $index => $item): ?>
                                     <tr>
                                         <td><?= htmlspecialchars($item['product_name']) ?></td>
                                         <td><?= number_format(floatval($item['product_price']), 2) ?> €</td>
                                         <td>
-                                            <input type="number" name="quantities[<?= $index ?>]" value="<?= $item['quantity']?>" min="1" class="form-control" style="width: 80px;">
+                                            <input type="number" name="quantities[<?= $index ?>]" value="<?= $item['quantity'] ?>" min="1" class="form-control" style="width: 80px;">
                                         </td>
                                         <td><?= number_format(floatval($item['product_price']) * intval($item['quantity']), 2) ?> €</td>
                                         <td>
@@ -141,7 +136,7 @@ foreach ($cart as $index => $item) {
                         <p><strong>Total: <?= number_format($total_amount, 2) ?> €</strong></p>
                         <button type="submit" name="update" class="btn btn-primary">Mettre à jour la Quantité</button>
                         <a href="../index.php" class="btn btn-secondary">Continuer vos achats</a>
-                        <a href="checkout.php" class="btn btn-success">Passer ou paiement</a>
+                        <a href="checkout.php" class="btn btn-success">Passer au paiement</a>
                     </form>
                 <?php else: ?>
                     <p>Votre panier est vide.</p>

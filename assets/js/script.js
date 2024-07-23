@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const buyButtons = document.querySelectorAll('.js_buy');
     const closePopupButton = document.querySelector('.js_close-popup');
 
-    // Открытие мобильного меню
+    // Ouverture du menu mobile
     if(mobileMenuButton) {
         mobileMenuButton.addEventListener('click', function () {
             menu.classList.add('d-flex');
@@ -15,62 +15,41 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Закрытие мобильного меню
+    // Fermeture du menu mobile
     if (closeMenuButton) {
         closeMenuButton.addEventListener('click', function () {
             menu.classList.remove('d-flex');
             menu.classList.add('d-none');
         });
     }
-
-    // Показать попап при нажатии на "Acheter"
-    //     buyButtons.forEach(button => {
-    //         button.addEventListener('click', function () {
-    //             overlay.style.display = 'block';
-    //             popup.style.display = 'block';
-    //         });
-    //     });
-
-    //     // Закрыть попап
-    //     closePopupButton.addEventListener('click', function () {
-    //         overlay.style.display = 'none';
-    //         popup.style.display = 'none';
-    //     });
-
-    //     // Закрыть попап при нажатии на overlay
-    //     overlay.addEventListener('click', function () {
-    //         overlay.style.display = 'none';
-    //         popup.style.display = 'none';
-    //     });
-    // });
 });
 
-//Timer
+// Timer
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Элементы для отображения времени
+    // Éléments pour l'affichage du temps
     const daysElement = document.querySelector(".days");
     const hoursElement = document.querySelector(".hours");
     const minutesElement = document.querySelector(".minutes");
     const secondsElement = document.querySelector(".seconds");
 
     function updateTimer() {
-        // Текущая дата и время
+        // Date et heure actuelles
         const now = new Date();
 
-        // Дата и время Нового года
+        // Date et heure du Nouvel An
         const newYear = new Date(now.getFullYear() + 1, 0, 1);
 
-        // Разница во времени в миллисекундах
+        // Différence de temps en millisecondes
         const timeRemaining = newYear - now;
 
-        // Переводим миллисекунды в дни, часы, минуты и секунды
+        // Convertir les millisecondes en jours, heures, minutes et secondes
         const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
         const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
 
-        // Обновляем значения на странице
+        // Mettre à jour les valeurs sur la page
         if (daysElement) {
             daysElement.textContent = days;
         }
@@ -84,14 +63,13 @@ document.addEventListener("DOMContentLoaded", function () {
             secondsElement.textContent = seconds;
         }
 
-        // Устанавливаем таймер для обновления значений каждую секунду
+        // Définir le minuteur pour mettre à jour les valeurs chaque seconde
         setTimeout(updateTimer, 1000);
     }
 
-    // Запуск таймера
+    // Lancement du minuteur
     updateTimer();
 });
-
 
 // Ajouter au panier
 document.addEventListener('DOMContentLoaded', () => {
@@ -114,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
                 console.log(response);
-                // Показываем модальное окно
+                // Afficher la fenêtre modale
                 const cartModal = new bootstrap.Modal(document.getElementById('cartModal'));
                 cartModal.show();
             })
@@ -123,30 +101,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-//animation snow
+// Animation neige
 document.addEventListener('DOMContentLoaded', function () {
     const body = document.querySelector('body');
 
-    // Массив символов снежинок
+    // Tableau de symboles de flocons de neige
     const snowflakeSymbols = ['❅', '❆'];
 
-    // Function to create a snowflake element
+    // Fonction pour créer un élément flocon de neige
     function createSnowflake() {
         const snowflake = document.createElement('div');
         snowflake.classList.add('snowflake');
         snowflake.style.left = `${Math.random() * 100}vw`;
-        snowflake.style.animationDuration = `${Math.random() * 5 + 15}s`; // Увеличиваем продолжительность анимации
+        snowflake.style.animationDuration = `${Math.random() * 5 + 15}s`; // Augmenter la durée de l'animation
         snowflake.textContent = snowflakeSymbols[Math.floor(Math.random() * snowflakeSymbols.length)];
         body.appendChild(snowflake);
 
-        // Remove snowflake after it falls
+        // Supprimer le flocon de neige après sa chute
         setTimeout(() => {
             snowflake.remove();
-        }, 15000); // Увеличиваем время удаления снежинки
+        }, 15000); // Augmenter le temps de suppression du flocon de neige
     }
 
-    // Create snowflakes every 800ms
-    setInterval(createSnowflake, 3000); // Увеличиваем интервал создания снежинок
+    // Créer des flocons de neige toutes les 3000ms
+    setInterval(createSnowflake, 3000); // Augmenter l'intervalle de création des flocons de neige
 });
-
-

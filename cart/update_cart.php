@@ -1,29 +1,28 @@
 <?php
+// Démarrer la session
 session_start();
+
+// Inclure le fichier de connexion à la base de données
 require '../include/database.php';
 
-// Проверка авторизации пользователя
-// if (!isset($_SESSION['user_id'])) {
-//     header('Location: ../login.php');
-//     exit;
-// }
-
-// Проверяем, существует ли корзина
+// Vérifier si la session de panier existe
 if (!isset($_SESSION['cart'])) {
+    // Si le panier n'existe pas, rediriger vers la page d'accueil
     header('Location: ../index.php');
     exit;
 }
 
-// Получаем корзину из сессии
+// Récupérer le panier de la session
 $cart = $_SESSION['cart'];
 $message = '';
 
-// Если пользователь нажал "Mettre à jour la Quantité"
+// Si l'utilisateur a cliqué sur "Mettre à jour la Quantité"
 if (isset($_POST['update'])) {
     foreach ($_POST['quantities'] as $index => $quantity) {
         if (isset($cart[$index])) {
             $quantity = intval($quantity);
             if ($quantity > 0) {
+                // Mettre à jour la quantité du produit dans le panier
                 $cart[$index]['quantity'] = $quantity;
                 $req = $pdo->prepare('UPDATE basket_has_goods SET quantity = :quantity WHERE basket_id = :basket_id AND goods_id = :goods_id');
                 $req->bindParam(':quantity', $quantity);
@@ -31,7 +30,7 @@ if (isset($_POST['update'])) {
                 $req->bindParam(':goods_id', $cart[$index]['goods_id']);
                 $req->execute();
             } else {
-                // Удаляем товар, если количество равно нулю или меньше
+                // Supprimer le produit si la quantité est nulle ou inférieure
                 $req = $pdo->prepare('DELETE FROM basket_has_goods WHERE basket_id = :basket_id AND goods_id = :goods_id');
                 $req->bindParam(':basket_id', $cart[$index]['basket_id']);
                 $req->bindParam(':goods_id', $cart[$index]['goods_id']);
@@ -40,25 +39,26 @@ if (isset($_POST['update'])) {
             }
         }
     }
-    $_SESSION['cart'] = array_values($cart); // Обновляем сессию, чтобы убрать возможные "дыры" в индексах
+    // Mettre à jour la session pour refléter les changements dans le panier
+    $_SESSION['cart'] = array_values($cart); // Réindexer le tableau pour éliminer les "trous"
     $_SESSION['message'] = 'Quantité mise à jour avec succès!';
 }
 
-// Если пользователь нажал "Supprimer"
+// Si l'utilisateur a cliqué sur "Supprimer"
 if (isset($_POST['remove'])) {
     $index = $_POST['remove'];
     if (isset($cart[$index])) {
-        // Получаем ID корзины и товара
+        // Récupérer l'ID du panier et du produit
         $basket_id = $cart[$index]['basket_id'];
         $goods_id = $cart[$index]['goods_id'];
 
-        // Удаляем запись из базы данных
+        // Supprimer l'entrée de la base de données
         $req = $pdo->prepare('DELETE FROM basket_has_goods WHERE basket_id = :basket_id AND goods_id = :goods_id');
         $req->bindParam(':basket_id', $basket_id);
         $req->bindParam(':goods_id', $goods_id);
         $req->execute();
 
-        // Если это был последний товар в корзине, также удаляем корзину
+        // Vérifier si c'était le dernier produit dans le panier et supprimer le panier si nécessaire
         $req = $pdo->prepare('SELECT COUNT(*) FROM basket_has_goods WHERE basket_id = :basket_id');
         $req->bindParam(':basket_id', $basket_id);
         $req->execute();
@@ -70,18 +70,17 @@ if (isset($_POST['remove'])) {
             $req->execute();
         }
 
-        // Удаляем запись из сессии
+        // Supprimer l'entrée du panier de la session
         unset($cart[$index]);
 
-        // Обновляем сессию
-        $_SESSION['cart'] = array_values($cart); // Обновляем сессию, чтобы убрать возможные "дыры" в индексах
+        // Mettre à jour la session
+        $_SESSION['cart'] = array_values($cart); // Réindexer le tableau pour éliminer les "trous"
 
-        // Сообщение об успешном удалении
+        // Message de succès pour la suppression du produit
         $_SESSION['message'] = 'Produit supprimé avec succès!';
     }
 }
 
-// Перенаправляем пользователя обратно на страницу корзины или главную страницу
+// Rediriger l'utilisateur vers la page du panier
 header('Location: cart.php');
 exit;
-?>

@@ -1,7 +1,14 @@
 <?php
+// Inclure les fonctions nécessaires
 include('../../include/functions.php');
+
+// Inclure le fichier de connexion à la base de données
 require_once '../../include/database.php';
+
+// Inclure le fichier pour l'édition des produits administrateur
 include('../../actions/admin/produitCrud/adminProduitEdit.php');
+
+// Vérifier si l'utilisateur est authentifié
 logged_only();
 ?>
 <!DOCTYPE html>
@@ -13,7 +20,7 @@ logged_only();
 
     <title>Boutique | Administration</title>
 
-    <!-- Favicons -->
+    <!-- Favicon -->
     <link href="../../assets/img/iconfav.jpg" rel="icon">
 
     <!-- Google Fonts -->
@@ -31,23 +38,18 @@ logged_only();
 
 <!-- ======= Header ======= -->
 <header id="header" class="header fixed-top d-flex align-items-center">
-
     <div class="d-flex align-items-center justify-content-between">
         <img src="../../assets/img/iconfav.jpg" alt="icon Boutique" class="logoD">
         <a href="../../index.php" class="logo d-flex align-items-center">
-
             <span class="d-none d-lg-block">Boutique</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
-
 </header><!-- End Header -->
 
 <!-- ======= Sidebar ======= -->
 <aside id="sidebar" class="sidebar">
-
     <ul class="sidebar-nav" id="sidebar-nav">
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="../../dashboard.php">
                 <i class="bi bi-house-heart"></i>
@@ -61,7 +63,6 @@ logged_only();
                 <span>Utilisateurs</span>
             </a>
         </li>
-
 
         <li class="nav-item">
             <a class="nav-link collapsed" href="../dashboardProduit.php">
@@ -77,14 +78,14 @@ logged_only();
             </a>
         </li>
     </ul>
-
 </aside><!-- End Sidebar-->
 
 <main id="main" class="main">
-
     <div class="pagetitle">
         <h1>Gestion des Produits</h1>
     </div><!-- End Page Title -->
+    
+    <!-- Affichage des messages flash de session -->
     <?php if (isset($_SESSION['flash'])) : ?>
         <?php foreach ($_SESSION['flash'] as $type => $message) : ?>
             <div class="ms-1 me-3 alert alert-<?= $type; ?>">
@@ -93,6 +94,8 @@ logged_only();
         <?php endforeach; ?>
         <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
+
+    <!-- Affichage des erreurs de validation -->
     <?php if (!empty($errors)) : ?>
         <div class="ms-1 me-3 alert alert-danger">
             <p>Vous n'avez pas rempli le formulaire correctement</p>
@@ -101,62 +104,46 @@ logged_only();
                     <li><?= $error; ?></li>
                 </ul>
             <?php endforeach; ?>
-
         </div>
     <?php endif; ?>
+
     <section class="section">
         <div class="row">
             <div class="profile-edit pt-3" id="profile-edit">
-
-                <!-- Profile Edit Form -->
+                <!-- Formulaire d'édition de produit -->
                 <form method="POST">
-
                     <div class="row mb-3">
                         <label for="id" class="col-md-4 col-lg-3 col-form-label">Id</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="id" type="text" class="form-control" id="id" value="<?=
-                            $produit->id;
-                            ?>" >
+                            <input name="id" type="text" class="form-control" id="id" value="<?= $produit->id; ?>" readonly>
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="name" class="col-md-4 col-lg-3 col-form-label">Nom produit</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="name" type="text" class="form-control" id="name" value="<?=
-                            $produit->name;
-                            ?>" >
+                            <input name="name" type="text" class="form-control" id="name" value="<?= $produit->name; ?>">
                         </div>
                     </div>
                     <div class="row mb-3">
-                        <label for="price" class="col-md-4 col-lg-3 col-form-label">Price</label>
+                        <label for="price" class="col-md-4 col-lg-3 col-form-label">Prix</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="price" type="text" class="form-control" id="price" value="<?=
-                            $produit->price;
-                            ?>" >
+                            <input name="price" type="text" class="form-control" id="price" value="<?= $produit->price; ?>">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="image" class="col-md-4 col-lg-3 col-form-label">Image</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="image" type="text" class="form-control" id="image" value="<?=
-                            $produit->image;
-                            ?>" >
+                            <input name="image" type="text" class="form-control" id="image" value="<?= $produit->image; ?>">
                         </div>
                     </div>
-
-
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary" name="validate">Sauvegarder les
-                            changements</button>
-                        <a href="../../actions/admin/produitCrud/adminProduitDelete.php?id=<?= $produit->id ?>" class="btn
-                                            btn-danger">Supprimer la
-                            produit</a>
+                        <button type="submit" class="btn btn-primary" name="validate">Sauvegarder les changements</button>
+                        <a href="../../actions/admin/produitCrud/adminProduitDelete.php?id=<?= $produit->id ?>" class="btn btn-danger">Supprimer le produit</a>
                     </div>
-                </form>
+                </form><!-- Fin du formulaire d'édition de produit -->
             </div>
         </div>
     </section>
-
 </main>
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
@@ -164,5 +151,4 @@ logged_only();
 <?php include '../../include/footer_js.php' ?>
 
 </body>
-
 </html>
